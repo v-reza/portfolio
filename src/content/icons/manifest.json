@@ -1,0 +1,218 @@
+{
+ "react": {
+  "hex": "61DAFB",
+  "title": "React"
+ },
+ "nextjs": {
+  "hex": "000000",
+  "title": "Next.js"
+ },
+ "vue": {
+  "hex": "4FC08D",
+  "title": "Vue.js"
+ },
+ "typescript": {
+  "hex": "3178C6",
+  "title": "TypeScript"
+ },
+ "tailwindcss": {
+  "hex": "06B6D4",
+  "title": "Tailwind CSS"
+ },
+ "shadcn": {
+  "hex": "000000",
+  "title": "shadcn/ui"
+ },
+ "redux": {
+  "hex": "764ABC",
+  "title": "Redux"
+ },
+ "zustand": {
+  "hex": null,
+  "title": "zustand"
+ },
+ "tanstack": {
+  "hex": "ECE8D1",
+  "title": "TanStack"
+ },
+ "vite": {
+  "hex": "9135FF",
+  "title": "Vite"
+ },
+ "electron": {
+  "hex": "47848F",
+  "title": "Electron"
+ },
+ "pwa": {
+  "hex": "5A0FC8",
+  "title": "PWA"
+ },
+ "flutter": {
+  "hex": "02569B",
+  "title": "Flutter"
+ },
+ "reactnative": {
+  "hex": null,
+  "title": "reactnative"
+ },
+ "dart": {
+  "hex": "0175C2",
+  "title": "Dart"
+ },
+ "springboot": {
+  "hex": "6DB33F",
+  "title": "Spring Boot"
+ },
+ "nodejs": {
+  "hex": "5FA04E",
+  "title": "Node.js"
+ },
+ "nestjs": {
+  "hex": "E0234E",
+  "title": "NestJS"
+ },
+ "laravel": {
+  "hex": "FF2D20",
+  "title": "Laravel"
+ },
+ "flask": {
+  "hex": "3BABC3",
+  "title": "Flask"
+ },
+ "graphql": {
+  "hex": "E10098",
+  "title": "GraphQL"
+ },
+ "hibernate": {
+  "hex": "59666C",
+  "title": "Hibernate"
+ },
+ "java": {
+  "hex": null,
+  "title": "java"
+ },
+ "go": {
+  "hex": "00ADD8",
+  "title": "Go"
+ },
+ "rust": {
+  "hex": "000000",
+  "title": "Rust"
+ },
+ "python": {
+  "hex": "3776AB",
+  "title": "Python"
+ },
+ "php": {
+  "hex": "777BB4",
+  "title": "PHP"
+ },
+ "postgresql": {
+  "hex": "4169E1",
+  "title": "PostgreSQL"
+ },
+ "mysql": {
+  "hex": "4479A1",
+  "title": "MySQL"
+ },
+ "mssql": {
+  "hex": null,
+  "title": "mssql"
+ },
+ "oracle": {
+  "hex": null,
+  "title": "oracle"
+ },
+ "mongodb": {
+  "hex": "47A248",
+  "title": "MongoDB"
+ },
+ "redis": {
+  "hex": "FF4438",
+  "title": "Redis"
+ },
+ "firebase": {
+  "hex": "DD2C00",
+  "title": "Firebase"
+ },
+ "prisma": {
+  "hex": "2D3748",
+  "title": "Prisma"
+ },
+ "docker": {
+  "hex": "2496ED",
+  "title": "Docker"
+ },
+ "kubernetes": {
+  "hex": "326CE5",
+  "title": "Kubernetes"
+ },
+ "githubactions": {
+  "hex": "2088FF",
+  "title": "GitHub Actions"
+ },
+ "nginx": {
+  "hex": "009639",
+  "title": "NGINX"
+ },
+ "vercel": {
+  "hex": "000000",
+  "title": "Vercel"
+ },
+ "gcp": {
+  "hex": "4285F4",
+  "title": "Google Cloud"
+ },
+ "aws": {
+  "hex": null,
+  "title": "aws"
+ },
+ "azure": {
+  "hex": null,
+  "title": "azure"
+ },
+ "linux": {
+  "hex": "FCC624",
+  "title": "Linux"
+ },
+ "sentry": {
+  "hex": "362D59",
+  "title": "Sentry"
+ },
+ "jest": {
+  "hex": "C21325",
+  "title": "Jest"
+ },
+ "cypress": {
+  "hex": "69D3A7",
+  "title": "Cypress"
+ },
+ "playwright": {
+  "hex": null,
+  "title": "playwright"
+ },
+ "postman": {
+  "hex": "FF6C37",
+  "title": "Postman"
+ },
+ "claude": {
+  "hex": "D97757",
+  "title": "Claude"
+ },
+ "copilot": {
+  "hex": "000000",
+  "title": "GitHub Copilot"
+ },
+ "mcp": {
+  "hex": "000000",
+  "title": "Model Context Protocol"
+ },
+ "codex": {
+  "hex": null,
+  "title": "Codex"
+ },
+ "opencode": {
+  "hex": "000000",
+  "title": "OpenCode"
+ }
+}

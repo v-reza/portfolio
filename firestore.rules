@@ -1,0 +1,47 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // A guest book entry: exactly three fields, text within the limits the form
+    // enforces, and a server-assigned timestamp. Read-only once written.
+    function validGuestEntry() {
+      let entry = request.resource.data;
+      return entry.keys().hasOnly(['name', 'message', 'createdAt'])
+        && entry.keys().hasAll(['name', 'message', 'createdAt'])
+        && entry.name is string
+        && entry.name.size() >= 1
+        && entry.name.size() <= 40
+        && entry.message is string
+        && entry.message.size() >= 1
+        && entry.message.size() <= 280
+        && entry.createdAt == request.time;
+    }
+
+    match /guestbook/{entryId} {
+      allow read: if true;
+      allow create: if validGuestEntry();
+      allow update, delete: if false;
+    }
+
+    // A single counter document. It may be created at 1 and only ever move up by
+    // exactly one, so a client cannot inflate or reset it.
+    match /stats/{statId} {
+      allow read: if statId == 'visits';
+      allow create: if statId == 'visits'
+        && request.resource.data.keys().hasOnly(['count'])
+        && request.resource.data.keys().hasAll(['count'])
+        && request.resource.data.count is int
+        && request.resource.data.count == 1;
+      allow update: if statId == 'visits'
+        && request.resource.data.keys().hasOnly(['count'])
+        && request.resource.data.keys().hasAll(['count'])
+        && request.resource.data.count is int
+        && request.resource.data.count == resource.data.count + 1;
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

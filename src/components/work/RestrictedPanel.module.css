@@ -1,0 +1,40 @@
+.panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #0f1219;
+  text-align: center;
+  padding: 24px;
+}
+
+.mark {
+  width: 44px;
+  height: 44px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.wordmark {
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(26px, 2.9vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #f4f4f5;
+  margin: 0;
+}
+
+.note {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0;
+  max-width: 46ch;
+  line-height: 1.7;
+}

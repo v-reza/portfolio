@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wuthering Waves - Resonators Spine 4.2 WebGL Viewer</title>
+  <link rel="stylesheet" href="../common-ui/spine-player.css">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --gold: #dab67d;
+      --gold-light: #ffedbd;
+      --text-white: #fdffef;
+      --text-muted: #a6a8a3;
+      --electro: #dc6061;
+      --glass: rgba(18, 20, 24, 0.72);
+      --border-glass: rgba(255, 237, 189, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      color: var(--text-white);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Scenic Background with Kuro's overlay gradient */
+    #bg-layer {
+      position: absolute;
+      inset: 0;
+      background: url('../featured/hsin/bg.webp') center center / cover no-repeat;
+      filter: brightness(0.68) contrast(1.1);
+      z-index: 0;
+      transition: background-image 0.4s ease;
+    }
+
+    #bg-layer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 65% 50%, rgba(220, 96, 97, 0.14) 0%, transparent 60%),
+                  linear-gradient(to right, rgba(10, 11, 15, 0.88) 0%, rgba(10, 11, 15, 0.45) 50%, rgba(10, 11, 15, 0.75) 100%),
+                  linear-gradient(to top, rgba(10, 11, 15, 0.95) 0%, transparent 22%);
+    }
+
+    /* Spine Player Viewport */
+    #spine-container {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #spine-player {
+      width: 100%;
+      height: 100%;
+    }
+
+    .spine-player {
+      background: transparent !important;
+    }
+    .spine-player-canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .spine-player-controls {
+      display: none !important;
+    }
+
+    /* Weapon Overlay (in weapon mode) */
+    #weapon-overlay {
+      position: absolute;
+      right: 18%;
+      top: 50%;
+      transform: translateY(-50%) scale(1.1);
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #weapon-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(-50%) scale(1.18);
+    }
+    #weapon-overlay img {
+      max-width: 520px;
+      max-height: 520px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+    }
+    .weapon-lore {
+      max-width: 460px;
+      padding: 14px 20px;
+      background: var(--glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+      text-align: center;
+    }
+    .weapon-lore-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+    .weapon-lore-desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+
+    /* Top Left Header */
+    .header-badge {
+      position: absolute;
+      top: 36px;
+      left: 48px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-badge img {
+      height: 48px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+    }
+
+    /* Left Info Column */
+    .info-column {
+      position: absolute;
+      left: 48px;
+      top: 18%;
+      width: 540px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .character-name-box {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .character-name-en {
+      font-size: 58px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--text-white);
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    }
+    .character-name-cn {
+      font-size: 28px;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 4px;
+    }
+    .star-rating {
+      height: 24px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Element & Weapon Tags */
+    .tags-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tag-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-white);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .tag-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--electro);
+      box-shadow: 0 0 10px var(--electro);
+    }
+
+    /* Quote Box */
+    .quote-box {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #e5e5e5;
+      padding: 16px 20px;
+      background: rgba(18, 20, 24, 0.6);
+      border-left: 3px solid var(--gold);
+      backdrop-filter: blur(8px);
+      border-radius: 0 8px 8px 0;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* Right Side Mode Switch (Model / Arms / BGM) */
+    .mode-switch-dock {
+      position: absolute;
+      right: 48px;
+      top: 30%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .switch-pill {
+      width: 80px;
+      height: 110px;
+      border-radius: 14px;
+      background: var(--glass);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .switch-pill:hover {
+      border-color: var(--gold);
+      transform: translateX(-4px);
+    }
+    .switch-pill.active {
+      border-color: var(--gold);
+      background: rgba(218, 182, 125, 0.18);
+      box-shadow: 0 0 20px rgba(218, 182, 125, 0.4);
+    }
+    .switch-pill img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+    .switch-pill span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+    .bgm-icon {
+      width: 32px;
+      height: 32px;
+      fill: none;
+      stroke: var(--gold-light);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all 0.25s ease;
+    }
+    .switch-pill.active .bgm-icon {
+      stroke: #ffffff;
+      filter: drop-shadow(0 0 8px var(--gold));
+    }
+
+    /* Roster Avatar Bar (Bottom Left: All Resonators) */
+    .avatar-bar-container {
+      position: absolute;
+      bottom: 24px;
+      left: 48px;
+      right: 160px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .avatar-bar-label {
+      font-family: var(--font-mono, monospace);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .avatar-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 6px 4px 8px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) rgba(255, 255, 255, 0.05);
+    }
+    .avatar-bar::-webkit-scrollbar {
+      height: 4px;
+    }
+    .avatar-bar::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .avatar-pill {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--glass);
+      border: 2px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .avatar-pill:hover {
+      border-color: var(--gold);
+      transform: scale(1.12);
+    }
+    .avatar-pill.active {
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(218, 182, 125, 0.65);
+      transform: scale(1.14);
+    }
+    .avatar-pill img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scenic Full-Bleed Background -->
+  <div id="bg-layer"></div>
+
+  <!-- Spine 4.2 WebGL Canvas Viewport -->
+  <div id="spine-container">
+    <div id="spine-player"></div>
+  </div>
+
+  <!-- Weapon Overlay (Model vs Arms Mode) -->
+  <div id="weapon-overlay">
+    <img id="weapon-img" src="../featured/hsin/arms.webp" alt="Weapon">
+    <div class="weapon-lore">
+      <div class="weapon-lore-title" id="weapon-title">Blooming Jadehaven</div>
+      <div class="weapon-lore-desc" id="weapon-desc">
+        Jade to pillars, gold to nexus, a hundred mechanisms meshed into one working.
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Left Kuro Header Banner -->
+  <div class="header-badge">
+    <img src="../common-ui/page-title_en.webp" alt="RESONATORS">
+  </div>
+
+  <!-- Left Info Column -->
+  <div class="info-column">
+    <div class="character-name-box">
+      <span class="character-name-en" id="char-en">Hsin</span>
+      <span class="character-name-cn" id="char-cn">心</span>
+      <img src="../common-ui/rate-5-star.webp" alt="5 Stars" class="star-rating">
+    </div>
+
+    <div class="tags-row">
+      <div class="tag-capsule element">
+        <span class="tag-indicator" id="tag-ind"></span>
+        <span id="char-attr">Electro (导电)</span>
+      </div>
+      <div class="tag-capsule">
+        <span id="char-arms">Rectifier (音感仪)</span>
+      </div>
+      <div class="tag-capsule">
+        <span id="char-arms-name">Blooming Jadehaven</span>
+      </div>
+    </div>
+
+    <div class="quote-box" id="char-quote">
+      "To share in the world's joy, and keep the lanterns... burning bright."
+    </div>
+  </div>
+
+  <!-- Mode & Audio Dock (Right Side) -->
+  <div class="mode-switch-dock">
+    <div class="switch-pill active" id="pill-role" onclick="setMode('role')" title="Resonator Model">
+      <img src="../featured/hsin/role_swap_act.webp" alt="Model">
+      <span>Model</span>
+    </div>
+    <div class="switch-pill" id="pill-arms" onclick="setMode('arms')" title="Signature Weapon">
+      <img src="../featured/hsin/arms_swap.webp" alt="Weapon">
+      <span>Arms</span>
+    </div>
+    <div class="switch-pill" id="pill-bgm" onclick="toggleBgm()" title="Toggle Background Music">
+      <svg class="bgm-icon" viewBox="0 0 24 24">
+        <path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+      </svg>
+      <span>BGM</span>
+    </div>
+  </div>
+
+  <!-- All Resonators Roster Scrollbar -->
+  <div class="avatar-bar-container">
+    <div class="avatar-bar-label">Resonator Roster · Solaris-3</div>
+    <div class="avatar-bar" id="roster-bar">
+      <!-- Injected by JavaScript from ROSTER -->
+    </div>
+  </div>
+
+  <!-- BGM Audio Element -->
+  <audio id="bgm-audio" src="../common-ui/bgm.mp3" loop></audio>
+
+  <!-- Spine 4.2 WebGL Runtime -->
+  <script src="../common-ui/spine-player.js"></script>
+
+  <script>
+    const ROSTER = {
+      hsin: {
+        enName: "Hsin",
+        cnName: "心",
+        attr: "Electro (导电)",
+        attrColor: "#DC6061",
+        arms: "Rectifier (音感仪)",
+        armsName: "Blooming Jadehaven",
+        armsDesc: "Jade to pillars, gold to nexus, a hundred mechanisms meshed into one working. Infinite forms divide and proliferate among the blooms.",
+        quote: "To share in the world's joy, and keep the lanterns... burning bright.",
+        avatar: "../featured/hsin/avatar.webp",
+        avatarActive: "../featured/hsin/avatar_active.webp",
+        spine: {
+          json: "../featured/hsin/spine/skeleton.json",
+          atlas: "../featured/hsin/spine/skeleton.atlas",
+          scale: 0.75,
+          x: -180,
+          y: 100,
+          pma: true
+        },
+        bg: "../featured/hsin/bg.webp",
+        armsImg: "../featured/hsin/arms.webp"
+      },
+      suoming: {
+        enName: "Suoming",
+        cnName: "锁暝",
+        attr: "Electro (导电)",
+        attrColor: "#DFB663",
+        arms: "Sword (迅刀)",
+        armsName: "Unspoken Rue",
+        armsDesc: "With this canopy, she sheltered all life and sealed the Evil Miasma. Beneath it linger the shadows of no return, always walking by her side.",
+        quote: "Let go. Forget... I've heard those words a thousand times. But this obsession... this is exactly what I want.",
+        avatar: "../featured/suoming/avatar.webp",
+        avatarActive: "../featured/suoming/avatar_active.webp",
+        spine: {
+          json: "../featured/suoming/spine/skeleton.json",
+          atlas: "../featured/suoming/spine/skeleton.atlas",
+          scale: 1.1,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../featured/suoming/bg.webp",
+        armsImg: "../featured/suoming/arms.webp"
+      },
+      chisa: {
+        enName: "Chisa",
+        cnName: "千咲",
+        attr: "Havoc (湮灭)",
+        attrColor: "#78B7F3",
+        arms: "Broadblade (长刃)",
+        armsName: "Kumokiri",
+        armsDesc: "A crimson thread emerges in the void, binding the structures of all things onto a single thread. The scattered path at last converges once more.",
+        quote: "I will… sever this deadlock.",
+        avatar: "../featured/chisa/avatar.webp",
+        avatarActive: "../featured/chisa/avatar_active.webp",
+        spine: {
+          json: "../featured/chisa/spine/skeleton.json",
+          atlas: "../featured/chisa/spine/skeleton.atlas",
+          scale: 0.9,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../featured/chisa/bg.webp",
+        armsImg: "../featured/chisa/arms.webp"
+      },
+      iuno: {
+        enName: "Iuno",
+        cnName: "尤诺",
+        attr: "Aero (气动)",
+        attrColor: "#4EB49F",
+        arms: "Gauntlets (臂铠)",
+        armsName: "Moongazer's Sigil",
+        armsDesc: "All things rise and fall in endless rhythm, each bearing its meaning. As for hers, it lies here within her grasp.",
+        quote: "While the moon cycles, I remain the anchor.",
+        avatar: "../featured/iuno/avatar.webp",
+        avatarActive: "../featured/iuno/avatar_active.webp",
+        spine: {
+          json: "../featured/iuno/spine/skeleton.json",
+          atlas: "../featured/iuno/spine/skeleton.atlas",
+          scale: 1.1,
+          x: -80,
+          y: -60,
+          pma: false
+        },
+        bg: "../featured/iuno/bg.webp",
+        armsImg: "../featured/iuno/arms.webp"
+      },
+      lynae: {
+        enName: "Lynae",
+        cnName: "琳奈",
+        attr: "Spectro (衍射)",
+        attrColor: "#6251AC",
+        arms: "Pistols (佩枪)",
+        armsName: "Spectrum Blaster",
+        armsDesc: "Prismatic light dances at her fingertips, arcs of color carving radiant trails through the sky.",
+        quote: "Outlaw Blue, Apollo Orange, Hazard Yellow, Acid Green... Wanna guess what color is my next pick?",
+        avatar: "../featured/lynae/avatar.webp",
+        avatarActive: "../featured/lynae/avatar_active.webp",
+        spine: {
+          json: "../featured/lynae/spine/skeleton.json",
+          atlas: "../featured/lynae/spine/skeleton.atlas",
+          scale: 0.9,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../featured/lynae/bg.webp",
+        armsImg: "../featured/lynae/arms.webp"
+      },
+      lucilla: {
+        enName: "Lucilla",
+        cnName: "洛瑟菈",
+        attr: "Glacio (冷凝)",
+        attrColor: "#9D6945",
+        arms: "Rectifier (音感仪)",
+        armsName: "Freeze Frame",
+        armsDesc: "I remember the sunset spilling down, birds and insects threading their small songs through the greenhouse. I am my own freeze frame.",
+        quote: "My dream now is just to see all my students' dreams come true.",
+        avatar: "../featured/lucilla/avatar.webp",
+        avatarActive: "../featured/lucilla/avatar_active.webp",
+        spine: {
+          json: "../featured/lucilla/spine/skeleton.json",
+          atlas: "../featured/lucilla/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../featured/lucilla/bg.webp",
+        armsImg: "../featured/lucilla/arms.webp"
+      },
+      suisui: {
+        enName: "Suisui",
+        cnName: "岁岁",
+        attr: "Fusion (热熔)",
+        attrColor: "#F97316",
+        arms: "Broadblade (长刃)",
+        armsName: "Evergreen Flame",
+        armsDesc: "A hearth fire that never dims, warmed by memories of spring festivals and home.",
+        quote: "Come closer to the fire. There is warmth enough for all of us.",
+        avatar: "../expired-featured/suisui/avatar.webp",
+        avatarActive: "../expired-featured/suisui/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/suisui/spine/skeleton.json",
+          atlas: "../expired-featured/suisui/spine/skeleton.atlas",
+          scale: 0.95,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/suisui/bg.webp",
+        armsImg: "../expired-featured/suisui/arms.webp"
+      },
+      aemeath: {
+        enName: "Aemeath",
+        cnName: "艾梅斯",
+        attr: "Electro (导电)",
+        attrColor: "#DC6061",
+        arms: "Gauntlets (臂铠)",
+        armsName: "Thundercrest Impact",
+        armsDesc: "Thunder forged in the core of ancient ruins, discharged in lightning-fast blows.",
+        quote: "Hold your ground! Lightning never strikes the same place twice—unless I command it.",
+        avatar: "../expired-featured/aemeath/avatar.webp",
+        avatarActive: "../expired-featured/aemeath/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/aemeath/spine/skeleton.json",
+          atlas: "../expired-featured/aemeath/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/aemeath/bg.webp",
+        armsImg: "../expired-featured/aemeath/arms.webp"
+      },
+      luuk: {
+        enName: "Luuk Herssen",
+        cnName: "路克·赫尔森",
+        attr: "Havoc (湮灭)",
+        attrColor: "#78B7F3",
+        arms: "Pistols (佩枪)",
+        armsName: "Shadow Trigger",
+        armsDesc: "Twin barrels engraved with the heraldry of the frontier.",
+        quote: "Bounties come and go, but a bullet always hits its target.",
+        avatar: "../expired-featured/luuk-herssen/avatar.webp",
+        avatarActive: "../expired-featured/luuk-herssen/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/luuk-herssen/spine/skeleton.json",
+          atlas: "../expired-featured/luuk-herssen/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/luuk-herssen/bg.webp",
+        armsImg: "../expired-featured/luuk-herssen/arms.webp"
+      },
+      yangyang: {
+        enName: "Yangyang Xuanling",
+        cnName: "央央·玄灵",
+        attr: "Aero (气动)",
+        attrColor: "#4EB49F",
+        arms: "Sword (迅刀)",
+        armsName: "Feathered Wind",
+        armsDesc: "The gentle breeze carries songs from beyond the clouds.",
+        quote: "Listen carefully... the wind is whispering your name.",
+        avatar: "../expired-featured/yangyang-xuanling/avatar.webp",
+        avatarActive: "../expired-featured/yangyang-xuanling/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/yangyang-xuanling/spine/skeleton.json",
+          atlas: "../expired-featured/yangyang-xuanling/spine/skeleton.atlas",
+          scale: 0.95,
+          x: -180,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/yangyang-xuanling/bg.webp",
+        armsImg: "../expired-featured/yangyang-xuanling/arms.webp"
+      },
+      qingxiao: {
+        enName: "Qingxiao",
+        cnName: "清宵",
+        attr: "Spectro (衍射)",
+        attrColor: "#6251AC",
+        arms: "Sword (迅刀)",
+        armsName: "Dawn Cleaver",
+        armsDesc: "Cold dawnlight caught upon a steel blade that slices through the dark.",
+        quote: "The night is long, but dawn always breaks.",
+        avatar: "../expired-featured/qingxiao/avatar.webp",
+        avatarActive: "../expired-featured/qingxiao/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/qingxiao/spine/skeleton.json",
+          atlas: "../expired-featured/qingxiao/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -80,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/qingxiao/bg.webp",
+        armsImg: "../expired-featured/qingxiao/arms.webp"
+      },
+      feixue: {
+        enName: "Feixue Hiyuki",
+        cnName: "绯雪",
+        attr: "Glacio (冷凝)",
+        attrColor: "#9D6945",
+        arms: "Rectifier (音感仪)",
+        armsName: "Frostpetal Bloom",
+        armsDesc: "Scarlet petals encased in permafrost, blooming only in the coldest winter.",
+        quote: "Snow falls in crimson silence.",
+        avatar: "../expired-featured/feixue-hiyuki/avatar.webp",
+        avatarActive: "../expired-featured/feixue-hiyuki/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/feixue-hiyuki/spine/skeleton.json",
+          atlas: "../expired-featured/feixue-hiyuki/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -100,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/feixue-hiyuki/bg.webp",
+        armsImg: "../expired-featured/feixue-hiyuki/arms.webp"
+      },
+      daniya: {
+        enName: "Daniya",
+        cnName: "达妮娅",
+        attr: "Fusion (热熔)",
+        attrColor: "#F97316",
+        arms: "Pistols (佩枪)",
+        armsName: "Blazing Stride",
+        armsDesc: "Twin rapid-fire pistols engineered for high-mobility duelists.",
+        quote: "Keep moving or stay in the dust.",
+        avatar: "../expired-featured/daniya/avatar.webp",
+        avatarActive: "../expired-featured/daniya/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/daniya/spine/skeleton.json",
+          atlas: "../expired-featured/daniya/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -100,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/daniya/bg.webp",
+        armsImg: "../expired-featured/daniya/arms.webp"
+      },
+      mornye: {
+        enName: "Mornye",
+        cnName: "莫宁",
+        attr: "Aero (气动)",
+        attrColor: "#4EB49F",
+        arms: "Broadblade (长刃)",
+        armsName: "Horizon Breaker",
+        armsDesc: "A colossal cleaver that parts the winds of the frontier.",
+        quote: "The frontier has no boundaries.",
+        avatar: "../expired-featured/mornye/avatar.webp",
+        avatarActive: "../expired-featured/mornye/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/mornye/spine/skeleton.json",
+          atlas: "../expired-featured/mornye/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -100,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/mornye/bg.webp",
+        armsImg: "../expired-featured/mornye/arms.webp"
+      },
+      jingran: {
+        enName: "Jingran",
+        cnName: "景然",
+        attr: "Havoc (湮灭)",
+        attrColor: "#78B7F3",
+        arms: "Gauntlets (臂铠)",
+        armsName: "Obsidian Impact",
+        armsDesc: "Dark crystal gauntlets forged in the deepest abyssal trenches.",
+        quote: "Shadows bend to the resolute.",
+        avatar: "../expired-featured/jingran/avatar.webp",
+        avatarActive: "../expired-featured/jingran/avatar_active.webp",
+        spine: {
+          json: "../expired-featured/jingran/spine/skeleton.json",
+          atlas: "../expired-featured/jingran/spine/skeleton.atlas",
+          scale: 1.0,
+          x: -100,
+          y: -60,
+          pma: false
+        },
+        bg: "../expired-featured/jingran/bg.webp",
+        armsImg: "../expired-featured/jingran/arms.webp"
+      },
+    };
+
+    let player = null;
+    let currentChar = "hsin";
+
+    // Populate all avatar pills into the scrollable roster bar
+    function initAvatarRoster() {
+      const bar = document.getElementById("roster-bar");
+      bar.innerHTML = "";
+      Object.keys(ROSTER).forEach(key => {
+        const char = ROSTER[key];
+        const pill = document.createElement("div");
+        pill.className = "avatar-pill" + (key === currentChar ? " active" : "");
+        pill.id = "avatar-" + key;
+        pill.title = `${char.enName} (${char.cnName})`;
+        pill.onclick = () => selectChar(key);
+
+        const img = document.createElement("img");
+        img.src = key === currentChar ? char.avatarActive : char.avatar;
+        img.alt = char.enName;
+
+        pill.appendChild(img);
+        bar.appendChild(pill);
+      });
+    }
+
+    // Load Spine 4.2 WebGL Player with character's specific PMA flag
+    function loadSpineCharacter(charKey) {
+      const char = ROSTER[charKey];
+      if (!char) return;
+
+      const container = document.getElementById("spine-player");
+      if (player) {
+        try {
+          player.dispose();
+        } catch(e) {}
+        player = null;
+        container.innerHTML = "";
+      }
+
+      try {
+        player = new spine.SpinePlayer("spine-player", {
+          jsonUrl: char.spine.json,
+          atlasUrl: char.spine.atlas,
+          animation: "idle",
+          showControls: false,
+          alpha: true,
+          backgroundColor: "#00000000",
+          premultipliedAlpha: char.spine.pma !== undefined ? char.spine.pma : false,
+          scale: char.spine.scale,
+          viewport: {
+            x: char.spine.x,
+            y: char.spine.y,
+            padLeft: "0%",
+            padRight: "0%",
+            padTop: "0%",
+            padBottom: "0%",
+            debugRender: false
+          },
+          success: (p) => {
+            console.log("Spine 4.2 loaded for:", charKey);
+          },
+          error: (p, msg) => {
+            console.error("Spine error for:", charKey, msg);
+          }
+        });
+      } catch (e) {
+        console.error("Failed to init Spine player:", e);
+      }
+    }
+
+    // Switch active resonator in the roster
+    function selectChar(charKey) {
+      if (currentChar === charKey && player) return;
+      currentChar = charKey;
+      const char = ROSTER[charKey];
+      if (!char) return;
+
+      // Update avatar active styling and images
+      document.querySelectorAll('.avatar-pill').forEach(el => {
+        el.classList.remove('active');
+        const k = el.id.replace('avatar-', '');
+        const c = ROSTER[k];
+        if (c && el.querySelector('img')) el.querySelector('img').src = c.avatar;
+      });
+      const activePill = document.getElementById('avatar-' + charKey);
+      if (activePill) {
+        activePill.classList.add('active');
+        if (activePill.querySelector('img')) activePill.querySelector('img').src = char.avatarActive;
+      }
+      // Update background
+      document.getElementById('bg-layer').style.backgroundImage = `url('${char.bg}')`;
+
+      // Update character texts
+      document.getElementById('char-en').innerText = char.enName;
+      document.getElementById('char-cn').innerText = char.cnName;
+      document.getElementById('char-attr').innerText = char.attr;
+      document.getElementById('tag-ind').style.background = char.attrColor;
+      document.getElementById('tag-ind').style.boxShadow = `0 0 10px ${char.attrColor}`;
+      document.getElementById('char-arms').innerText = char.arms;
+      document.getElementById('char-arms-name').innerText = char.armsName;
+      document.getElementById('char-quote').innerText = `"${char.quote}"`;
+
+      // Update weapon overlay
+      document.getElementById('weapon-img').src = char.armsImg;
+      document.getElementById('weapon-title').innerText = char.armsName;
+      document.getElementById('weapon-desc').innerText = char.armsDesc;
+
+      // Reset mode to model
+      setMode('role');
+
+      // Load new live Spine rig
+      loadSpineCharacter(charKey);
+    }
+
+    // Model vs Arms toggle
+    function setMode(mode) {
+      const spineContainer = document.getElementById('spine-container');
+      const weaponOverlay = document.getElementById('weapon-overlay');
+      const pillRole = document.getElementById('pill-role');
+      const pillArms = document.getElementById('pill-arms');
+
+      if (mode === 'arms') {
+        spineContainer.style.opacity = '0.05';
+        spineContainer.style.pointerEvents = 'none';
+        weaponOverlay.classList.add('active');
+        pillArms.classList.add('active');
+        pillRole.classList.remove('active');
+      } else {
+        spineContainer.style.opacity = '1';
+        spineContainer.style.pointerEvents = 'auto';
+        weaponOverlay.classList.remove('active');
+        pillRole.classList.add('active');
+        pillArms.classList.remove('active');
+      }
+    }
+
+    // Background Music toggle
+    function toggleBgm() {
+      const bgm = document.getElementById('bgm-audio');
+      const btn = document.getElementById('pill-bgm');
+      if (bgm.paused) {
+        bgm.play().catch(() => {});
+        btn.classList.add('active');
+      } else {
+        bgm.pause();
+        btn.classList.remove('active');
+      }
+    }
+
+    // Start with Hsin on load and populate roster
+    window.addEventListener('DOMContentLoaded', () => {
+      initAvatarRoster();
+      loadSpineCharacter("hsin");
+    });
+  </script>
+</body>
+</html>

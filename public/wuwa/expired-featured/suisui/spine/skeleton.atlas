@@ -1,0 +1,955 @@
+c_suisui_01.png
+size:2048,2048
+filter:Linear,Linear
+scale:0.31
+BG.C.中层云 → 1
+bounds:1888,927,114,32
+BG.C.中层云 → 2
+bounds:538,1336,161,25
+offsets:1,0,162,25
+rotate:90
+BG.C.中层云 → 3
+bounds:1999,1859,187,47
+rotate:90
+BG.C.中层云 ↓ 1
+bounds:520,649,72,15
+offsets:0,0,72,16
+BG.C.中层云 ↓ 2
+bounds:1382,209,99,28
+BG.C.中层云 ↓ 3
+bounds:475,666,270,45
+BG.C.前层云 ← 1
+bounds:1722,412,155,52
+offsets:1,1,157,53
+rotate:90
+BG.C.前层云 ↓ 1
+bounds:2021,548,57,23
+rotate:90
+BG.C.背景云 ← 1
+bounds:1780,1191,96,54
+BG.C.背景云 ← 2
+bounds:1889,1058,118,51
+offsets:1,0,119,52
+BG.C.背景云 ← 3
+bounds:1871,480,87,80
+offsets:26,0,113,134
+rotate:90
+BG.C.背景云 ← 4
+bounds:1808,1064,125,79
+offsets:5,7,143,86
+rotate:90
+BG.C.背景云 ← 5
+bounds:1826,475,92,43
+offsets:0,4,104,47
+rotate:90
+BG.C.背景云 ← 6
+bounds:884,168,109,50
+rotate:90
+BG.C.背景云 → 1
+bounds:971,75,106,48
+offsets:10,43,116,92
+rotate:90
+BG.C.背景云 → 2
+bounds:1776,469,98,48
+offsets:0,5,98,53
+rotate:90
+BG.C.背景云 → 3
+bounds:2004,847,107,42
+offsets:0,88,120,155
+rotate:90
+BG.C.背景云 → 4
+bounds:1854,840,100,85
+offsets:0,18,149,155
+BG.E.中层荷叶 → 1
+bounds:1955,554,84,64
+rotate:90
+BG.E.中层荷叶 → 2
+bounds:1006,328,148,86
+rotate:90
+BG.E.中层荷花 ↑ 1
+bounds:1103,133,87,93
+BG.E.中层荷花 → 1
+bounds:1795,236,58,38
+BG.E.中层荷花 → 2
+bounds:538,1228,35,45
+BG.E.中层荷花 → 3
+bounds:1953,405,62,86
+rotate:90
+BG.E.中层飞鸟 ↓ 1.1
+bounds:1203,970,12,13
+offsets:69,4,99,21
+rotate:90
+BG.E.中层飞鸟 ↓ 1.2
+bounds:1462,1312,11,11
+offsets:49,8,99,21
+BG.E.中层飞鸟 ↓ 1.3
+bounds:2035,1219,11,10
+offsets:26,11,99,21
+BG.E.中层飞鸟 ↓ 1.4
+bounds:1103,107,9,10
+offsets:1,10,99,21
+BG.E.中层飞鸟 ↓ 2.1
+bounds:1993,651,11,11
+offsets:73,17,101,34
+BG.E.中层飞鸟 ↓ 2.2
+bounds:2022,1058,10,9
+offsets:56,14,101,34
+BG.E.中层飞鸟 ↓ 2.3
+bounds:2009,1058,11,9
+offsets:38,14,101,34
+BG.E.中层飞鸟 ↓ 2.4
+bounds:1840,925,10,11
+offsets:18,15,101,34
+BG.E.中层飞鸟 ↓ 2.5
+bounds:1659,937,11,9
+offsets:0,25,101,34
+rotate:90
+BG.E.中层飞鸟 ↓ 3
+bounds:1495,231,62,47
+offsets:3,5,75,55
+BG.E.中层飞鸟 ↓ 4
+bounds:1998,194,38,28
+offsets:6,40,86,114
+rotate:90
+BG.E.中层飞鸟 ↓ 5
+bounds:1815,653,37,30
+offsets:1,1,44,43
+BG.E.中层飞鸟 ↓ 6
+bounds:1795,191,49,43
+offsets:4,14,63,66
+BG.E.中层飞鸟 ↓ 7
+bounds:977,1231,36,46
+offsets:6,1,48,51
+BG.E.前层飞鸟 ↑ 1
+bounds:2,2,22,40
+offsets:0,0,22,41
+rotate:90
+BG.E.前层飞鸟 ↑ 2
+bounds:956,1566,17,18
+rotate:90
+BG.E.前层飞鸟 ↑ 3
+bounds:1461,1659,23,24
+BG.E.前层飞鸟 ↑ 4
+bounds:1191,679,66,33
+rotate:90
+BG.E.前层飞鸟 ↑ 5
+bounds:1776,416,56,51
+offsets:14,0,135,95
+BG.E.前层飞鸟 ↑ 6
+bounds:2026,1757,20,21
+offsets:2,0,22,52
+BG.E.前层飞鸟 ↑ 7
+bounds:1812,915,21,26
+offsets:0,0,23,26
+rotate:90
+BG.E.前层飞鸟 ↑ 8
+bounds:723,2,14,12
+offsets:92,94,106,106
+rotate:90
+BG.E.前层飞鸟 ↑ 9
+bounds:781,894,54,41
+offsets:11,15,65,56
+BG.E.前层鱼 ← 1
+bounds:1029,740,250,148
+rotate:90
+BG.E.前层鱼 → 1
+bounds:820,333,139,184
+offsets:0,1,140,185
+rotate:90
+BG.E.背景荷叶 ↑ 1
+bounds:1705,281,129,89
+rotate:90
+BG.E.背景荷花 ↑ 1
+bounds:1993,664,53,44
+offsets:23,0,76,61
+BG.E.背景荷花 ↑ 2
+bounds:747,666,15,31
+offsets:0,30,76,61
+rotate:90
+BG.E.背景飞鸟 ↑ 1
+bounds:594,647,20,17
+offsets:84,0,104,58
+BG.E.背景飞鸟 ↑ 2
+bounds:2027,273,19,24
+offsets:68,13,104,58
+BG.E.背景飞鸟 ↑ 3
+bounds:2021,497,23,25
+offsets:44,30,104,58
+rotate:90
+BG.E.背景飞鸟 ↑ 4
+bounds:2026,1736,19,20
+offsets:28,33,104,58
+rotate:90
+BG.E.背景飞鸟 ↑ 5
+bounds:2021,472,23,23
+offsets:0,35,104,58
+BG.F.中层焰火 ← 1
+bounds:1548,761,109,207
+BG.F.中层焰火 → 1
+bounds:1418,745,128,223
+offsets:0,0,128,296
+BG.F.中层焰火 → 2
+bounds:1601,970,67,169
+BG.F.中层焰火 → 3
+bounds:1404,433,133,173
+offsets:3,0,136,173
+rotate:90
+BG.F.中层焰火 ↓ 1
+bounds:376,272,373,279
+offsets:0,1,373,280
+rotate:90
+BG.F.中层环火 1
+bounds:2,1029,534,468
+BG.F.中层螺云纹 → 1
+bounds:1888,961,116,95
+offsets:0,0,117,95
+BG.F.前层流水 1
+bounds:1029,678,160,60
+offsets:0,2,161,62
+BG.F.前层浪 ↓ 1
+bounds:1206,984,293,91
+offsets:0,1,293,92
+rotate:90
+BG.F.前层浪 ↓ 2
+bounds:1405,1324,259,55
+offsets:1,0,260,55
+rotate:90
+BG.F.前层浪 ↓ 3
+bounds:1462,1325,199,167
+offsets:0,0,200,167
+BG.F.前层焰火 ← 1
+bounds:2,260,372,385
+BG.F.前层焰火 ↑ 1
+bounds:1795,784,57,129
+offsets:0,1,147,130
+BG.F.前层焰火 ↑ 2
+bounds:820,474,167,202
+BG.F.前层焰火 ↑ 3
+bounds:1044,2,68,92
+offsets:1,0,69,92
+BG.F.背景环火 1
+bounds:2,1499,571,547
+offsets:0,44,572,593
+BG.L.前层孔明灯 ← 1
+bounds:1405,1252,8,11
+offsets:1,1,10,13
+rotate:90
+BG.L.前层孔明灯 ← 2
+bounds:2038,1847,8,10
+offsets:1,1,10,12
+BG.L.前层孔明灯 ← 3
+bounds:376,262,7,8
+offsets:1,1,9,11
+BG.L.前层孔明灯 ← 4
+bounds:1893,1477,6,7
+offsets:1,1,8,9
+BG.L.前层孔明灯 ← 5
+bounds:1854,652,10,13
+offsets:1,1,12,15
+rotate:90
+BG.L.前层孔明灯 ← 6
+bounds:874,20,7,6
+offsets:1,1,9,9
+rotate:90
+BG.L.前层孔明灯 ↓ 1
+bounds:1705,412,12,15
+offsets:1,1,14,17
+rotate:90
+BG.L.前层孔明灯 ↓ 10
+bounds:565,1469,8,10
+offsets:1,1,10,12
+BG.L.前层孔明灯 ↓ 11
+bounds:1571,426,5,6
+offsets:1,9,7,16
+rotate:90
+BG.L.前层孔明灯 ↓ 12
+bounds:1893,1486,6,8
+offsets:1,1,8,10
+BG.L.前层孔明灯 ↓ 13
+bounds:874,29,6,8
+offsets:1,1,8,10
+BG.L.前层孔明灯 ↓ 14
+bounds:531,1020,5,7
+offsets:1,1,7,9
+BG.L.前层孔明灯 ↓ 15
+bounds:44,2,6,5
+offsets:2,1,17,15
+BG.L.前层孔明灯 ↓ 16
+bounds:1179,740,5,7
+offsets:1,1,7,9
+rotate:90
+BG.L.前层孔明灯 ↓ 17
+bounds:1483,231,6,8
+offsets:1,1,8,10
+rotate:90
+BG.L.前层孔明灯 ↓ 18
+bounds:1947,405,4,4
+offsets:1,1,6,7
+BG.L.前层孔明灯 ↓ 19
+bounds:1673,1325,5,6
+offsets:1,1,12,11
+rotate:90
+BG.L.前层孔明灯 ↓ 2
+bounds:800,666,10,12
+offsets:1,1,12,14
+rotate:90
+BG.L.前层孔明灯 ↓ 20
+bounds:1956,840,4,5
+offsets:1,1,7,7
+BG.L.前层孔明灯 ↓ 3
+bounds:1094,204,7,8
+offsets:1,62,121,71
+BG.L.前层孔明灯 ↓ 4
+bounds:1226,737,6,8
+offsets:1,1,8,10
+BG.L.前层孔明灯 ↓ 5
+bounds:1869,640,5,7
+offsets:10,1,16,13
+rotate:90
+BG.L.前层孔明灯 ↓ 6
+bounds:531,1013,5,5
+offsets:1,1,7,7
+BG.L.前层孔明灯 ↓ 7
+bounds:1418,1252,8,10
+offsets:1,1,10,12
+rotate:90
+BG.L.前层孔明灯 ↓ 8
+bounds:1878,640,5,5
+offsets:1,1,8,7
+BG.L.前层孔明灯 ↓ 9
+bounds:1021,959,6,8
+offsets:1,1,9,10
+BG.L.前层孔明灯 底
+bounds:1020,244,72,82
+offsets:1,1,73,83
+BG.M.中画卷 云纹 1
+bounds:1556,569,190,104
+offsets:0,25,190,130
+rotate:90
+BG.M.中画卷 云纹 2
+bounds:1901,1436,185,145
+offsets:21,57,206,202
+rotate:90
+BG.M.中画卷 底
+bounds:1489,1810,236,508
+offsets:0,157,236,671
+rotate:90
+BG.M.中画卷 日
+bounds:664,149,121,121
+BG.M.中画卷 日 环
+bounds:1579,426,141,141
+BG.M.中画卷 日发光
+bounds:1403,280,151,151
+BG.M.中画卷 环火 1
+bounds:1234,578,172,167
+offsets:21,5,193,230
+BG.M.中画卷 环火 2
+bounds:1093,484,192,139
+offsets:0,90,193,230
+rotate:90
+BG.M.中画卷纹理叠加
+bounds:1179,747,221,237
+offsets:0,0,221,249
+rotate:90
+BG.S.中层山 1
+bounds:2,26,381,232
+offsets:30,9,418,241
+BG.S.中层山 1 遮挡
+bounds:475,941,54,86
+offsets:0,0,55,86
+BG.S.中层楼 → 1
+bounds:1953,469,83,66
+offsets:0,0,87,66
+rotate:90
+BG.S.前层山 ↓ 1
+bounds:1670,915,130,140
+offsets:172,0,302,140
+rotate:90
+BG.S.前层山 ↓ 2
+bounds:1857,346,88,63
+BG.S.底层背景
+bounds:2,647,471,380
+offsets:42,105,544,548
+BG.S.背景山 ← 1
+bounds:1662,652,120,128
+offsets:0,0,123,128
+BG.S.背景山 ← 2
+bounds:936,183,98,82
+offsets:13,0,113,82
+rotate:90
+BG.S.背景山 ← 3
+bounds:1780,1247,111,109
+BG.S.背景楼阁 ←
+bounds:1659,782,134,131
+C.B.鸟主体
+bounds:1834,416,35,57
+offsets:92,29,138,98
+C.B.鸟头火
+bounds:1409,1585,25,35
+offsets:2,2,30,39
+rotate:90
+C.B.鸟尾羽
+bounds:936,168,13,29
+offsets:2,2,17,34
+rotate:90
+C.B.鸟尾羽 1
+bounds:1982,234,63,43
+offsets:71,4,138,100
+rotate:90
+C.B.鸟尾羽 2
+bounds:616,647,17,13
+offsets:84,3,138,69
+rotate:90
+C.B.鸟尾长羽 1
+bounds:1475,1141,166,182
+offsets:2,2,170,185
+C.B.鸟尾长羽 2
+bounds:1906,640,85,48
+offsets:2,2,89,53
+C.B.鸟尾长羽 3
+bounds:1962,775,84,70
+offsets:2,2,88,74
+C.B.鸟爪 ←
+bounds:1643,1156,25,33
+offsets:2,6,29,41
+C.B.鸟爪 →
+bounds:2021,522,25,24
+offsets:2,3,31,31
+C.B.鸟眼火 ←
+bounds:2026,1695,18,20
+offsets:2,5,23,34
+rotate:90
+C.B.鸟眼火 →
+bounds:780,666,10,18
+offsets:2,2,14,24
+rotate:90
+C.B.鸟红飘带 ←
+bounds:1094,304,178,126
+offsets:2,2,183,131
+rotate:90
+C.B.鸟红飘带 →
+bounds:771,22,125,60
+offsets:2,3,129,65
+rotate:90
+C.B.鸟翅膀 ←
+bounds:882,59,87,107
+offsets:18,5,161,115
+C.B.鸟翅膀 →
+bounds:1382,239,39,111
+offsets:118,6,161,117
+rotate:90
+C.C.EFF.右手提亮
+bounds:664,18,129,105
+offsets:1,1,132,111
+rotate:90
+C.C.上眼窝线 ←
+bounds:879,168,5,3
+offsets:2,2,9,7
+rotate:90
+C.C.上眼窝线 →
+bounds:1826,469,5,4
+offsets:2,2,9,9
+C.C.上睫毛 ←
+bounds:565,1481,16,8
+offsets:3,2,21,12
+rotate:90
+C.C.上睫毛 →
+bounds:2035,1283,21,11
+offsets:3,3,26,16
+rotate:90
+C.C.下睫毛 ←
+bounds:1548,746,13,6
+offsets:2,3,17,11
+rotate:90
+C.C.下睫毛 →
+bounds:1193,294,16,8
+offsets:3,3,21,14
+C.C.人红飘带 A 1
+bounds:1408,568,146,175
+offsets:2,2,150,179
+C.C.人红飘带 A 2
+bounds:1947,345,78,58
+offsets:1,2,81,62
+C.C.人红飘带 B 1
+bounds:1662,569,117,81
+offsets:2,0,122,83
+C.C.人红飘带 B 2
+bounds:1234,444,168,132
+offsets:2,2,172,136
+C.C.侧发 ← 1
+bounds:1559,250,30,96
+offsets:4,2,37,107
+rotate:90
+C.C.侧发 ← 2
+bounds:1878,1222,13,23
+offsets:2,2,17,27
+C.C.侧发 ← 3
+bounds:1643,1141,13,21
+offsets:2,2,18,25
+rotate:90
+C.C.侧发 ← 4
+bounds:2027,346,19,27
+offsets:2,2,23,31
+C.C.侧发 ← 5
+bounds:735,375,12,20
+offsets:2,3,16,25
+rotate:90
+C.C.侧发 → 1
+bounds:538,1275,35,59
+offsets:2,2,39,63
+C.C.侧发 → 1.0
+bounds:2005,1146,41,71
+offsets:3,2,46,75
+C.C.侧发 → 1.1
+bounds:1218,970,12,12
+offsets:2,2,16,16
+C.C.侧发 → 2.0
+bounds:1289,230,62,91
+offsets:2,3,66,99
+rotate:90
+C.C.侧发 → 2.1
+bounds:1003,283,15,12
+offsets:2,2,19,17
+C.C.发夹
+bounds:1222,448,13,10
+offsets:2,2,17,14
+rotate:90
+C.C.发饰 → 前
+bounds:1934,178,30,48
+offsets:2,2,34,52
+C.C.发饰 → 后
+bounds:2021,607,25,55
+offsets:2,2,30,59
+C.C.发饰 → 结
+bounds:1446,1599,11,11
+offsets:2,2,16,15
+C.C.发饰 → 角
+bounds:971,59,18,14
+offsets:2,2,22,18
+C.C.发饰 → 飘 1
+bounds:837,894,11,17
+offsets:2,2,15,21
+C.C.发饰 → 飘 2
+bounds:2035,1231,14,11
+offsets:3,7,19,20
+rotate:90
+C.C.发饰长飘
+bounds:1462,1494,240,127
+offsets:2,2,244,131
+C.C.右大腿
+bounds:1475,970,124,169
+offsets:3,4,129,175
+C.C.右小腿
+bounds:1704,1496,195,125
+offsets:2,2,199,130
+C.C.右手 大臂
+bounds:1854,775,63,106
+offsets:2,2,67,110
+rotate:90
+C.C.右手 小臂
+bounds:1193,231,94,61
+offsets:2,2,98,65
+C.C.右手 布
+bounds:882,2,55,81
+offsets:2,2,59,98
+rotate:90
+C.C.右手 手掌
+bounds:1461,1718,48,26
+offsets:3,2,52,30
+rotate:90
+C.C.右手 手掌 遮挡
+bounds:2026,1780,31,20
+offsets:13,4,52,30
+rotate:90
+C.C.右手串珠
+bounds:1222,463,10,19
+offsets:2,2,26,23
+C.C.右手布串珠
+bounds:771,2,15,18
+offsets:2,2,19,23
+C.C.右手布蝴蝶结
+bounds:1021,75,19,21
+offsets:2,2,22,25
+rotate:90
+C.C.右手布飘 1
+bounds:2035,1265,16,11
+offsets:2,2,20,15
+rotate:90
+C.C.右手布飘 2
+bounds:1784,652,28,19
+offsets:2,2,33,23
+C.C.右手飘 A 羽纱 1
+bounds:787,149,90,24
+offsets:0,2,93,28
+C.C.右手飘 A 羽纱 2
+bounds:1784,673,107,29
+offsets:2,9,113,40
+rotate:90
+C.C.右手飘 B
+bounds:1222,294,179,148
+offsets:2,2,183,154
+C.C.右手飘 B 纱羽 1
+bounds:657,272,126,101
+offsets:13,2,140,105
+C.C.右手飘 B 纱羽 2
+bounds:1663,1332,115,160
+offsets:2,2,119,165
+C.C.右手飘A
+bounds:735,389,275,83
+offsets:2,3,279,89
+rotate:90
+C.C.右肩前飘 1
+bounds:664,2,57,14
+offsets:2,6,59,21
+C.C.右肩前飘 2
+bounds:1714,202,36,28
+offsets:6,2,42,31
+C.C.右肩后飘 1
+bounds:1165,2,34,24
+offsets:0,1,36,26
+rotate:90
+C.C.右肩后飘 2
+bounds:1869,647,36,35
+offsets:1,2,40,37
+rotate:90
+C.C.右肩后飘 3
+bounds:1405,1262,54,60
+offsets:0,2,57,62
+C.C.右胸肩
+bounds:1857,294,85,50
+offsets:2,1,87,53
+C.C.后发
+bounds:1871,411,67,80
+offsets:2,2,71,83
+rotate:90
+C.C.后发球
+bounds:1999,1813,37,44
+offsets:2,2,41,47
+C.C.后长发 01
+bounds:1179,970,20,22
+offsets:1,2,24,26
+rotate:90
+C.C.后长发 02
+bounds:1409,1612,154,50
+offsets:9,3,165,55
+rotate:90
+C.C.后长发 03
+bounds:837,913,22,11
+offsets:1,2,26,16
+rotate:90
+C.C.后长发 04
+bounds:785,279,138,52
+offsets:18,2,158,56
+C.C.后长发 05
+bounds:1944,299,84,44
+offsets:2,2,88,48
+C.C.后长发 06
+bounds:1094,228,74,97
+offsets:2,3,79,102
+rotate:90
+C.C.后长发 07
+bounds:1906,690,85,83
+offsets:105,2,281,109
+C.C.后长发 08
+bounds:1301,1252,331,102
+offsets:2,118,347,225
+rotate:90
+C.C.后长发 09
+bounds:1812,938,124,74
+offsets:6,5,132,81
+rotate:90
+C.C.后长发 10
+bounds:1923,1626,182,101
+offsets:2,1,194,104
+rotate:90
+C.C.后长发 11
+bounds:2027,375,28,19
+offsets:2,2,32,24
+rotate:90
+C.C.后长发 12
+bounds:1483,191,38,74
+offsets:2,2,42,77
+rotate:90
+C.C.后长发 13
+bounds:787,175,95,102
+offsets:1,1,98,104
+C.C.后长发 14
+bounds:1114,2,49,34
+offsets:2,2,54,38
+C.C.呆毛 1
+bounds:788,2,13,18
+offsets:3,2,18,25
+C.C.呆毛 2
+bounds:1663,1325,5,8
+offsets:2,2,10,13
+rotate:90
+C.C.嘴巴
+bounds:774,375,12,9
+offsets:2,2,16,14
+rotate:90
+C.C.头ALL
+bounds:1559,151,67,76
+offsets:5,2,74,81
+rotate:90
+C.C.尾裙 前
+bounds:475,713,304,222
+offsets:38,1,344,238
+C.C.尾裙 后
+bounds:385,7,263,277
+offsets:7,18,271,301
+rotate:90
+C.C.左大臂
+bounds:833,39,108,47
+offsets:2,2,114,51
+rotate:90
+C.C.左手
+bounds:1682,191,37,30
+offsets:2,2,41,34
+rotate:90
+C.C.左手布串珠 前
+bounds:1659,950,18,9
+offsets:2,2,22,14
+rotate:90
+C.C.左手布串珠 后
+bounds:1226,729,6,6
+offsets:2,2,11,11
+C.C.左手布蝴蝶结
+bounds:1003,297,29,15
+offsets:2,2,33,19
+rotate:90
+C.C.左手布飘 1
+bounds:747,683,28,32
+offsets:2,7,38,41
+rotate:90
+C.C.左手布飘 2
+bounds:1461,1685,26,31
+offsets:2,2,30,35
+C.C.左手拇指
+bounds:2030,314,30,16
+offsets:3,2,35,20
+rotate:90
+C.C.左手环 前
+bounds:2026,1715,19,20
+offsets:2,2,23,24
+rotate:90
+C.C.左手环 后
+bounds:2030,299,16,13
+offsets:2,2,20,17
+C.C.左手臂
+bounds:965,2,55,77
+offsets:26,2,176,101
+rotate:90
+C.C.左手飘 A
+bounds:1021,992,285,183
+offsets:11,2,302,187
+rotate:90
+C.C.左手飘 A 羽纱 1
+bounds:1780,1358,136,111
+offsets:1,1,139,113
+rotate:90
+C.C.左手飘 A 羽纱 2
+bounds:1893,1219,140,85
+offsets:7,3,149,88
+C.C.左手飘 B
+bounds:1299,970,280,174
+offsets:2,10,292,186
+rotate:90
+C.C.左手飘 B 羽纱 1
+bounds:1114,38,74,93
+offsets:1,2,78,97
+C.C.左手飘 B 羽纱 2
+bounds:1889,1111,114,106
+offsets:2,2,117,110
+C.C.左手飘 BB
+bounds:1020,194,72,48
+offsets:7,13,82,63
+C.C.左手食指
+bounds:2009,1069,37,16
+offsets:2,2,41,21
+C.C.左肩前飘 1
+bounds:1382,280,18,12
+offsets:2,2,22,16
+C.C.左肩前飘 2
+bounds:1846,179,48,44
+offsets:3,2,53,47
+C.C.左肩前飘 蝴蝶结 1
+bounds:1094,214,12,7
+offsets:2,2,16,11
+rotate:90
+C.C.左肩前飘 蝴蝶结 2
+bounds:1659,925,10,9
+offsets:2,2,14,14
+rotate:90
+C.C.左肩后飘 1
+bounds:475,647,17,43
+offsets:2,1,34,46
+rotate:90
+C.C.左肩后飘 2
+bounds:1956,888,37,46
+offsets:2,4,41,51
+rotate:90
+C.C.左腿
+bounds:1489,1623,185,432
+offsets:2,2,189,436
+rotate:90
+C.C.左鞋子
+bounds:925,283,48,76
+offsets:2,4,53,82
+rotate:90
+C.C.扇山
+bounds:1781,569,86,81
+offsets:8,11,96,93
+C.C.扇柄 ←
+bounds:1796,322,59,92
+offsets:0,1,60,95
+C.C.扇柄 →
+bounds:2006,956,100,40
+offsets:5,2,108,44
+rotate:90
+C.C.扇流 EX
+bounds:538,937,310,289
+offsets:644,892,1519,1519
+C.C.扇流发光 EX
+bounds:977,1279,322,304
+offsets:641,875,1519,1519
+C.C.扇流飞鸟
+bounds:1559,220,28,94
+offsets:2,2,32,99
+rotate:90
+C.C.流海 ← 1
+bounds:785,337,33,50
+offsets:6,6,41,58
+C.C.流海 ← 2
+bounds:44,9,15,29
+offsets:2,15,23,48
+rotate:90
+C.C.流海 →
+bounds:1657,230,45,50
+offsets:2,3,50,55
+C.C.眉毛 ←
+bounds:1556,426,13,5
+offsets:2,2,17,10
+C.C.眉毛 →
+bounds:1021,969,21,6
+offsets:2,3,26,12
+rotate:90
+C.C.眼球 ←
+bounds:1211,294,8,9
+offsets:2,2,13,13
+rotate:90
+C.C.眼球 →
+bounds:2034,1058,10,9
+offsets:3,3,17,14
+C.C.眼睛底 ←
+bounds:1103,119,12,9
+offsets:2,2,16,13
+rotate:90
+C.C.眼睛底 →
+bounds:2035,1247,16,11
+offsets:2,2,20,15
+rotate:90
+C.C.羽毛头发 1
+bounds:850,894,332,169
+offsets:2,26,336,197
+rotate:90
+C.C.羽毛头发 2
+bounds:1670,1047,136,142
+offsets:2,8,200,152
+C.C.羽毛头发 3
+bounds:1682,152,29,37
+offsets:15,2,47,41
+C.C.羽毛头发 4
+bounds:1956,847,39,43
+offsets:2,1,43,46
+rotate:90
+C.C.肩肉
+bounds:1896,179,44,36
+offsets:2,2,48,40
+rotate:90
+C.C.胸珍珠
+bounds:1846,225,8,9
+offsets:8,2,19,13
+C.C.胸结圈
+bounds:757,375,15,12
+offsets:2,4,19,18
+C.C.胸结飘
+bounds:1854,664,13,19
+offsets:2,2,17,23
+C.C.脖子
+bounds:1757,222,36,57
+offsets:2,2,41,62
+C.C.腰飘前上
+bounds:1856,225,72,67
+offsets:2,2,76,71
+C.C.腰飘前下
+bounds:781,678,246,214
+offsets:3,2,250,218
+C.C.腰飘后上
+bounds:1637,151,67,43
+offsets:5,2,73,47
+rotate:90
+C.C.腰飘后下
+bounds:989,478,198,102
+offsets:5,2,206,104
+rotate:90
+C.C.身体
+bounds:956,1585,181,451
+offsets:2,1,184,453
+rotate:90
+EFF.中部整体提亮
+bounds:575,1566,379,480
+EFF.人提亮
+bounds:575,1228,336,400
+rotate:90
+EFF.鸟提亮
+bounds:1893,1306,128,149
+rotate:90
+FG.E.前层鱼 ← 2
+bounds:1993,710,63,53
+offsets:1,1,65,55
+rotate:90
+FG.E.前层鱼 → 2
+bounds:1815,685,89,88
+offsets:1,3,91,92
+FG.F.顶层流水 1
+bounds:956,1768,531,278
+offsets:1,0,532,278
+FG.F.顶层流水 2
+bounds:657,375,289,76
+offsets:60,44,349,120
+rotate:90
+FG.L.顶层孔明发光 ↓ 1
+bounds:1556,282,147,142
+offsets:0,2,147,147
+FG.L.顶层孔明发光 ↓ 2
+bounds:1704,232,47,51
+offsets:1,3,50,55
+rotate:90
+FG.L.顶层孔明发光 ↓ 3
+bounds:1796,276,44,58
+offsets:2,1,48,60
+rotate:90
+FG.L.顶层孔明发光 ↓ 4
+bounds:1021,96,80,96
+offsets:2,3,84,100
+FG.L.顶层孔明发光 ↓ 5
+bounds:1930,228,50,64
+offsets:2,2,54,69
+FG.L.顶层孔明灯 ↓ 1
+bounds:1643,1191,132,135
+offsets:1,1,135,136
+rotate:90
+FG.L.顶层孔明灯 ↓ 2
+bounds:833,2,35,39
+offsets:0,1,35,40
+rotate:90
+FG.L.顶层孔明灯 ↓ 3
+bounds:1966,182,30,44
+offsets:1,1,31,46
+FG.L.顶层孔明灯 ↓ 4
+bounds:1869,569,69,84
+offsets:0,2,69,86
+rotate:90
+FG.L.顶层孔明灯 ↓ 5
+bounds:2009,1087,37,57
+offsets:0,0,40,58

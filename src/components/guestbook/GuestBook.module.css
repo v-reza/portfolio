@@ -1,0 +1,195 @@
+.section {
+  background: var(--bg);
+  padding: 100px clamp(24px, 5vw, 80px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.inner {
+  width: 100%;
+  max-width: none;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.num {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: var(--fg);
+}
+
+.sub {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.guestbookCard {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4e4e7;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+
+.cardHeading {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.entryList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 36px;
+}
+
+.entryItem {
+  background: #fafaf9;
+  border: 1px solid #f4f4f5;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.entryAuthor {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--fg);
+}
+
+.entryDate {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.entryMessage {
+  font-size: 14px;
+  color: #3f3f46;
+  line-height: 1.5;
+}
+
+/* Form */
+.form {
+  border-top: 1px solid #e4e4e7;
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+}
+
+.inputField,
+.textField {
+  background: #ffffff;
+  border: 1px solid #d4d4d8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--fg);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.inputField:focus,
+.textField:focus {
+  border-color: var(--accent);
+}
+
+.textField {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.formBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charCount {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.submitBtn {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 24px;
+  }
+  .guestbookCard {
+    padding: 24px;
+  }
+  .inputRow {
+    grid-template-columns: 1fr;
+  }
+}

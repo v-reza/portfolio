@@ -1,0 +1,519 @@
+c_jingran_1.png
+size:2048,2048
+filter:Linear,Linear
+scale:0.38
+BG.BG
+bounds:272,1017,1029,1104
+offsets:47,6,1120,1112
+rotate:270
+BG.塔 ←
+bounds:297,151,226,305
+offsets:8,1,234,308
+rotate:90
+BG.塔 →
+bounds:981,294,338,488
+offsets:0,57,373,554
+rotate:90
+BG.塔 → 1
+bounds:32,2020,16,26
+offsets:25,380,373,554
+BG.塔 → 2
+bounds:315,1908,18,29
+offsets:81,373,373,554
+BG.塔 → 3
+bounds:1627,2011,23,35
+offsets:257,418,373,554
+BG.塔 → 4
+bounds:1442,2013,25,33
+offsets:269,447,373,554
+BG.塔 灯笼
+bounds:1945,1946,73,100
+offsets:6,2,80,104
+BG.塔光 →
+bounds:1220,430,401,320
+offsets:1,170,404,498
+BG.塔柱 →
+bounds:1846,1835,51,80
+offsets:2,2,55,84
+BG.柱火 → 1
+bounds:936,1991,45,55
+offsets:3,1,49,59
+BG.柱火 → 2
+bounds:2010,1831,28,41
+offsets:2,2,31,45
+BG.残布 → 1
+bounds:1073,140,307,218
+offsets:312,203,619,421
+BG.残布 → 2
+bounds:191,1439,123,68
+offsets:529,158,652,265
+BG.特效火 1
+bounds:1896,1003,150,226
+offsets:100,176,528,503
+BG.特效火 2
+bounds:1843,942,106,147
+offsets:0,0,113,147
+BG.特效火 发光
+bounds:1796,1643,249,240
+offsets:90,170,522,496
+BG.背景烟 1
+bounds:367,1912,134,29
+offsets:2,1,137,32
+rotate:270
+BG.背景烟 2
+bounds:799,944,92,103
+offsets:0,1,92,104
+BG.背景烟 3
+bounds:2,787,816,387
+offsets:122,98,938,485
+rotate:180
+BG.背景长带 ←
+bounds:925,548,176,426
+offsets:0,1,176,428
+rotate:270
+BG.背景长带 →
+bounds:1004,95,141,331
+offsets:1,0,145,331
+rotate:270
+BG.钱 ←
+bounds:290,1888,32,158
+offsets:12,11,54,172
+BG.铁链 1
+bounds:124,1589,67,457
+offsets:0,0,589,516
+rotate:180
+BG.铁链 2
+bounds:238,1898,17,148
+offsets:2,241,284,390
+BG.铁链 3
+bounds:280,1646,400,88
+offsets:2,1,403,144
+rotate:270
+BG.铁链 动 1
+bounds:1296,68,263,281
+offsets:12,1,464,283
+rotate:270
+BG.铁链 动 2
+bounds:332,1762,59,157
+offsets:2,2,63,161
+BG.飞鸟 1
+bounds:1341,2019,56,27
+offsets:1,1,59,29
+BG.飞鸟 2
+bounds:1896,1885,61,24
+offsets:1,1,63,25
+BG.飞鸟 3
+bounds:1311,2030,35,16
+offsets:6,1,43,64
+BG.飞鸟 4
+bounds:813,2036,21,10
+offsets:60,7,84,61
+BG.飞鸟 5
+bounds:850,2038,9,8
+offsets:41,1,52,68
+BGF.乌鸦 ← 1
+bounds:2001,1863,45,56
+offsets:1,2,48,59
+BGF.乌鸦 ← 2
+bounds:544,2007,58,39
+offsets:0,1,59,64
+BGF.乌鸦 ← 2.1
+bounds:1738,1910,38,48
+offsets:1,1,40,49
+BGF.乌鸦 ← 2.2
+bounds:1400,1995,47,51
+offsets:1,1,49,53
+BGF.乌鸦 ← 2.2.1
+bounds:1114,1992,47,51
+offsets:1,1,49,53
+BGF.乌鸦 ← 2.3
+bounds:45,1843,16,30
+offsets:2,2,35,68
+BGF.前柱 ←
+bounds:766,715,442,848
+offsets:64,2,533,850
+rotate:270
+BGF.布条 ← 1
+bounds:1767,1897,149,252
+offsets:0,0,370,252
+rotate:90
+BGF.布条 ← 2
+bounds:277,1030,195,170
+offsets:14,182,282,352
+rotate:180
+BGF.布条长 ← 1
+bounds:146,1516,45,121
+offsets:1,1,46,123
+BGF.布条长 ← 2
+bounds:1990,1548,40,72
+offsets:1,2,42,76
+BGF.柱条 ←
+bounds:355,44,205,266
+offsets:0,0,205,268
+rotate:90
+BGF.柱铃 ← 1
+bounds:76,327,150,226
+offsets:10,0,175,226
+BGF.柱铃 ← 2
+bounds:1919,1254,100,154
+offsets:63,299,262,453
+BGF.柱铃 ← 3
+bounds:1432,1580,61,70
+offsets:3,1,65,72
+BGF.柱铃 ← 4
+bounds:155,1800,28,48
+offsets:1,2,31,52
+BGF.柱铃布 ←
+bounds:1518,1270,225,159
+offsets:0,260,348,420
+rotate:90
+BGF.烛光 ← 1
+bounds:863,2023,13,23
+offsets:3,2,17,27
+BGF.烛光 ← 2
+bounds:215,2032,7,14
+offsets:2,2,12,19
+BGF.烛光 ← 3
+bounds:167,2033,11,13
+offsets:1,2,14,17
+BGF.烛光 ← 4
+bounds:234,2035,6,11
+offsets:1,2,8,15
+BGF.烛光 ← 5
+bounds:2,2037,6,9
+offsets:2,2,9,13
+BGF.石头
+bounds:52,598,315,188
+offsets:0,0,397,188
+BGF.石头遮挡
+bounds:570,2042,15,4
+offsets:2,2,19,8
+BGF.红布料 ←
+bounds:149,398,437,439
+offsets:0,5,437,444
+rotate:90
+BGF.红布料 ← 下 1
+bounds:1484,1448,96,130
+offsets:1,0,262,356
+BGF.红布料 ← 下 2
+bounds:2,567,123,154
+offsets:0,0,282,242
+BGF.绿布 底 ←
+bounds:215,1059,93,74
+offsets:14,4,115,88
+BGF.绿布 顶 ←
+bounds:1786,206,249,260
+rotate:90
+BGF.钱串 ← 1
+bounds:350,1094,86,154
+offsets:0,1,87,155
+BGF.钱串 ← 2
+bounds:123,1117,73,104
+offsets:1,1,74,105
+BGF.钱串 ← 3
+bounds:1527,724,59,114
+offsets:0,1,59,116
+BGF.钱串 ← 4
+bounds:1032,164,182,126
+BGF.钱串 ← 5
+bounds:66,320,147,138
+offsets:0,0,179,138
+C.上睫毛 ←
+bounds:501,2030,22,16
+offsets:3,3,29,22
+C.上睫毛 →
+bounds:731,2033,16,13
+offsets:3,3,22,19
+C.上身
+bounds:1474,1319,156,213
+offsets:218,96,596,421
+C.下睫毛 ←
+bounds:524,2032,17,14
+offsets:3,3,22,20
+C.下睫毛 →
+bounds:633,2037,16,9
+offsets:3,3,21,14
+C.兜帽前
+bounds:1481,934,121,130
+offsets:2,2,127,134
+C.兜帽后
+bounds:1626,1923,120,123
+offsets:2,2,137,127
+C.兜帽层级前
+bounds:1941,1931,39,33
+offsets:2,3,43,40
+C.后发
+bounds:143,1847,29,46
+offsets:14,2,46,51
+C.后手
+bounds:1481,102,97,235
+offsets:29,11,131,249
+rotate:90
+C.大臂 ←
+bounds:1421,1620,122,68
+offsets:9,16,133,96
+C.头发 ←
+bounds:1201,1940,68,71
+offsets:12,3,82,79
+C.头发 ← 阴影
+bounds:1182,1950,26,51
+offsets:31,3,60,59
+C.头发 ↑
+bounds:1594,1988,32,58
+offsets:62,45,121,130
+C.头发 ↑ 阴影
+bounds:257,2012,9,34
+offsets:3,3,15,40
+C.头发 →
+bounds:1737,1968,42,78
+offsets:3,8,52,88
+C.头部
+bounds:28,1289,71,74
+offsets:2,2,76,85
+C.小臂 ←
+bounds:1953,1296,92,124
+offsets:2,2,117,168
+C.手指 ← 1
+bounds:515,1987,34,24
+offsets:3,3,41,31
+C.手指 ← 2
+bounds:1813,1877,41,30
+offsets:3,3,47,36
+C.手指 ← 3
+bounds:370,1834,29,36
+offsets:3,3,35,49
+C.手指 ← 4
+bounds:598,2022,18,24
+offsets:3,3,24,30
+C.手指 ← 5
+bounds:1734,2000,14,31
+offsets:3,3,20,39
+C.棍儿
+bounds:2,1308,78,738
+offsets:10,1,91,741
+C.灯
+bounds:586,453,97,246
+offsets:1,2,102,250
+C.灯内火单独处理
+bounds:1340,1921,32,58
+offsets:3,2,38,62
+C.灯内火遮挡
+bounds:48,1875,15,45
+offsets:3,3,21,51
+C.灯火 1
+bounds:49,69,125,191
+C.灯火 2
+bounds:1860,1563,71,60
+offsets:2,4,75,65
+C.灯火 3
+bounds:1834,1810,33,29
+offsets:3,3,38,35
+C.独毛 ←
+bounds:1618,1953,26,35
+offsets:3,3,32,41
+C.独毛 →
+bounds:2018,1785,25,44
+offsets:2,2,30,49
+C.眉毛 ←
+bounds:826,2033,22,13
+offsets:3,3,28,19
+C.眉毛 →
+bounds:923,2037,16,9
+offsets:3,3,22,15
+C.眼球 ←
+bounds:312,2036,10,10
+offsets:3,3,16,17
+C.眼球 →
+bounds:392,2038,8,8
+offsets:3,3,14,14
+C.眼白 ←
+bounds:616,2034,16,12
+offsets:3,3,22,19
+C.眼白 →
+bounds:81,2038,13,8
+offsets:3,3,19,14
+C.耳朵 →
+bounds:340,2033,15,13
+offsets:2,3,19,19
+C.脖子
+bounds:1023,2000,36,46
+offsets:2,3,41,52
+C.腰碎物 0
+bounds:41,1942,32,44
+offsets:190,133,226,193
+C.腰碎物 1
+bounds:150,1870,37,84
+offsets:0,3,40,90
+C.腰碎物 2
+bounds:178,132,176,122
+offsets:5,23,184,146
+C.腰碎物 3
+bounds:1250,1626,54,109
+offsets:157,95,221,206
+C.腰碎物 4
+bounds:1375,1472,104,98
+offsets:97,53,203,154
+C.腰间配饰 ↑
+bounds:216,1843,28,55
+offsets:3,20,61,86
+C.腰间配饰 ↓
+bounds:131,1980,36,66
+offsets:4,3,48,134
+C.腰饰 前
+bounds:1887,1605,159,90
+offsets:18,1,178,92
+C.腰饰 飘
+bounds:783,2008,95,38
+offsets:2,2,103,43
+C.腿 ←
+bounds:51,1487,105,559
+offsets:176,2,537,561
+C.腿 →
+bounds:1290,1185,191,458
+offsets:24,6,220,464
+C.裙摆 ← 0
+bounds:1100,922,192,250
+offsets:2,3,195,256
+rotate:90
+C.裙摆 ← 1
+bounds:1448,1026,184,130
+offsets:63,6,249,139
+C.裙摆 ← 2
+bounds:794,187,250,243
+offsets:49,232,559,475
+rotate:90
+C.裙摆 ← 3
+bounds:1562,766,212,205
+offsets:53,0,265,205
+C.裙摆 →
+bounds:386,1847,166,199
+offsets:307,243,559,443
+C.裙摆 → 0
+bounds:1552,308,333,468
+offsets:138,0,559,498
+rotate:90
+C.长飘 1
+bounds:85,82,191,536
+offsets:0,0,191,537
+rotate:270
+C.长飘 2
+bounds:1218,1106,188,369
+offsets:16,58,206,429
+rotate:90
+C.长飘 3
+bounds:542,119,75,280
+offsets:30,24,108,306
+rotate:90
+C.马尾
+bounds:60,1359,218,259
+offsets:0,0,220,259
+EFF.左下角石头碎光
+bounds:1174,588,165,95
+offsets:0,1,166,98
+EFF.灯提亮效果 1
+bounds:1529,874,517,688
+offsets:86,1,603,689
+EFF.灯提亮效果 2
+bounds:2,1127,337,304
+EFF.碎焰 1
+bounds:603,163,165,171
+offsets:0,1,165,172
+EFF.碎焰 2
+bounds:440,287,448,278
+offsets:1,8,449,320
+FG.前景烟雾 ← 1
+bounds:1611,637,435,375
+offsets:0,35,845,410
+rotate:180
+FG.前景烟雾 ↓ 1
+bounds:1160,1930,258,116
+offsets:0,1,258,117
+FG.前景烟雾 ↓ 2
+bounds:222,1617,429,75
+rotate:90
+FG.前景烟雾 ↓ 3
+bounds:166,1609,437,70
+offsets:0,1,437,71
+rotate:270
+FG.前景烟雾 中 1
+bounds:1322,1440,606,544
+rotate:90
+FG.前景烟雾 中 2
+bounds:527,403,430,410
+FG.柱铃 →
+bounds:2,232,529,409
+offsets:401,30,955,439
+rotate:180
+FG.柱铃 → 0
+bounds:2030,1966,16,24
+offsets:1,1,19,26
+FG.柱铃 → 1
+bounds:856,952,106,230
+offsets:0,0,132,687
+rotate:90
+FG.柱铃 → 1.1
+bounds:2003,1950,43,85
+offsets:1,1,44,87
+FG.柱铃 → 2
+bounds:1294,1622,137,173
+FG.柱铃 → 3
+bounds:324,1937,19,109
+FG.柱铃 → 4
+bounds:1377,164,296,513
+offsets:623,0,957,1042
+rotate:90
+FG.柱铃 → EX 1
+bounds:398,2025,61,21
+offsets:2,1,65,24
+FG.柱铃 → EX 2
+bounds:1410,1690,54,39
+offsets:369,153,730,436
+FG.柱铃 → EX 3
+bounds:712,2036,12,10
+offsets:1,0,14,12
+FG.柱铃 → EX 4
+bounds:753,2024,30,22
+offsets:1,1,32,24
+FG.柱铃 → EX 5
+bounds:1686,91,326,158
+offsets:108,34,730,436
+rotate:180
+FG.柱铃 零碎 →01
+bounds:1379,1958,52,35
+offsets:0,1,52,38
+FG.柱铃 零碎 →02
+bounds:881,1997,54,49
+offsets:1,2,56,53
+FG.柱铃 零碎 →03
+bounds:50,1911,24,29
+offsets:1,0,26,30
+FG.柱铃 零碎 →04
+bounds:484,2028,18,18
+offsets:1,1,20,20
+FG.柱铃 零碎 →05
+bounds:286,1849,33,38
+offsets:1,1,35,41
+FG.柱铃 零碎 →06
+bounds:192,2029,22,17
+offsets:2,2,25,21
+FG.柱铃 零碎 →07
+bounds:466,2031,14,15
+offsets:1,1,17,16
+FG.柱铃 零碎 →08
+bounds:1323,1910,26,23
+offsets:1,1,29,25
+FG.柱铃 零碎 →09
+bounds:163,1949,22,22
+offsets:1,1,24,26
+FG.柱铃 零碎 →10
+bounds:2018,1934,28,27
+offsets:1,1,30,30
+FG.柱铃 零碎 →11
+bounds:1065,1992,54,54
+offsets:1,1,56,56
+FG.柱铃 零碎 →13
+bounds:981,2007,41,39
+offsets:1,1,43,41
+FG.柱铃 零碎 →14
+bounds:1777,2014,43,32
+offsets:1,0,44,33

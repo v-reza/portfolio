@@ -1,0 +1,419 @@
+c_qianxiao_1.png
+size:2048,2048
+filter:Linear,Linear
+scale:0.247
+DaiZi _R
+bounds:949,1208,81,103
+GaoJia1 zhedang
+bounds:1948,674,96,195
+GaoJia2
+bounds:952,477,506,319
+rotate:180
+Guang1
+bounds:2,576,506,158
+L eye _1
+bounds:291,2035,6,4
+L eye _10
+bounds:219,2034,14,12
+L eye _11
+bounds:1894,2032,27,14
+L eye _2
+bounds:102,2037,6,4
+L eye _3
+bounds:2034,2043,5,3
+L eye _4
+bounds:1772,2036,33,10
+offsets:0,0,33,11
+L eye _51
+bounds:86,2041,21,5
+L eye _6
+bounds:164,2032,8,6
+L eye _7
+bounds:178,1955,22,8
+offsets:0,0,23,8
+L eye _9
+bounds:801,2043,6,3
+LingJie22
+bounds:1742,1367,74,32
+offsets:0,0,74,34
+PaPer14-1
+bounds:88,1441,44,82
+PaPer14-2
+bounds:75,1335,70,88
+PaPer_1
+bounds:1817,1359,69,43
+PaPer_10
+bounds:758,1631,72,88
+offsets:0,2,72,90
+PaPer_11
+bounds:758,1804,44,71
+PaPer_12
+bounds:1986,1734,60,102
+PaPer_13
+bounds:1955,1508,91,169
+PaPer_14
+bounds:1999,1959,47,84
+PaPer_15
+bounds:1760,1401,129,78
+offsets:0,0,129,84
+PaPer_16
+bounds:1745,1576,106,103
+PaPer_17
+bounds:58,232,328,198
+PaPer_18
+bounds:230,1192,100,79
+PaPer_19
+bounds:150,1997,13,16
+PaPer_2
+bounds:1745,1679,64,31
+PaPer_3
+bounds:1268,1381,63,42
+PaPer_4
+bounds:758,1877,49,51
+PaPer_5
+bounds:2021,1951,25,17
+PaPer_6
+bounds:292,2041,5,5
+PaPer_7
+bounds:286,1994,12,21
+PaPer_8
+bounds:334,1548,61,31
+PaPer_9
+bounds:334,1519,60,27
+Qiu
+bounds:1334,1372,193,166
+QunBai1
+bounds:1513,976,132,41
+QunBai2
+bounds:2,284,145,199
+offsets:0,0,154,199
+QunBai3
+bounds:177,192,120,206
+rotate:90
+QunBai4
+bounds:1795,469,242,164
+R eye_1
+bounds:212,2043,5,3
+R eye_2
+bounds:758,2044,3,2
+R eye_3
+bounds:178,2034,10,8
+offsets:0,0,10,11
+R eye_41
+bounds:1763,2042,6,4
+R eye_5
+bounds:180,2040,5,6
+offsets:3,0,8,11
+R eye_6
+bounds:272,2038,11,8
+R eye_7
+bounds:226,2027,9,7
+R eye_8
+bounds:166,2039,6,7
+R eye_9
+bounds:790,2037,9,9
+Star
+bounds:237,1870,176,20
+rotate:90
+Star1
+bounds:75,1956,90,9
+rotate:90
+Weapon _L
+bounds:977,817,924,1069
+rotate:90
+XiuZi1 _R
+bounds:1702,290,164,343
+XiuZi2 _R
+bounds:250,761,141,288
+rotate:90
+Yao
+bounds:373,269,128,164
+YaoDai
+bounds:1044,1131,98,38
+YiLing1
+bounds:1392,1308,51,62
+YiLing2
+bounds:1550,62,299,226
+YiLing3
+bounds:1093,1384,96,65
+YiLing4
+bounds:383,118,140,156
+ZhuZi
+bounds:1943,268,103,201
+arm _R
+bounds:1239,169,139,328
+rotate:90
+arm2
+bounds:151,343,356,155
+brow_L
+bounds:127,2038,37,8
+brow_R
+bounds:1807,2042,11,4
+clothes1
+bounds:1904,1526,49,33
+clothes2
+bounds:214,1681,84,164
+clothes3
+bounds:891,993,174,299
+clothes4
+bounds:680,125,136,274
+rotate:90
+clothes5
+bounds:1883,1357,163,162
+clothes5 shadow
+bounds:1281,1272,122,98
+clothes6
+bounds:1209,702,160,143
+clothes7
+bounds:1249,350,142,147
+rotate:90
+clothes8
+bounds:1642,1501,52,37
+down leg _L
+bounds:1861,1672,185,282
+rotate:180
+down leg _R
+bounds:1391,233,370,283
+ear
+bounds:758,2018,30,28
+foot _L
+bounds:1529,1440,133,98
+hair1 shadow
+bounds:81,1724,39,64
+hair10
+bounds:763,104,81,231
+rotate:90
+hair11
+bounds:2027,1858,19,33
+hair12
+bounds:2005,1512,41,39
+hair13
+bounds:1943,1712,41,54
+hair14
+bounds:1390,89,159,173
+hair15
+bounds:77,1934,19,53
+hair16
+bounds:1540,998,82,87
+hair17
+bounds:847,1922,22,27
+hair18
+bounds:592,114,91,165
+hair19
+bounds:1624,974,73,182
+hair2 shadow
+bounds:795,1804,21,43
+hair20-1
+bounds:998,660,50,165
+hair20-2
+bounds:758,1460,35,79
+hair21
+bounds:495,342,88,214
+rotate:90
+hair22
+bounds:82,123,80,212
+rotate:90
+hair23
+bounds:779,1112,52,159
+rotate:90
+hair24
+bounds:999,1254,31,99
+hair25
+bounds:1078,1044,31,85
+hair26
+bounds:453,66,137,184
+hair27
+bounds:936,919,64,94
+hair28
+bounds:1715,94,227,177
+hair29
+bounds:1107,1077,49,92
+hair3 shadow
+bounds:107,1830,21,45
+hair30
+bounds:1860,128,184,138
+hair31
+bounds:146,106,242,118
+offsets:11,0,253,121
+hair32
+bounds:683,253,282,111
+hair33
+bounds:1184,138,290,89
+hair34
+bounds:1281,1250,199,113
+hair35
+bounds:924,161,230,99
+hair36
+bounds:1914,1496,110,30
+hair37
+bounds:259,1872,174,39
+rotate:90
+hair38
+bounds:157,1676,370,92
+offsets:0,0,370,96
+rotate:90
+hair39
+bounds:1074,279,406,140
+hair4 shadow
+bounds:233,1786,27,48
+offsets:4,2,31,50
+hair40
+bounds:1814,158,310,127
+rotate:90
+hair41
+bounds:1050,1372,83,22
+hair42
+bounds:664,54,279,150
+hair43
+bounds:909,69,218,158
+hair7 shadow
+bounds:259,2005,12,41
+hair9
+bounds:2,169,105,103
+hair9 shadow
+bounds:278,1882,19,22
+hand _R
+bounds:334,1580,47,54
+index _R
+bounds:786,1489,21,50
+little _L
+bounds:1985,2035,15,11
+little _R
+bounds:102,1794,21,40
+middle _L
+bounds:1966,2034,17,12
+middle _R
+bounds:100,1403,32,57
+n_LeiShe
+bounds:1334,1540,506,409
+rotate:90
+n_楼1
+bounds:758,1434,25,24
+n_楼2
+bounds:272,1906,25,28
+n_楼3
+bounds:2020,1644,26,25
+n_楼4
+bounds:238,1759,26,25
+n_楼5
+bounds:2002,2034,10,12
+n_楼6
+bounds:2015,1617,25,25
+n_楼7
+bounds:134,1361,198,314
+neck
+bounds:527,938,111,118
+n大三角
+bounds:1745,1675,371,271
+rotate:270
+qunbai41
+bounds:1528,292,265,166
+qunbai5
+bounds:759,423,279,166
+qunbai6
+bounds:97,1265,248,96
+ring _L
+bounds:1945,2033,19,13
+ring _R
+bounds:75,1668,21,58
+thumb _R
+bounds:86,2007,17,34
+thumb1 _L
+bounds:1745,2028,38,18
+thumb2 _L
+bounds:257,1840,41,36
+up leg _L
+bounds:1437,976,260,304
+up leg _R
+bounds:2,462,354,112
+yan
+bounds:1460,460,240,173
+前发_1
+bounds:125,1941,38,95
+offsets:1,0,39,95
+前发_2
+bounds:868,1982,12,42
+前发_3
+bounds:178,1963,23,66
+前发_4
+bounds:271,1936,27,56
+前发_5
+bounds:108,1877,36,63
+前发_6
+bounds:2019,1830,27,29
+前发_7
+bounds:1939,1838,20,43
+前发_8
+bounds:1531,1378,52,68
+前发_9
+bounds:867,2026,13,20
+吊塔
+bounds:758,1181,865,574
+rotate:90
+吊塔线1
+bounds:83,1779,42,267
+吊塔线2
+bounds:75,1779,41,267
+塔1
+bounds:968,244,124,134
+塔2
+bounds:1699,871,347,474
+塔尾
+bounds:1372,651,325,297
+大三角2
+bounds:498,617,506,499
+rotate:180
+大三角3
+bounds:33,768,506,498
+rotate:180
+小三角
+bounds:1699,635,247,234
+小楼2_1
+bounds:801,1633,25,25
+小楼2_3
+bounds:758,1541,37,47
+小楼2_4
+bounds:1745,1651,30,26
+小楼3_1
+bounds:1192,1379,74,46
+小楼3_4
+bounds:758,1590,49,40
+红线1
+bounds:483,265,283,975
+rotate:90
+红线2
+bounds:75,1388,101,658
+红线3
+bounds:2,1121,71,925
+背景烟2_1
+bounds:758,1721,74,76
+背景烟2_2
+bounds:1032,1171,198,247
+rotate:90
+背景烟3_1
+bounds:1094,215,124,120
+rotate:90
+背景烟3_2
+bounds:510,432,247,224
+背景的塔
+bounds:300,1058,988,456
+rotate:90
+脸2
+bounds:758,1929,108,117
+蝴蝶结_1
+bounds:274,1801,20,37
+offsets:1,0,21,37
+蝴蝶结_2
+bounds:78,1252,40,82
+蝴蝶结_3
+bounds:975,1238,51,84
+蝴蝶结_4
+bounds:281,1682,36,32
+领带_1
+bounds:120,1323,121,36
+领带_2
+bounds:826,1141,74,75
+领带_3
+bounds:1923,2030,20,16
+鼻子
+bounds:2018,2027,15,19

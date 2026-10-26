@@ -1,0 +1,443 @@
+.elevationSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0b0d12;
+  color: #f4f4f5;
+  padding: clamp(32px, 5vh, 60px) 0;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: min(1200px, 110vw);
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    45% 55% at 50% 0%,
+    rgba(255, 72, 32, 0.06),
+    transparent 72%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.5vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vh, 36px);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff4820;
+  margin: 0 0 8px;
+}
+
+.title {
+  font-size: clamp(28px, 3.4vw, 46px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+
+.sub {
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.5;
+  color: #8f9aa9;
+  margin: 0 auto;
+  max-width: 58ch;
+  text-wrap: balance;
+}
+
+/* Mountain SVG Container */
+.svgWrap {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.baseline {
+  stroke: #1a202c;
+  stroke-width: 1;
+}
+
+.ridgeFill {
+  opacity: 0.85;
+}
+
+.ridgeLine {
+  fill: none;
+  stroke: #ff4820;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.ridgeDormant {
+  fill: none;
+  stroke: #1e2430;
+  stroke-width: 1.6;
+  stroke-dasharray: 4 6;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Transit Orb */
+.transitOrb {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 6px #ff4820) drop-shadow(0 0 16px #ff4820);
+}
+
+.transitPulse {
+  fill: none;
+  stroke: rgba(255, 72, 32, 0.75);
+  stroke-width: 1.5;
+  animation: pulseOrb 1.6s ease-out infinite;
+}
+
+@keyframes pulseOrb {
+  0% {
+    r: 6px;
+    opacity: 0.9;
+  }
+  100% {
+    r: 22px;
+    opacity: 0;
+  }
+}
+
+/* Station Waypoints on the mountain */
+.waypointDot {
+  fill: #141822;
+  stroke: #2b3446;
+  stroke-width: 1.5;
+  transition: all 0.3s ease;
+}
+
+.waypointActive {
+  fill: #ffffff;
+  stroke: #ff4820;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 8px rgba(255, 72, 32, 0.8));
+}
+
+.waypointCompleted {
+  fill: #10151f;
+  stroke: #6ee7a8;
+  stroke-width: 2;
+}
+
+.stationIndex {
+  font-family: var(--font-mono), monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  fill: #4b5568;
+  text-anchor: middle;
+  transition: fill 0.3s ease;
+}
+
+.stationName {
+  font-family: var(--font-mono), monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: #64748b;
+  text-anchor: middle;
+  transition: fill 0.3s ease;
+}
+
+.stationBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  transition: fill 0.3s ease;
+}
+
+/* Active waypoint text colors */
+.textActive {
+  fill: #ffffff !important;
+  font-weight: 800;
+}
+
+.indexActive {
+  fill: #ff4820 !important;
+}
+
+.badgeActive {
+  fill: #ff8a65 !important;
+}
+
+.badgeCompleted {
+  fill: #6ee7a8 !important;
+}
+
+.textCompleted {
+  fill: #cbd5e1 !important;
+}
+
+/* ---------- Lower Deck: Station Inspector & Metric Cards ---------- */
+.lowerDeck {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: clamp(32px, 5vh, 56px) auto 0;
+  min-height: 156px;
+}
+
+/* 1. Station Inspector (Active station detail) */
+.inspectorCard {
+  position: absolute;
+  inset: 0;
+  background: #10141c;
+  border: 1px solid #1f2737;
+  border-radius: 18px;
+  padding: clamp(22px, 3vh, 32px) clamp(24px, 3.2vw, 36px);
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 28px);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.inspectorIcon {
+  width: clamp(44px, 5vw, 56px);
+  height: clamp(44px, 5vw, 56px);
+  border-radius: 14px;
+  background: rgba(255, 72, 32, 0.12);
+  border: 1px solid rgba(255, 72, 32, 0.35);
+  color: #ff4820;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.inspectorIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.inspectorBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.inspectorTop {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.inspectorStep {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #ff4820;
+}
+
+.inspectorName {
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.inspectorBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2.5px 9px;
+  border-radius: 999px;
+  background: rgba(255, 72, 32, 0.15);
+  border: 1px solid rgba(255, 72, 32, 0.5);
+  color: #ff8a65;
+}
+
+.inspectorWhat {
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* 2. Four Impact Metric Cards (Revealed at Release) */
+.metricsGrid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 1.8vw, 24px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(12px);
+}
+
+.metricsGridVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.metricCard {
+  position: relative;
+  background: #0f131a;
+  border: 1px solid #1f2737;
+  border-radius: 18px;
+  padding: clamp(24px, 3.2vh, 34px) clamp(22px, 2.4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.metricCard:hover {
+  border-color: rgba(255, 72, 32, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5);
+}
+
+.metricTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.metricIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 72, 32, 0.1);
+  border: 1px solid rgba(255, 72, 32, 0.25);
+  color: #ff4820;
+  display: grid;
+  place-items: center;
+}
+
+.metricIcon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.metricBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6ee7a8;
+  padding: 1.5px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(110, 231, 168, 0.3);
+  background: rgba(110, 231, 168, 0.08);
+}
+
+.metricValue {
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  line-height: 1.05;
+  margin-top: 2px;
+}
+
+.metricLabel {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #8f9aa9;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lowerDeck {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .elevationSection {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  .lowerDeck {
+    min-height: auto;
+    position: relative;
+  }
+  .inspectorCard,
+  .metricsGrid {
+    position: relative;
+    inset: auto;
+  }
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    margin-top: 16px;
+  }
+  .stationBadge {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metricsGrid {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    position: relative;
+    margin-top: 20px;
+  }
+  .inspectorCard {
+    position: relative;
+  }
+}

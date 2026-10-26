@@ -1,0 +1,525 @@
+c_luosela_01.png
+size:2048,2048
+filter:Linear,Linear
+scale:0.245
+BG.UHD元素 1
+bounds:635,1220,190,85
+BG.人阴影
+bounds:1400,1246,434,646
+rotate:270
+BG.吧台
+bounds:542,562,357,352
+rotate:180
+BG.吧台胶卷后
+bounds:397,624,138,107
+offsets:13,26,151,139
+BG.吧台胶片
+bounds:404,1362,195,52
+BG.喇叭台前
+bounds:1013,872,270,624
+offsets:1,0,272,624
+rotate:270
+BG.喇叭群
+bounds:945,1026,320,669
+offsets:12,20,332,689
+rotate:270
+BG.喇叭群 遮挡
+bounds:146,1412,115,59
+offsets:225,463,443,919
+BG.围栏 1
+bounds:1716,156,128,330
+offsets:0,1,1162,429
+rotate:90
+BG.围栏 2
+bounds:334,1722,63,295
+offsets:1098,33,1162,429
+BG.围栏 3
+bounds:1442,149,297,79
+offsets:827,248,1162,429
+BG.围栏 4
+bounds:378,1722,64,295
+offsets:788,47,1162,429
+rotate:180
+BG.围栏 5
+bounds:226,1678,339,78
+offsets:476,253,1162,429
+rotate:270
+BG.围栏 6
+bounds:285,1720,65,297
+offsets:438,40,1162,429
+rotate:180
+BG.围栏 7
+bounds:419,1765,252,58
+offsets:199,256,1162,429
+rotate:270
+BG.地板胶卷盘
+bounds:2,1098,959,241
+BG.场记板
+bounds:2,1008,115,101
+offsets:0,7,116,108
+BG.小喇叭
+bounds:1107,1874,62,76
+offsets:28,17,92,95
+BG.曲柱
+bounds:1070,1441,576,830
+offsets:1,4,577,834
+rotate:90
+BG.栏杆阴影
+bounds:260,276,910,300
+offsets:0,0,1007,300
+BG.椅子
+bounds:34,359,167,435
+offsets:3,0,172,440
+BG.楼
+bounds:1313,605,430,171
+offsets:1,40,432,213
+BG.电影票
+bounds:830,340,593,476
+offsets:0,32,593,508
+BG.相片 1
+bounds:257,1830,50,121
+offsets:3,2,55,125
+BG.相片 2
+bounds:325,1891,33,80
+offsets:2,2,37,84
+BG.相片 3
+bounds:93,1801,34,91
+offsets:2,2,38,95
+BG.相片 4
+bounds:811,1177,46,101
+offsets:3,2,52,105
+BG.相片 5
+bounds:2,1854,35,85
+offsets:2,2,40,89
+BG.磁带 前
+bounds:1171,232,610,734
+rotate:270
+BG.磁带 后
+bounds:1509,562,349,221
+offsets:166,64,515,285
+BG.红地毯
+bounds:1263,771,783,255
+offsets:0,1,784,256
+BG.纸鸟 1
+bounds:1043,1962,61,55
+offsets:28,82,161,138
+BG.纸鸟 2
+bounds:1936,1977,66,40
+offsets:92,49,161,138
+BG.纸鸟 3
+bounds:1240,1819,34,37
+offsets:126,82,161,138
+BG.纸鸟 4
+bounds:1898,1959,26,19
+offsets:31,45,161,138
+BG.背景球阴影
+bounds:90,1509,508,110
+offsets:200,0,709,523
+rotate:90
+BG.背景衣阴影 1
+bounds:1958,1015,88,269
+offsets:0,110,709,523
+BG.背景衣阴影 2
+bounds:713,198,167,491
+offsets:95,32,709,523
+rotate:90
+BG.衣  → 2
+bounds:1034,1175,93,82
+offsets:1,6,94,88
+BG.衣 ← 架
+bounds:163,352,115,350
+offsets:114,2,280,593
+rotate:90
+BG.衣 →
+bounds:1893,1639,153,331
+offsets:36,191,189,522
+BG.衣 → 架
+bounds:381,778,100,215
+offsets:72,0,189,522
+rotate:90
+BG.衣前 ←
+bounds:87,722,280,501
+offsets:0,91,280,593
+rotate:90
+BG.衣后 ←
+bounds:186,464,291,281
+offsets:12,2,303,363
+BG.装饰球
+bounds:73,230,384,112
+offsets:0,0,403,114
+BG.频谱
+bounds:112,1033,195,64
+C.上半身
+bounds:1769,1683,134,230
+offsets:4,0,139,230
+C.上眼皮褶 ←
+bounds:266,2007,9,10
+offsets:6,3,18,21
+C.上眼皮褶 →
+bounds:945,2011,15,6
+offsets:4,9,27,22
+C.上眼眶 ←
+bounds:667,1986,26,15
+offsets:3,3,32,24
+C.上眼眶 →
+bounds:740,2006,23,11
+offsets:3,3,29,22
+C.下半身
+bounds:1892,441,154,266
+offsets:2,36,168,304
+C.下眼眶 ←
+bounds:545,2009,15,8
+offsets:3,3,25,25
+C.下眼眶 →
+bounds:762,2009,15,8
+offsets:2,3,23,22
+C.侧发
+bounds:2,709,62,201
+offsets:2,2,67,204
+C.侧发 2
+bounds:951,1177,43,153
+offsets:10,2,60,165
+C.侧发 3
+bounds:628,1968,24,16
+offsets:4,3,31,22
+C.侧眼眶 ←
+bounds:2,2008,6,9
+offsets:3,8,28,25
+C.侧眼眶 →
+bounds:127,2011,8,6
+offsets:12,3,23,22
+C.前发 ←
+bounds:1954,1516,92,60
+offsets:3,3,98,66
+C.前发 ← 2
+bounds:1962,1970,29,17
+offsets:3,3,35,24
+C.前发 ← 3
+bounds:1079,1923,35,26
+offsets:3,3,41,32
+C.前发 ↑
+bounds:1136,1813,58,66
+offsets:7,3,68,74
+C.前发 ↑ 2
+bounds:1197,1918,38,33
+offsets:24,3,66,51
+C.前发 →
+bounds:2009,1700,37,86
+offsets:2,3,42,92
+C.前发 → 2
+bounds:35,1979,19,38
+offsets:3,3,25,44
+C.右小腿
+bounds:2,157,169,350
+offsets:1,2,172,355
+rotate:270
+C.后发 0.1
+bounds:900,386,202,205
+offsets:0,1,203,206
+rotate:270
+C.后发 0.2
+bounds:90,1655,60,42
+offsets:3,3,65,48
+C.后发 0.3
+bounds:1170,1788,34,61
+offsets:3,2,40,65
+C.后发 1.1
+bounds:548,366,91,168
+offsets:3,10,138,215
+C.后发 1.2
+bounds:70,718,82,100
+offsets:9,32,124,132
+C.后发 1.3
+bounds:766,787,120,96
+offsets:47,96,171,195
+C.后发 2.1
+bounds:2,858,105,144
+offsets:2,1,108,147
+C.后发 2.2
+bounds:2,1282,143,353
+offsets:1,2,145,356
+rotate:90
+C.后发 3.1
+bounds:1626,239,231,376
+offsets:0,1,231,377
+rotate:90
+C.后发 3.2
+bounds:2,1384,76,27
+offsets:2,2,84,33
+C.后发 4
+bounds:1360,385,96,368
+offsets:16,0,112,368
+rotate:90
+C.后发 5.1
+bounds:1045,559,132,385
+rotate:90
+C.后发 5.2
+bounds:129,1814,27,76
+offsets:2,3,34,81
+C.后发 6
+bounds:1436,470,130,279
+offsets:16,0,146,306
+rotate:90
+C.后发 7.1
+bounds:976,1150,243,351
+C.后发 7.2
+bounds:1611,1570,53,79
+offsets:2,2,58,121
+C.后发 7.3
+bounds:1887,1800,32,75
+offsets:3,3,37,79
+C.后发 7.4
+bounds:1771,1906,50,32
+offsets:49,3,102,38
+C.后发 7.5
+bounds:1103,703,188,98
+offsets:0,15,189,115
+C.后发 7.6
+bounds:1441,1568,72,29
+offsets:51,74,125,105
+C.后发 7.7
+bounds:1788,1013,169,50
+offsets:2,54,174,106
+C.后发 8.1
+bounds:728,381,100,185
+offsets:2,2,104,206
+C.后发 8.2
+bounds:1204,160,122,262
+offsets:0,2,125,267
+rotate:90
+C.头
+bounds:1398,1360,81,88
+offsets:3,3,86,93
+C.头发阴影
+bounds:538,1954,70,63
+offsets:3,22,75,87
+C.头小边发
+bounds:1010,1989,11,27
+offsets:3,3,17,34
+C.工牌
+bounds:515,1977,22,40
+offsets:4,2,34,46
+C.左腿
+bounds:2,1480,94,537
+C.帽头阴影
+bounds:1425,1586,79,30
+offsets:3,2,86,35
+C.帽子
+bounds:3,1396,185,113
+offsets:2,1,189,115
+C.帽子 后
+bounds:608,1984,81,33
+offsets:63,79,189,115
+C.帽子 后 2
+bounds:207,1908,30,36
+offsets:126,70,189,115
+C.帽飘带
+bounds:1054,524,147,92
+offsets:22,2,170,102
+C.手 ←
+bounds:1790,1226,108,231
+offsets:2,2,123,236
+rotate:90
+C.手 ← 袖
+bounds:613,127,143,176
+offsets:1,0,146,177
+C.手 ← 袖 后
+bounds:326,1773,31,118
+offsets:2,3,45,124
+C.手 →
+bounds:1200,781,158,90
+offsets:2,2,162,94
+C.手 → 胶卷
+bounds:689,1998,31,19
+offsets:4,3,38,25
+C.手 → 袖
+bounds:1954,722,92,208
+offsets:2,1,96,211
+C.手开袖 →
+bounds:1859,1687,83,76
+offsets:3,3,88,81
+C.手开袖 → 2
+bounds:1935,1576,111,99
+offsets:2,2,116,103
+C.手开袖 → 3
+bounds:437,1875,150,142
+offsets:2,1,153,145
+C.手提包
+bounds:541,1122,96,190
+offsets:2,2,100,195
+rotate:90
+C.手环
+bounds:1020,1983,27,34
+offsets:3,3,34,40
+C.手环 ←
+bounds:4,1947,34,32
+offsets:3,3,40,38
+C.手环 背后
+bounds:279,1958,28,34
+offsets:3,3,34,40
+C.手长袖 ←
+bounds:346,1638,100,86
+offsets:2,3,105,92
+C.手长袖 ← 2
+bounds:1163,1838,78,113
+offsets:3,2,84,118
+C.手长袖 ← 3
+bounds:1245,1338,158,148
+offsets:2,3,160,153
+C.眉毛 ←
+bounds:1988,1967,27,12
+offsets:3,3,33,18
+C.眉毛 →
+bounds:624,2008,18,9
+offsets:3,3,24,16
+C.眼球 ←
+bounds:253,2005,12,12
+offsets:3,3,24,23
+C.眼球 →
+bounds:532,2008,11,9
+offsets:3,4,23,21
+C.眼白眼影 ←
+bounds:602,2003,23,14
+offsets:3,3,28,20
+C.眼白眼影 →
+bounds:721,2003,18,14
+offsets:3,3,25,20
+C.耳 →
+bounds:1042,1986,16,19
+offsets:3,3,23,28
+C.耳环 ←
+bounds:1988,1990,24,27
+offsets:3,3,30,33
+C.耳环 →
+bounds:465,1977,11,30
+offsets:3,3,18,36
+C.胸花 ←
+bounds:1103,1993,31,24
+offsets:3,3,49,29
+C.胸花 ↑
+bounds:606,1966,16,20
+offsets:7,3,26,26
+C.胸花 →
+bounds:984,1995,25,22
+offsets:3,3,31,27
+C.胸花 ↓
+bounds:1050,1371,82,76
+offsets:22,2,107,86
+C.胸花 ↓ 2
+bounds:1929,1963,32,26
+offsets:23,3,58,37
+C.胸花珠
+bounds:134,2000,26,17
+offsets:3,3,33,23
+C.胸花金属
+bounds:423,1998,21,19
+offsets:2,3,25,25
+C.胸花飘后
+bounds:162,1428,72,73
+offsets:3,2,78,77
+C.腰带飘
+bounds:1096,47,138,214
+offsets:1,2,140,219
+C.腰环
+bounds:1288,1484,79,61
+offsets:2,2,84,65
+C.蓝领 ←
+bounds:419,1732,39,73
+offsets:2,3,44,79
+C.衣下 ←
+bounds:248,1795,58,60
+offsets:3,2,65,65
+C.衣下 →
+bounds:1762,1651,43,65
+offsets:2,13,47,80
+C.长裙 后
+bounds:1651,931,323,331
+offsets:0,2,323,353
+C.长裙边 ←
+bounds:142,1609,91,408
+offsets:1,3,95,411
+C.长裙边 → 1
+bounds:679,963,136,192
+offsets:2,2,141,196
+rotate:90
+C.长裙边 → 2
+bounds:555,373,203,260
+offsets:2,2,208,264
+rotate:90
+C.高光 ←
+bounds:94,2010,11,7
+offsets:3,3,17,12
+C.高光 →
+bounds:476,2012,10,5
+offsets:3,3,16,11
+C.鼻
+bounds:181,2004,13,13
+offsets:3,3,19,19
+EFF.人打光
+bounds:823,896,176,215
+offsets:1,35,209,250
+EFF.单线 1
+bounds:928,2,265,283
+rotate:270
+EFF.单线 2
+bounds:322,1598,124,123
+offsets:15,10,139,133
+EFF.单线 3
+bounds:993,370,194,191
+EFF.影子光
+bounds:214,1378,268,303
+offsets:1,0,269,303
+EFF.细节光
+bounds:1165,1496,132,323
+offsets:0,1,132,324
+EFF.细节光 2
+bounds:1644,1576,119,91
+EFF.闪光1
+bounds:1335,1531,95,86
+offsets:312,12,449,381
+EFF.闪光2
+bounds:191,1944,63,73
+offsets:18,105,547,287
+EFF.闪光3
+bounds:2,1979,40,38
+offsets:41,117,479,273
+EFF.闪光4
+bounds:252,1758,42,37
+offsets:196,62,250,245
+EFF.闪光5
+bounds:1895,1977,45,40
+offsets:0,361,440,401
+EFF.闪光6
+bounds:451,1832,79,73
+offsets:63,2,166,103
+EFF.闪光7
+bounds:1204,1332,102,73
+offsets:1,357,614,431
+EX.棱遮挡
+bounds:370,124,152,329
+offsets:2,0,155,330
+rotate:270
+EX.聚光灯
+bounds:448,1305,731,712
+offsets:0,2,731,716
+FG.胶片人像 1
+bounds:75,1506,43,85
+offsets:113,31,157,117
+FG.胶片人像 2
+bounds:101,1763,37,54
+offsets:4,0,41,55
+FG.胶片人像 3
+bounds:1273,1549,67,121
+offsets:6,0,74,121
+FG.胶片人像 4
+bounds:2,1741,37,118
+offsets:1,1,52,121
+FG.胶片人像 5
+bounds:2016,1958,22,59
+offsets:1,2,25,63
+FG.胶片人像 6
+bounds:379,1941,23,50
+offsets:1,2,34,53
+FG.胶片卷带
+bounds:61,743,1147,330
+offsets:0,0,1148,330

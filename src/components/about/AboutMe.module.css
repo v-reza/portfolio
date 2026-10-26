@@ -1,0 +1,199 @@
+.section {
+  background: var(--bg);
+  padding: 100px clamp(24px, 5vw, 80px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.inner {
+  width: 100%;
+  max-width: none;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.num {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: var(--fg);
+}
+
+.handNote {
+  font-family: var(--font-hand), cursive;
+  font-size: 24px;
+  color: var(--muted);
+  margin-left: 12px;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+/* Browser mockup window */
+.browserWindow {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  margin-bottom: 48px;
+}
+
+.browserHeader {
+  background: #f4f4f5;
+  border-bottom: 1px solid #e4e4e7;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d4d4d8;
+}
+
+.addressBar {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 6px;
+  padding: 4px 16px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: #71717a;
+  flex: 1;
+  max-width: 500px;
+}
+
+.browserContent {
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.bioHeading {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.bioText {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #3f3f46;
+  margin-bottom: 24px;
+}
+
+.factsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+}
+
+.factRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.factKey {
+  color: var(--muted);
+  width: 100px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.factVal {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+/* Everyday camera roll */
+.reelSection {
+  margin-top: 48px;
+}
+
+.reelTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.reelGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.reelCard {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 180px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.reelIcon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.reelCaption {
+  font-family: var(--font-hand), cursive;
+  font-size: 18px;
+  color: #52525b;
+}
+
+@media (max-width: 900px) {
+  .browserContent {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+  .reelGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 70px 24px;
+  }
+  .reelGrid {
+    grid-template-columns: 1fr;
+  }
+}

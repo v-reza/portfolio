@@ -1,0 +1,238 @@
+.stage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #08090d;
+  overflow: hidden;
+  padding: clamp(32px, 5vh, 60px) 0;
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #dab67d;
+  margin: 0 0 clamp(16px, 2.5vh, 24px);
+  text-align: center;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 clamp(20px, 4vw, 48px);
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line1 {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(36px, 5.2vw, 76px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 0 0 16px;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+}
+
+.line2 {
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(18px, 2.2vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #dab67d;
+  margin: 0 0 clamp(28px, 4vh, 44px);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.word {
+  display: inline-block;
+  filter: blur(16px);
+  opacity: 0;
+  will-change: filter, opacity;
+  margin: 0 0.12em;
+}
+
+/* Direction C: 4-Game Launcher Strip */
+.launcherGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.4vw, 18px);
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.launcherVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gameCard {
+  position: relative;
+  background: rgba(16, 20, 28, 0.85);
+  border: 1px solid rgba(255, 237, 189, 0.12);
+  border-radius: 14px;
+  padding: clamp(16px, 2.2vh, 22px) clamp(14px, 1.6vw, 18px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 6px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.gameCard:hover {
+  border-color: rgba(218, 182, 125, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Active Game (Wuthering Waves) */
+.activeCard {
+  border-color: rgba(218, 182, 125, 0.6) !important;
+  background: rgba(24, 28, 38, 0.95) !important;
+  box-shadow: 0 0 28px rgba(218, 182, 125, 0.22), 0 16px 36px -10px rgba(0, 0, 0, 0.7);
+}
+
+.cardTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.gameGenre {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8b95a5;
+}
+
+.statusBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.activeBadge {
+  background: rgba(218, 182, 125, 0.18) !important;
+  border-color: rgba(218, 182, 125, 0.5) !important;
+  color: #ffedbd !important;
+}
+
+.gameTitle {
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.gameDesc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.activeDesc {
+  color: #cbd5e1;
+}
+
+/* Scroll Hint */
+.hint {
+  margin-top: clamp(20px, 3.5vh, 32px);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #dab67d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.hintDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dab67d;
+  box-shadow: 0 0 8px #dab67d;
+  animation: pulseHint 1.8s infinite;
+}
+
+@keyframes pulseHint {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .launcherGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .launcherGrid {
+    grid-template-columns: 1fr;
+  }
+  .stage {
+    min-height: auto;
+    padding: 60px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    filter: none;
+    opacity: 1;
+  }
+  .launcherGrid,
+  .hint {
+    opacity: 1;
+    transform: none;
+  }
+}

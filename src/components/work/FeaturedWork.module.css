@@ -1,0 +1,342 @@
+.workScroll {
+  background: var(--dark-bg); /* #0d0f14 */
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.workStage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--dark-bg);
+}
+
+/* Stage Top Bar: Fullscreen pinned header matching Samay */
+.stageTopBar {
+  position: absolute;
+  top: 36px;
+  left: clamp(24px, 5vw, 80px);
+  right: clamp(24px, 5vw, 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.stageLabel {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #71717a;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.stageSkip {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #71717a;
+  text-decoration: none;
+  pointer-events: auto;
+  transition: color 0.15s ease;
+}
+
+.stageSkip:hover {
+  color: #ffffff;
+}
+
+/* Horizontal Rail moving right-to-left on scroll */
+.workRail {
+  align-items: center;
+  gap: clamp(32px, 3.5vw, 60px);
+  width: max-content;
+  height: 100%;
+  padding-left: clamp(24px, 5vw, 80px);
+  padding-right: clamp(48px, 8vw, 120px);
+  background: var(--dark-bg);
+  display: flex;
+  will-change: transform;
+}
+
+/* Intro Title Card on the Left of the Rail */
+.introCard {
+  width: min(440px, 80vw);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: clamp(40px, 4.6vw, 64px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.sub {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.scrollIndicator {
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.indicatorArrow {
+  font-size: 16px;
+  animation: slideRight 1.5s infinite;
+}
+
+@keyframes slideRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+/* Project Card: Exactly matching Samay's card structure & geometry */
+.workCard {
+  width: clamp(740px, 72vw, 1024px);
+  border-radius: 14.4px;
+  color: inherit;
+  cursor: pointer;
+  flex-direction: column;
+  flex-shrink: 0;
+  text-decoration: none;
+  display: flex;
+  background: transparent;
+  transition: transform 0.25s ease;
+}
+
+.workCardHeader {
+  border-radius: 14.4px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem 2rem;
+  margin-bottom: 0.95rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.workCard:hover .workCardHeader {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 72, 32, 0.4);
+}
+
+.workCardHeading {
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0px;
+  display: flex;
+}
+
+.workCardTitle {
+  font-family: var(--font-sans), sans-serif;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0px;
+  font-size: clamp(1.2rem, 1.55vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.workCardTags {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusSoon,
+.statusRestricted {
+  font-family: var(--font-mono), monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.statusSoon {
+  color: var(--accent);
+  border: 1px solid rgba(255, 72, 32, 0.45);
+  background: rgba(255, 72, 32, 0.1);
+}
+
+.statusRestricted {
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.workCardTags li {
+  font-family: var(--font-sans), sans-serif;
+  letter-spacing: 0.01em;
+  color: rgb(190, 190, 187);
+  border: 1px solid rgb(58, 58, 56);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Right-side meta: Company Logo Image (no text crossover) */
+.workCardMeta {
+  text-align: right;
+  flex-shrink: 0;
+  align-items: flex-end;
+  display: flex;
+  align-self: center;
+}
+
+.companyLogoImg {
+  height: 28px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.workCard:hover .companyLogoImg {
+  transform: rotate(-3deg) scale(1.08);
+}
+
+.selfBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Widescreen 2:1 Application Media (Framed Live Screenshot) */
+.workCardMedia {
+  aspect-ratio: 16 / 10;
+  border-radius: 14.4px;
+  box-shadow: rgba(255, 255, 255, 0.08) 0px 0px 0px 1px;
+  background: #11141c;
+  position: relative;
+  overflow: hidden;
+}
+
+.workCardMedia img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  inset: 0px;
+  transition: filter 0.4s ease;
+}
+
+.workCard:hover .workCardMedia img {
+  filter: brightness(1.06);
+}
+
+
+/* Mobile & Reduced Motion Fallback: Stacked Vertical Flow */
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .workStage {
+    height: auto;
+    padding: 80px 0;
+  }
+  .workRail {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 clamp(24px, 5vw, 80px);
+    gap: 40px;
+    transform: none !important;
+  }
+  .workCard {
+    width: 100%;
+  }
+  .workCardMedia {
+    min-height: auto;
+    aspect-ratio: 16 / 10;
+  }
+  .introCard {
+    width: 100%;
+  }
+  .stageTopBar {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    padding: 0 clamp(24px, 5vw, 80px) 24px;
+  }
+}
+
+/* Restricted overlay on government cards */
+.restrictedOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: clamp(18px, 2.2vw, 30px);
+  background: linear-gradient(
+    to top,
+    rgba(9, 12, 18, 0.92) 0%,
+    rgba(9, 12, 18, 0.55) 34%,
+    rgba(9, 12, 18, 0) 62%
+  );
+  pointer-events: none;
+}
+
+.restrictedTitle {
+  margin: 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f87171;
+}
+
+.restrictedBody {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}

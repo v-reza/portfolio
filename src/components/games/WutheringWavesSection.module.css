@@ -1,0 +1,267 @@
+/* =========================================================
+   Wuthering Waves — Full-Width Kuro Games Resonators Showcase
+   Faithful to https://wutheringwaves.kurogames.com/en/
+   ========================================================= */
+
+.section {
+  position: relative;
+  width: 100%;
+  background: #08090d;
+  color: #fdffef;
+  overflow: hidden;
+  --gold: #dab67d;
+  --gold-light: #ffedbd;
+  --text-white: #fdffef;
+  --text-muted: #a6a8a3;
+  --electro: #dc6061;
+}
+
+/* 1. Cinematic Wuthering Waves Headline Banner */
+.bannerHeader {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(60px, 8vh, 96px) clamp(24px, 4vw, 56px) clamp(32px, 4vh, 48px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 4px;
+}
+
+.wuwaLogoRow {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Wuthering Waves Official Font Style */
+.wuwaTitle {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(38px, 5.2vw, 72px);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #dab67d 60%, #997b48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin: 0;
+  filter: drop-shadow(0 4px 20px rgba(218, 182, 125, 0.4));
+}
+
+.cnSeal {
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+
+.subtitle {
+  font-size: clamp(13.5px, 1.1vw, 15.5px);
+  color: #94a3b8;
+  margin: 8px 0 0;
+  max-width: 58ch;
+  line-height: 1.5;
+}
+
+.statusPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(218, 182, 125, 0.1);
+  border: 1px solid rgba(218, 182, 125, 0.3);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+/* 2. Full-Width (100vw, 100vh) Live WebGL Spine Stage */
+.stageContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 720px;
+  max-height: 1080px;
+  border-top: 1px solid rgba(255, 237, 189, 0.18);
+  border-bottom: 1px solid rgba(255, 237, 189, 0.18);
+  box-shadow: 0 24px 60px -16px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  background: #0b0c10;
+}
+
+.stageIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* =========================================================
+   3. Reza's In-Game Account Stats Card
+   Exact match to user's attached screenshot [Image #1]
+   ========================================================= */
+.accountSection {
+  position: relative;
+  width: 100%;
+  padding: clamp(48px, 6vh, 80px) clamp(20px, 3.5vw, 48px) clamp(80px, 10vh, 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #08090d;
+}
+
+.statsWidget {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: #191b22;
+  border: 1px solid #282b35;
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* Top App Tag */
+.widgetHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.widgetIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.widgetGameTitle {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+/* User Identity Row with Portrait on Right */
+.widgetIdentityRow {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 110px;
+  margin-bottom: 18px;
+}
+
+.identityText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+
+.playerIGN {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.playerServerText {
+  font-size: 15px;
+  color: #8b92a0;
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+
+/* Portrait seamlessly positioned on the right */
+.portraitWrap {
+  position: absolute;
+  right: -10px;
+  top: -24px;
+  width: 190px;
+  height: 145px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.portraitImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+}
+
+/* 6 Grid Stats (2 rows of 3) */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 22px;
+  column-gap: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.statNumber {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #8b92a0;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .stageContainer {
+    height: 640px;
+  }
+}

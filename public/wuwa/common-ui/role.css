@@ -1,0 +1,1005 @@
+.font_ly,.lingyang_jp,.lingyang_zh-tw {
+  font-family:none;
+  font-weight:bolder
+}
+
+.font_ly .role-name i,.lingyang_jp .role-name i,.lingyang_zh-tw .role-name i,.font_ly i,.lingyang_jp i,.lingyang_zh-tw i {
+  margin-bottom:.1rem
+}
+
+.role-enter-active {
+  -webkit-transition:all .8s .6s;
+  transition:all .8s .6s
+}
+
+.role-leave-active {
+  -webkit-transition:opacity .5s;
+  transition:opacity .5s
+}
+
+.role-enter-from,.role-leave-to {
+  opacity:0
+}
+
+.text-enter-active {
+  -webkit-transition:all .8s .6s;
+  transition:all .8s .6s
+}
+
+.text-leave-active {
+  -webkit-transition:all .5s 0s;
+  transition:all .5s 0s
+}
+
+.text-enter-from,.text-leave-to {
+  opacity:0
+}
+
+.mode-fade-enter-active {
+  -webkit-transition:opacity .45s ease-out .15s,-webkit-transform .45s ease-out .15s;
+  transition:opacity .45s ease-out .15s,-webkit-transform .45s ease-out .15s;
+  transition:opacity .45s ease-out .15s,transform .45s ease-out .15s;
+  transition:opacity .45s ease-out .15s,transform .45s ease-out .15s,-webkit-transform .45s ease-out .15s
+}
+
+.mode-fade-leave-active {
+  -webkit-transition:opacity .25s ease-in,-webkit-transform .25s ease-in;
+  transition:opacity .25s ease-in,-webkit-transform .25s ease-in;
+  transition:opacity .25s ease-in,transform .25s ease-in;
+  transition:opacity .25s ease-in,transform .25s ease-in,-webkit-transform .25s ease-in
+}
+
+.mode-fade-enter-from {
+  opacity:0;
+  -webkit-transform:translateY(.2rem);
+  transform:translateY(.2rem)
+}
+
+.mode-fade-leave-to {
+  opacity:0;
+  -webkit-transform:translateY(-.15rem);
+  transform:translateY(-.15rem)
+}
+
+.mode-fade-late-enter-active {
+  -webkit-transition:opacity .4s ease-out .3s,-webkit-transform .4s ease-out .3s;
+  transition:opacity .4s ease-out .3s,-webkit-transform .4s ease-out .3s;
+  transition:opacity .4s ease-out .3s,transform .4s ease-out .3s;
+  transition:opacity .4s ease-out .3s,transform .4s ease-out .3s,-webkit-transform .4s ease-out .3s
+}
+
+.mode-fade-late-leave-active {
+  -webkit-transition:opacity .25s ease-in,-webkit-transform .25s ease-in;
+  transition:opacity .25s ease-in,-webkit-transform .25s ease-in;
+  transition:opacity .25s ease-in,transform .25s ease-in;
+  transition:opacity .25s ease-in,transform .25s ease-in,-webkit-transform .25s ease-in
+}
+
+.mode-fade-late-enter-from {
+  opacity:0;
+  -webkit-transform:translateY(.2rem);
+  transform:translateY(.2rem)
+}
+
+.mode-fade-late-leave-to {
+  opacity:0;
+  -webkit-transform:translateY(-.15rem);
+  transform:translateY(-.15rem)
+}
+
+.name-swap-enter-active {
+  -webkit-transition:opacity .35s ease-out,-webkit-transform .35s ease-out;
+  transition:opacity .35s ease-out,-webkit-transform .35s ease-out;
+  transition:opacity .35s ease-out,transform .35s ease-out;
+  transition:opacity .35s ease-out,transform .35s ease-out,-webkit-transform .35s ease-out
+}
+
+.name-swap-leave-active {
+  -webkit-transition:opacity .2s ease-in,-webkit-transform .2s ease-in;
+  transition:opacity .2s ease-in,-webkit-transform .2s ease-in;
+  transition:opacity .2s ease-in,transform .2s ease-in;
+  transition:opacity .2s ease-in,transform .2s ease-in,-webkit-transform .2s ease-in
+}
+
+.name-swap-enter-from {
+  opacity:0;
+  -webkit-transform:translateY(.1rem);
+  transform:translateY(.1rem)
+}
+
+.name-swap-leave-to {
+  opacity:0;
+  -webkit-transform:translateY(-.1rem);
+  transform:translateY(-.1rem)
+}
+
+.role-container {
+  width:100%;
+  height:100%;
+  position:relative
+}
+
+.role-container .page-title-box {
+  width:100%;
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  -webkit-transform:translateX(-.5rem);
+  transform:translate(-.5rem);
+  opacity:0;
+  -webkit-transition:opacity .5s .2s,-webkit-transform .5s .2s;
+  transition:opacity .5s .2s,-webkit-transform .5s .2s;
+  transition:transform .5s .2s,opacity .5s .2s;
+  transition:transform .5s .2s,opacity .5s .2s,-webkit-transform .5s .2s;
+  z-index:11
+}
+
+.role-container .page-title-box .page-title {
+  height:.6rem
+}
+
+.role-container .page-title-bg1-box {
+  width:100%;
+  position:absolute;
+  top:1rem;
+  z-index:1
+}
+
+.role-container .page-title-bg1-box img {
+  height:.92rem;
+  position:absolute;
+  left:1rem
+}
+
+.role-container .model-video-content {
+  width:100%;
+  height:100%;
+  -webkit-transition:opacity .5s .2s,-webkit-transform .5s .2s;
+  transition:opacity .5s .2s,-webkit-transform .5s .2s;
+  transition:transform .5s .2s,opacity .5s .2s;
+  transition:transform .5s .2s,opacity .5s .2s,-webkit-transform .5s .2s
+}
+
+.role-container .model-video-content .model-video-content-video {
+  width:100%;
+  height:100%;
+  -webkit-transform:scale(1.4);
+  transform:scale(1.4)
+}
+
+.role-container .model-video-content .model-video-content-video.Cantarella {
+  -webkit-transform:scale(1.1) translateY(.5rem);
+  transform:scale(1.1) translateY(.5rem)
+}
+
+.role-container .model-video-content .model-video-content-video.Phrolova {
+  -webkit-transform:scale(1.5) translateY(.6rem);
+  transform:scale(1.5) translateY(.6rem)
+}
+
+.role-container .model-video-content.move {
+  -webkit-transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:transform .5s .2s,opacity .3s 0s;
+  transition:transform .5s .2s,opacity .3s 0s,-webkit-transform .5s .2s;
+  opacity:0!important
+}
+
+.role-container .model-video-content.show {
+  -webkit-transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:transform .5s .2s,opacity .3s 0s;
+  transition:transform .5s .2s,opacity .3s 0s,-webkit-transform .5s .2s;
+  opacity:1!important
+}
+
+.role-container .role-spine-container {
+  width:100%;
+  height:100%;
+  opacity:0;
+  -webkit-transition:opacity .5s .2s,-webkit-transform .5s .2s;
+  transition:opacity .5s .2s,-webkit-transform .5s .2s;
+  transition:transform .5s .2s,opacity .5s .2s;
+  transition:transform .5s .2s,opacity .5s .2s,-webkit-transform .5s .2s
+}
+
+.role-container .role-spine-container.hide-for-weapon {
+  opacity:0!important;
+  -webkit-transition:opacity .2s ease-in!important;
+  transition:opacity .2s ease-in!important
+}
+
+.role-container .role-spine-container.move {
+  -webkit-transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:transform .5s .2s,opacity .3s 0s;
+  transition:transform .5s .2s,opacity .3s 0s,-webkit-transform .5s .2s;
+  opacity:0!important
+}
+
+.role-container .role-spine-container.show {
+  -webkit-transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:opacity .3s 0s,-webkit-transform .5s .2s;
+  transition:transform .5s .2s,opacity .3s 0s;
+  transition:transform .5s .2s,opacity .3s 0s,-webkit-transform .5s .2s;
+  opacity:1!important
+}
+
+.role-container.an .page-title-box,.role-container.an .page-title-bg-box {
+  opacity:1;
+  -webkit-transform:translateX(0);
+  transform:translate(0)
+}
+
+.role-container.an .role-spine-container {
+  opacity:1
+}
+
+.role-container.an .role-avatar-nav {
+  opacity:1;
+  -webkit-transform:translateY(0);
+  transform:translateY(0)
+}
+
+.role-container.an .role-intr-box .text1,.role-container.an .role-intr-box .voice-box,.role-container.an .role-intr-box .role-name,.role-container.an .role-intr-box .video-role-box,.role-container.an .role-intr-box .text2,.role-container.an .role-intr-box .weapon-box,.role-container.an .role-intr-box .page-title-box {
+  opacity:1;
+  -webkit-transform:translateX(0);
+  transform:translate(0)
+}
+
+.role-container.an .attr-voice-box {
+  opacity:1!important;
+  -webkit-transform:translateX(0)!important;
+  transform:translate(0)!important
+}
+
+.role-container.an .role-box .role-img {
+  opacity:1
+}
+
+.role-container .bg-name {
+  width:4.8rem;
+  height:3.9rem;
+  -webkit-transform:translateX(-.5rem);
+  transform:translate(-.5rem);
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  position:absolute;
+  left:.5rem;
+  top:-2rem;
+  z-index:-2
+}
+
+.role-container .bg-name img {
+  width:100%;
+  height:100%;
+  -o-object-fit:contain;
+  object-fit:contain
+}
+
+.role-container .role-box {
+  width:100%;
+  height:100%;
+  position:absolute
+}
+
+.role-container .role-box .role-img {
+  width:8.2rem;
+  width:100%;
+  height:100%;
+  margin:0 auto;
+  padding:0;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  opacity:0;
+  -webkit-transition:opacity .4s .1s;
+  transition:opacity .4s .1s;
+  position:absolute;
+  bottom:0;
+  left:50%;
+  -webkit-transform:translateX(-50%);
+  transform:translate(-50%)
+}
+
+.role-container .role-box .role-img .role-img-lottie {
+  position:absolute;
+  width:100%;
+  height:100%
+}
+
+.role-container .role-box .role-img.isSuper {
+  width:100%;
+  padding:0
+}
+
+.role-container .role-box .role-img.isBaizhi {
+  width:10rem;
+  padding:0;
+  height:116%;
+  position:absolute;
+  bottom:0
+}
+
+.role-container .role-box .role-img img {
+  width:100%;
+  height:100%;
+  -o-object-fit:contain;
+  object-fit:contain
+}
+
+.role-container .role-box .role-img .baizhi-bg {
+  width:10rem;
+  height:116%;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  -webkit-mask-image:-webkit-gradient(linear,left bottom,left top,from(#000000),color-stop(75%,#000000),color-stop(100%,rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+  -webkit-mask-image:linear-gradient(to top,#000000,#000000 75%,rgba(0,0,0,0) 100%,rgba(0,0,0,0));
+  mask-image:-webkit-gradient(linear,left bottom,left top,from(#000000),color-stop(75%,#000000),color-stop(100%,rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+  mask-image:linear-gradient(to top,#000000,#000000 75%,rgba(0,0,0,0) 100%,rgba(0,0,0,0));
+  position:absolute;
+  bottom:0;
+  left:50%;
+  -webkit-transform:translateX(-50%);
+  transform:translate(-50%)
+}
+
+.role-container .role-intr-box {
+  position:absolute;
+  left:1.2rem;
+  top:24%;
+  z-index:1
+}
+
+.role-container .role-intr-box .text1 {
+  width:5.4rem;
+  font-size:.18rem;
+  line-height:.34rem;
+  color:#e1e1e1
+}
+
+.role-container .role-intr-box .text1.jp {
+  width:5.6rem
+}
+
+.role-container .role-intr-box .voice-box {
+  width:4.6rem;
+  height:.6rem;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  font-size:.2rem;
+  color:#fafae9;
+  position:relative
+}
+
+.role-container .role-intr-box .voice-box .btn-voice {
+  width:1.25rem;
+  height:.32rem;
+  cursor:pointer;
+  border-radius:.2rem;
+  position:absolute;
+  left:.4rem
+}
+
+.role-container .role-intr-box .voice-box .play-style {
+  width:.7rem;
+  height:100%;
+  margin-left:.48rem;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:row;
+  flex-direction:row;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-box-pack:justify;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  padding:0 .12rem;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  pointer-events:none
+}
+
+.role-container .role-intr-box .voice-box .play-style .line {
+  display:block;
+  width:.03rem;
+  height:.12rem;
+  background-color:#fafae9;
+  border-radius:.02rem;
+  -webkit-transform-origin:center;
+  transform-origin:center;
+  -webkit-transition:height .2s ease-out;
+  transition:height .2s ease-out
+}
+
+.role-container .role-intr-box .voice-box .play-style .line:nth-child(2),.role-container .role-intr-box .voice-box .play-style .line:nth-child(5) {
+  height:.2rem
+}
+
+.role-container .role-intr-box .voice-box .btn-voice.start .play-style .line {
+  -webkit-animation:voice-line-wave .9s ease-in-out infinite;
+  animation:voice-line-wave .9s ease-in-out infinite
+}
+
+.role-container .role-intr-box .voice-box .btn-voice.start .play-style .line:nth-child(1) {
+  -webkit-animation-delay:0s;
+  animation-delay:0s
+}
+
+.role-container .role-intr-box .voice-box .btn-voice.start .play-style .line:nth-child(2) {
+  -webkit-animation-delay:.12s;
+  animation-delay:.12s
+}
+
+.role-container .role-intr-box .voice-box .btn-voice.start .play-style .line:nth-child(3) {
+  -webkit-animation-delay:.24s;
+  animation-delay:.24s
+}
+
+.role-container .role-intr-box .voice-box .btn-voice.start .play-style .line:nth-child(4) {
+  -webkit-animation-delay:.36s;
+  animation-delay:.36s
+}
+
+.role-container .role-intr-box .voice-box .btn-voice.start .play-style .line:nth-child(5) {
+  -webkit-animation-delay:.48s;
+  animation-delay:.48s
+}
+
+.role-container .role-intr-box .voice-box .btn-voice.start .play-style .line:nth-child(6) {
+  -webkit-animation-delay:.6s;
+  animation-delay:.6s
+}
+
+@-webkit-keyframes voice-line-wave {
+  0%,to {
+  -webkit-transform:scaleY(.5);
+  transform:scaleY(.5)
+}
+
+50% {
+  -webkit-transform:scaleY(1.2);
+  transform:scaleY(1.2)
+}
+
+
+}
+
+@keyframes voice-line-wave {
+  0%,to {
+  -webkit-transform:scaleY(.5);
+  transform:scaleY(.5)
+}
+
+50% {
+  -webkit-transform:scaleY(1.2);
+  transform:scaleY(1.2)
+}
+
+
+}
+
+.role-container .role-intr-box .voice-box .cv-name {
+  margin-left:1.2rem;
+  width:2.5rem;
+  text-align:center
+}
+
+.role-container .role-intr-box .role-name {
+  margin-top:.1rem;
+  position:relative;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column
+}
+
+.role-container .role-intr-box .role-name p {
+  font-size:1rem;
+  line-height:1.1rem;
+  color:#e1e1e1;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center
+}
+
+.role-container .role-intr-box .role-name i {
+  width:1rem;
+  height:.85rem;
+  display:inline-block;
+  margin-right:.1rem
+}
+
+.role-container .role-intr-box .role-name i img {
+  width:100%;
+  height:100%;
+  -o-object-fit:contain;
+  object-fit:contain
+}
+
+.role-container .role-intr-box .role-name .role-name-heat {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:end;
+  -ms-flex-align:end;
+  align-items:flex-end
+}
+
+.role-container .role-intr-box .role-name .role-name-heat .petName {
+  font-size:.14rem;
+  color:#dab67d;
+  line-height:.2em
+}
+
+.role-container .role-intr-box .role-name .name-wrap {
+  position:relative
+}
+
+.role-container .role-intr-box .role-name .name-span {
+  position:relative;
+  line-height:.8rem;
+  font-size:.6rem;
+  font-weight:400;
+  font-stretch:normal;
+  color:#fdffef;
+  z-index:1
+}
+
+.role-container .role-intr-box .role-name .name-span.jingran.weapon,.role-container .role-intr-box .role-name .name-span.daniya.weapon {
+  font-size:.4rem
+}
+
+.role-container .role-intr-box .role-name .name-span.yangyang.jp {
+  font-weight:600
+}
+
+.role-container .role-intr-box .role-name .name-span .petName {
+  font-size:.14rem;
+  position:absolute;
+  color:#e1e1e1;
+  left:50%;
+  -webkit-transform:translate(-50%,-90%);
+  transform:translate(-50%,-90%)
+}
+
+.role-container .role-intr-box .role-name .name-span .bg-name-wrap {
+  position:absolute;
+  right:-1.6rem;
+  bottom:.2rem
+}
+
+.role-container .role-intr-box .role-name .camp {
+  height:.64rem;
+  margin-right:.1rem
+}
+
+.role-container .role-intr-box .role-name .star {
+  width:2.15rem;
+  margin-left:.1rem
+}
+
+.role-container .role-intr-box .attr-voice-box {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-transform:translateX(-.5rem);
+  transform:translate(-.5rem);
+  opacity:0;
+  -webkit-transition:opacity .4s,-webkit-transform .5s .1s;
+  transition:opacity .4s,-webkit-transform .5s .1s;
+  transition:transform .5s .1s,opacity .4s;
+  transition:transform .5s .1s,opacity .4s,-webkit-transform .5s .1s;
+  margin-top:.2rem
+}
+
+.role-container .role-intr-box .attr-voice-box .attr-name {
+  font-size:.25rem;
+  color:#d5d5d5;
+  margin-left:.15rem
+}
+
+.role-container .role-intr-box .weapon-box {
+  margin-top:.3rem;
+  -webkit-transform:translateX(-.5rem);
+  transform:translate(-.5rem);
+  opacity:0;
+  -webkit-transition:opacity .4s,-webkit-transform .5s .1s;
+  transition:opacity .4s,-webkit-transform .5s .1s;
+  transition:transform .5s .1s,opacity .4s;
+  transition:transform .5s .1s,opacity .4s,-webkit-transform .5s .1s
+}
+
+.role-container .role-intr-box .weapon-box .weapon-bar {
+  position:relative;
+  height:.44rem;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:start;
+  -ms-flex-pack:start;
+  justify-content:flex-start
+}
+
+.role-container .role-intr-box .weapon-box .weapon-capsule {
+  overflow:hidden;
+  position:relative;
+  padding-right:.04rem;
+  height:.44rem;
+  border:solid .01rem #ffedbd;
+  border-radius:.22rem;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  margin-right:.2rem
+}
+
+.role-container .role-intr-box .weapon-box .weapon-base {
+  position:absolute;
+  top:0;
+  width:1.2rem;
+  height:.44rem;
+  border-radius:.04rem
+}
+
+.role-container .role-intr-box .weapon-box .weapon-icon {
+  width:.32rem;
+  height:.34rem;
+  margin-left:.24rem;
+  -webkit-box-flex:0;
+  -ms-flex:0 0 auto;
+  flex:0 0 auto;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-box-pack:center;
+  -ms-flex-pack:center;
+  justify-content:center;
+  position:relative
+}
+
+.role-container .role-intr-box .weapon-box .weapon-icon img {
+  width:100%;
+  height:100%;
+  -o-object-fit:contain;
+  object-fit:contain
+}
+
+.role-container .role-intr-box .weapon-box .weapon-name-card {
+  height:.36rem;
+  min-width:1.19rem;
+  padding:0 .1rem;
+  margin-left:.2rem;
+  border:solid .01rem #e6e7de;
+  border-radius:.18rem;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-box-pack:center;
+  -ms-flex-pack:center;
+  justify-content:center;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  z-index:10
+}
+
+.role-container .role-intr-box .weapon-box .weapon-name-card .weapon-name-text {
+  font-size:.26rem;
+  color:#fbfbec;
+  letter-spacing:.013rem;
+  line-height:1
+}
+
+.role-container .role-intr-box .weapon-box .weapon-name-card .weapon-name-text.th {
+  font-size:.2rem
+}
+
+.role-container .role-intr-box .text2 {
+  width:6.6rem;
+  letter-spacing:1px;
+  padding:.5rem 0;
+  background-size:100% 1.4rem;
+  font-size:.224rem;
+  line-height:.357rem;
+  color:#353535
+}
+
+.role-container .role-intr-box .text2.feixue.kr {
+  font-size:.2rem
+}
+
+.role-container .role-intr-box .text2.Mornye.jp {
+  width:7.2rem
+}
+
+.role-container .role-intr-box .text3 {
+  width:6rem;
+  letter-spacing:1px;
+  padding:.2rem 0;
+  background-size:100% 1.4rem;
+  font-size:.224rem;
+  line-height:.357rem;
+  color:#353535
+}
+
+.role-container .role-intr-box .text3.en {
+  font-size:.2rem
+}
+
+.role-container .role-intr-box .text3.kr {
+  width:6.5rem
+}
+
+.role-container .role-intr-box .text3.kr.qingxiao {
+  width:6rem;
+  font-size:.18rem
+}
+
+.role-container .role-intr-box .text3.kr.daniya {
+  width:6.5rem
+}
+
+.role-container .role-intr-box .text3.es {
+  font-size:.2rem
+}
+
+.role-container .role-intr-box .text3.fr {
+  font-size:.18rem
+}
+
+.role-container .role-intr-box .text3.pt-BR {
+  font-size:.2rem
+}
+
+.role-container .role-intr-box .text3.jp {
+  width:7.2rem
+}
+
+.role-container .role-intr-box .video-role-box {
+  position:relative;
+  width:4.65rem;
+  -webkit-transform:translateX(-.5rem);
+  transform:translate(-.5rem);
+  z-index:2;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  gap:.24rem
+}
+
+.role-container .role-intr-box .video-role-box .active-btn {
+  width:1.9rem
+}
+
+.role-container .role-intr-box .video-role-box .video-border {
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index:11
+}
+
+.role-container .role-intr-box .video-role-box .video-container {
+  position:absolute;
+  top:50%;
+  left:49%;
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+  width:4.55rem;
+  height:2.9rem;
+  border-radius:.2rem;
+  background:#000
+}
+
+.role-container .role-intr-box .video-role-box .video-container .video-content {
+  width:100%;
+  height:100%;
+  -o-object-fit:cover;
+  object-fit:cover;
+  border-radius:.2rem
+}
+
+.role-container .role-intr-box .text1,.role-container .role-intr-box .voice-box,.role-container .role-intr-box .role-name,.role-container .role-intr-box .video-role-box,.role-container .role-intr-box .attr-arms,.role-container .role-intr-box .text2 {
+  -webkit-transform:translateX(-.5rem);
+  transform:translate(-.5rem);
+  opacity:0;
+  -webkit-transition:opacity .4s,-webkit-transform .5s .1s;
+  transition:opacity .4s,-webkit-transform .5s .1s;
+  transition:transform .5s .1s,opacity .4s;
+  transition:transform .5s .1s,opacity .4s,-webkit-transform .5s .1s
+}
+
+.role-container .role-avatar-nav {
+  position:absolute;
+  left:1rem;
+  bottom:1.8rem;
+  z-index:10;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:row;
+  flex-direction:row;
+  gap:.2rem;
+  opacity:0;
+  -webkit-transform:translateY(.5rem);
+  transform:translateY(.5rem);
+  -webkit-transition:opacity .4s,-webkit-transform .4s;
+  transition:opacity .4s,-webkit-transform .4s;
+  transition:transform .4s,opacity .4s;
+  transition:transform .4s,opacity .4s,-webkit-transform .4s
+}
+
+.role-container .role-avatar-nav .avatar-item {
+  width:1rem;
+  height:1rem;
+  border-radius:50%;
+  overflow:hidden;
+  cursor:pointer
+}
+
+.role-container .role-avatar-nav .avatar-item img {
+  width:100%;
+  height:100%;
+  -o-object-fit:cover;
+  object-fit:cover
+}
+
+.role-container .role-avatar-nav .avatar-item .active-img {
+  display:none
+}
+
+.role-container .role-avatar-nav .avatar-item.active {
+  opacity:1
+}
+
+.role-container .role-avatar-nav .avatar-item.active .no-active-img {
+  display:none
+}
+
+.role-container .role-avatar-nav .avatar-item.active .active-img {
+  display:block
+}
+
+.role-container .weapon-display {
+  position:absolute;
+  right:7%;
+  top:50%;
+  -webkit-transform:translateY(-50%);
+  transform:translateY(-50%);
+  width:12rem;
+  height:8rem;
+  z-index:1;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-box-pack:center;
+  -ms-flex-pack:center;
+  justify-content:center
+}
+
+.role-container .weapon-display img {
+  max-width:100%;
+  max-height:100%;
+  -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+  -o-object-fit:contain;
+  object-fit:contain
+}
+
+.role-container .weapon-display img.feixue,.role-container .weapon-display img.moning {
+  -webkit-transform:scale(1.6) rotate(-10deg);
+  transform:scale(1.6) rotate(-10deg)
+}
+
+.role-container .weapon-display img.daniya {
+  -webkit-transform:scale(1.3) rotate(10deg);
+  transform:scale(1.3) rotate(10deg)
+}
+
+.role-container .weapon-display img.jingran {
+  -webkit-transform:scale(1.6) rotate(0deg) translate(0,.5rem);
+  transform:scale(1.6) rotate(0) translateY(.5rem)
+}
+
+.role-container .weapon-display img.qingxiao {
+  -webkit-transform:scale(1.9) rotate(-10deg) translate(-.7rem,.5rem);
+  transform:scale(1.9) rotate(-10deg) translate(-.7rem,.5rem)
+}
+
+.role-container .weapon-display img.xin {
+  -webkit-transform:scale(1.3) translate(-.3rem,-.1rem);
+  transform:scale(1.3) translate(-.3rem,-.1rem)
+}
+
+.role-container .weapon-display img.younuo {
+  -webkit-transform:scale(1.3) translate(-1.2rem,-.3rem);
+  transform:scale(1.3) translate(-1.2rem,-.3rem)
+}
+
+.role-container .weapon-display img.luosela {
+  -webkit-transform:scale(1.1) translate(.2rem,-.3rem);
+  transform:scale(1.1) translate(.2rem,-.3rem)
+}
+
+.role-container .display-mode-switch {
+  position:absolute;
+  right:.6rem;
+  top:30%;
+  z-index:11;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  gap:.2rem
+}
+
+.role-container .display-mode-switch .switch-item {
+  width:1.2rem;
+  height:1.845rem;
+  cursor:pointer;
+  -webkit-transition:all .25s ease-out;
+  transition:all .25s ease-out
+}
+
+.role-container .display-mode-switch .switch-item img {
+  width:100%;
+  height:100%;
+  pointer-events:none
+}
+
+.role-container .display-mode-switch .switch-item .active {
+  display:none
+}
+
+.role-container .display-mode-switch .switch-item:hover,.role-container .display-mode-switch .switch-item.active {
+  color:#fff
+}
+
+.role-container .display-mode-switch .switch-item.active img {
+  display:none
+}
+
+.role-container .display-mode-switch .switch-item.active .active {
+  display:block
+}
+
+
