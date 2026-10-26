@@ -1,422 +1,932 @@
 {
-  "total_resonators_featured": 6,
-  "total_resonators_expired_featured": 9,
   "featured": [
     {
-      "key": "心",
-      "enName": "Hsin",
-      "cnName": "Hsin",
-      "assetsKey": "xin",
-      "attr": "导电",
-      "attr_color": "#DC6061",
-      "arms": "音感仪",
-      "armsName": "Blooming Jadehaven",
-      "armsDesc": "Jade to pillars, gold to nexus, a hundred mechanisms meshed into one working. Infinite forms divide and proliferate among the blooms, and it still fits in the palm of Her hand. Walls and mechanisms know no feeling. What makes a life's work worth the life is not the making, but that something in it was loved.",
-      "quote": "To share in the world's joy, and keep the lanterns... burning bright.",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_xin/c_xin_01.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_xin/c_xin_01.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_xin/c_xin_01.png",
-        "scale": 0.75,
-        "x": -180.0,
-        "y": 100.0
-      },
-      "assets": {
-        "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-30fd9730.webp",
-        "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-active-9c7a9003.webp",
-        "background": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-5bfcc2ed.webp",
-        "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-15833111.webp",
-        "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-6c67896a.webp",
-        "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-f5465248.webp",
-        "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-active-91c9f8e6.webp",
-        "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-a2cbee72.webp",
-        "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-active-ecee30bc.webp",
-        "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-1900adc3.webp",
-        "armsDecorate": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-2ada2aea.webp",
-        "voiceEN": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-16696169.mp3",
-        "voiceJA": "https://wutheringwaves.kurogames.com/website-preface/assets/xin-55bb8d41.mp3"
-      }
+      "id": "chisa",
+      "path": "featured/chisa",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
     },
     {
-      "key": "锁暝",
-      "enName": "Suoming",
-      "cnName": "Suoming",
-      "assetsKey": "suoming",
-      "attr": "导电",
-      "attr_color": "#DFB663",
-      "arms": "迅刀",
-      "armsName": "Unspoken Rue",
-      "armsDesc": "With this canopy, she sheltered all life and sealed the Evil Miasma. The Blight Rain ceased, the Miasmic Thunder fell silent, and a deep darkness lies trapped upon the canopy's surface. Beneath it linger the shadows of no return, always walking by her side.",
-      "quote": "Let go. Forget... I've heard those words a thousand times. I've said them to myself a thousand more. But this obsession... this is exactly what I want.",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_suoming/c_suoming_01.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_suoming/c_suoming_01.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_suoming/c_suoming_01.png",
-        "scale": 1.1,
-        "x": -180.0,
-        "y": -60.0
-      },
-      "assets": {
-        "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-85356aaf.webp",
-        "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-active-c47820cd.webp",
-        "background": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-e78ac8d5.webp",
-        "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-c2312ead.webp",
-        "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-00a62d6e.webp",
-        "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-9f26eb53.webp",
-        "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-active-b2276299.webp",
-        "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-77dc49f6.webp",
-        "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-active-ea201bbd.webp",
-        "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-6caba476.webp",
-        "armsDecorate": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-0a10258d.webp",
-        "voiceEN": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-3401f8c0.mp3",
-        "voiceJA": "https://wutheringwaves.kurogames.com/website-preface/assets/suoming-8e06ed28.mp3"
-      }
+      "id": "hsin",
+      "path": "featured/hsin",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
     },
     {
-      "key": "千咲",
-      "enName": "Chisa",
-      "cnName": "Chisa",
-      "assetsKey": "qianxiao",
-      "attr": "湮灭",
-      "attr_color": "#78B7F3",
-      "arms": "长刃",
-      "armsName": "Kumokiri",
-      "armsDesc": "A crimson thread emerges in the void, as if binding the structures of all things onto a single thread.<br/>At her fingertips, the endless season is drawn taut, snipped, and rewoven, until the scattered path at last converges once more upon this timeline.",
-      "quote": "I will… sever this deadlock.",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_qianxiao/c_qianxiao_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_qianxiao/c_qianxiao_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_qianxiao/c_qianxiao_1.png",
-        "scale": 0.9,
-        "x": -180.0,
-        "y": -60.0
-      },
-      "assets": {
-        "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-493adb02.webp",
-        "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-active-9610e36b.webp",
-        "background": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-136e8fe4.webp",
-        "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-c289b53a.webp",
-        "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-10d83110.webp",
-        "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-cf9f59fa.webp",
-        "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-active-32b504d1.webp",
-        "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-5ae50e0d.webp",
-        "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-active-eda839c0.webp",
-        "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-faf4ab09.webp",
-        "armsDecorate": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-928788dc.webp",
-        "voiceEN": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-31f929ae.mp3",
-        "voiceJA": "https://wutheringwaves.kurogames.com/website-preface/assets/qianxiao-9496ffc7.mp3"
-      }
+      "id": "iuno",
+      "path": "featured/iuno",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
     },
     {
-      "key": "尤诺",
-      "enName": "Iuno",
-      "cnName": "Iuno",
-      "assetsKey": "younuo",
-      "attr": "气动",
-      "attr_color": "#4EB49F",
-      "arms": "臂铠",
-      "armsName": "Moongazer's Sigil",
-      "armsDesc": "By what means do all things endure? By light and heat, by matter and word, by the mechanics of converging chances, by the soft dissolution into silence, by a moment that mimics the eternal... All things rise and fall in endless rhythm, each bearing its meaning. As for hers, it lies here within her grasp.",
-      "quote": "While the moon cycles, I remain the anchor.",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_younuo/c_younuo_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_younuo/c_younuo_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_younuo/c_younuo_1.png",
-        "scale": 1.1,
-        "x": -80.0,
-        "y": -60.0
-      },
-      "assets": {
-        "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-c18cd174.webp",
-        "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-active-2dba0c84.webp",
-        "background": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-dbe8ea6d.webp",
-        "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-98b959ef.webp",
-        "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-f8ea1dc0.webp",
-        "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-c87c4048.webp",
-        "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-active-f62b6781.webp",
-        "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-423aef59.webp",
-        "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-active-1088ff08.webp",
-        "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-b010881b.webp",
-        "armsDecorate": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-302b2665.webp",
-        "voiceEN": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-2290e41b.mp3",
-        "voiceJA": "https://wutheringwaves.kurogames.com/website-preface/assets/younuo-e909b6d9.mp3"
-      }
+      "id": "lucilla",
+      "path": "featured/lucilla",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
     },
     {
-      "key": "琳奈",
-      "enName": "Lynae",
-      "cnName": "Lynae",
-      "assetsKey": "linnai",
-      "attr": "衍射",
-      "attr_color": "#6251AC",
-      "arms": "佩枪",
-      "armsName": "Spectrum Blaster",
-      "armsDesc": "Prismatic light dances at her fingertips, arcs of color carving radiant trails.<br/>Every rushing hue converges upon her aim, and at last, she reaches a sky where nothing lies beyond her sight.",
-      "quote": "Outlaw Blue, Apollo Orange, Hazard Yellow, Acid Green... Wanna guess what color is my next pick?",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_linnai/c_linnai_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_linnai/c_linnai_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_linnai/c_linnai_1.png",
-        "scale": 0.9,
-        "x": -180.0,
-        "y": -60.0
-      },
-      "assets": {
-        "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-e868aef4.webp",
-        "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-active-9ce57ccf.webp",
-        "background": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-08b58d89.webp",
-        "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-f02985ec.webp",
-        "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-f8ea1dc0.webp",
-        "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-54653a95.webp",
-        "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-active-6a81c2f6.webp",
-        "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-b62a0a28.webp",
-        "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-active-e76db2c8.webp",
-        "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-2b20e776.webp",
-        "armsDecorate": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-7178ac7a.webp",
-        "voiceEN": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-28499b5c.mp3",
-        "voiceJA": "https://wutheringwaves.kurogames.com/website-preface/assets/linnai-e6e8db01.mp3"
-      }
+      "id": "lynae",
+      "path": "featured/lynae",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
     },
     {
-      "key": "洛瑟菈",
-      "enName": "Lucilla",
-      "cnName": "Lucilla",
-      "assetsKey": "luosela",
-      "attr": "冷凝",
-      "attr_color": "#9D6945",
-      "arms": "音感仪",
-      "armsName": "Freeze Frame",
-      "armsDesc": "I remember the sunset spilling down, birds and insects threading their small songs through the greenhouse. I remember the quiet nights, my lone steps echoing the crescent moon's curve. I am my own freeze frame. I am my own afterimage.",
-      "quote": "My dream now is just to see all my students' dreams come true.",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_luosela/c_luosela_01.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_luosela/c_luosela_01.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_luosela/c_luosela_01.png",
-        "scale": 1.0,
-        "x": -180.0,
-        "y": -60.0
-      },
-      "assets": {
-        "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-0b0c38f4.webp",
-        "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-active-ad03a1e5.webp",
-        "background": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-9e3297db.webp",
-        "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-39a0129d.webp",
-        "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-da772c7a.webp",
-        "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-183dc38a.webp",
-        "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-active-ed7798fd.webp",
-        "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-8a2fc675.webp",
-        "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-active-806d1c88.webp",
-        "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-5e703797.webp",
-        "armsDecorate": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-e3afa595.webp",
-        "voiceEN": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-0a5b12fe.mp3",
-        "voiceJA": "https://wutheringwaves.kurogames.com/website-preface/assets/luosela-a8050786.mp3"
-      }
+      "id": "suoming",
+      "path": "featured/suoming",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
     }
   ],
-  "expired_featured": [
+  "expired-featured": [
     {
-      "title": "Mornye (莫宁)",
-      "key": "moning",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_moning/c_moning_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_moning/c_moning_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_moning/c_moning_1.png",
-        "scale": 1.0,
-        "x": -100.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-3f1600bd.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-active-5a1dae6c.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-f2409485.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-b0cc6e62.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-4c3f790b.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-0685fd9d.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-active-cfa5e358.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-04937a39.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-active-98dbea23.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/moning-6dbf3118.webp"
+      "id": "aemeath",
+      "path": "expired-featured/aemeath",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Feixue / Hiyuki (绯雪)",
-      "key": "feixue",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_feixue/c_feixue_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_feixue/c_feixue_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_feixue/c_feixue_1.png",
-        "scale": 1.0,
-        "x": -100.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-e613b7bf.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-active-0116a80a.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-af041c59.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-f93c6ee1.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-6f70f130.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-acae812a.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-active-66509d59.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-78ed2d39.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-active-ef681010.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/feixue-743f7097.webp"
+      "id": "daniya",
+      "path": "expired-featured/daniya",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Daniya (达妮娅)",
-      "key": "daniya",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_daniya/c_daniya_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_daniya/c_daniya_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_daniya/c_daniya_1.png",
-        "scale": 1.0,
-        "x": -100.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-ff467f8e.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-active-76272661.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-a22a3432.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-08dd32dd.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-9d53dc12.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-3b0b62ad.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-active-564a5696.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-97f83bfb.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-active-bf514aea.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/daniya-36e8f990.webp"
+      "id": "feixue-hiyuki",
+      "path": "expired-featured/feixue-hiyuki",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Jingran (景燃)",
-      "key": "jingran",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_jingran/c_jingran_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_jingran/c_jingran_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_jingran/c_jingran_1.png",
-        "scale": 1.0,
-        "x": -100.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-9d6052ee.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-active-ff155f32.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-96354316.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-deb85745.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-262ef320.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-4dbee861.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-active-20c1e5ed.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-d3a2e01c.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-active-567335c1.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/jingran-9491b8bb.webp"
+      "id": "jingran",
+      "path": "expired-featured/jingran",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Qingxiao (清宵)",
-      "key": "qingxiao",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_qingxiao/c_qingxiao_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_qingxiao/c_qingxiao_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_qingxiao/c_qingxiao_1.png",
-        "scale": 1.0,
-        "x": -80.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-b472dd4a.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-active-733c0b88.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-e0105039.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-a095c6e0.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-09afdb7e.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-6c9f0b49.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-active-2f4a6bb7.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-e79d5ddf.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-active-c4ac337a.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/qingxiao-7a3b2716.webp"
+      "id": "luuk-herssen",
+      "path": "expired-featured/luuk-herssen",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Suisui (穗穗)",
-      "key": "suisui",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_suisui/c_suisui_01.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_suisui/c_suisui_01.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_suisui/c_suisui_01.png",
-        "scale": 1.0,
-        "x": 0.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-0af82aad.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-active-08ed064e.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-756954b4.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-fa92ca59.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-eedbed78.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-b22b1897.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-active-0f42ac50.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-b178460b.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-active-266b3371.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/suisui-17e59e24.webp"
+      "id": "mornye",
+      "path": "expired-featured/mornye",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Luuk Herssen (陆·赫斯)",
-      "key": "luhesi",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_luhesi/c_luhesi_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_luhesi/c_luhesi_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_luhesi/c_luhesi_1.png",
-        "scale": 0.8,
-        "x": 0.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-60f305ed.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-active-6443168f.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-576d2bd8.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-b0f764eb.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-e77c5080.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-dea4ecd6.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-active-8d387258.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-0dd88b4b.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-active-97303695.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/luhesi-8b2620ec.webp"
+      "id": "qingxiao",
+      "path": "expired-featured/qingxiao",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Aemeath (爱弥斯)",
-      "key": "aimisi",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_aimisi/c_aimisi_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_aimisi/c_aimisi_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_aimisi/c_aimisi_1.png",
-        "scale": 0.85,
-        "x": 0.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-44acf8d0.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-active-8ac73805.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-277452a7.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-049d3594.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-dfd1700d.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-cbb7f930.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-active-bc6aff5b.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-16b71e02.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-active-d822dcc1.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-a6ecba7e.webp"
+      "id": "suisui",
+      "path": "expired-featured/suisui",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     },
     {
-      "title": "Yangyang: Xuanling (秧秧·玄翎)",
-      "key": "yangyang",
-      "spine": {
-        "json": "https://wutheringwaves.kurogames.com/spine-file/role_jingran/c_jingran_1.json",
-        "atlas": "https://wutheringwaves.kurogames.com/spine-file/role_jingran/c_jingran_1.atlas",
-        "png": "https://wutheringwaves.kurogames.com/spine-file/role_jingran/c_jingran_1.png",
-        "scale": 1.0,
-        "x": 0.0,
-        "y": -60.0
-      },
-      "avatar": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-df7bde2e.webp",
-      "avatarActive": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-active-0f58d600.webp",
-      "background": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-d2ab0b9e.webp",
-      "arms": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-243295df.webp",
-      "armsBg": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-1978bf32.webp",
-      "armsSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-d1e4c564.webp",
-      "armsSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-active-f90bcb19.webp",
-      "roleSwap": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-b78cf768.webp",
-      "roleSwapActive": "https://wutheringwaves.kurogames.com/website-preface/assets/yangyang-active-b6a63f43.webp",
-      "decorate": "https://wutheringwaves.kurogames.com/website-preface/assets/aimisi-a6ecba7e.webp"
+      "id": "yangyang-xuanling",
+      "path": "expired-featured/yangyang-xuanling",
+      "has_circular_avatar": true,
+      "has_mobile_avatar": false,
+      "has_standing_card": false,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "arms.webp",
+        "arms_bg.webp",
+        "arms_decorate.webp",
+        "arms_swap.webp",
+        "arms_swap_act.webp",
+        "avatar.webp",
+        "avatar_active.webp",
+        "bg.webp",
+        "decorate.webp",
+        "role_swap.webp",
+        "role_swap_act.webp",
+        "spine"
+      ]
     }
   ],
-  "ui_specs": {
-    "design_draft": "1920x1080",
-    "rem_unit": "1rem = 100px at 1920px width (html font-size: calc(100vw / 19.2))",
-    "spine_version": "Spine 4.2.43 WebGL",
-    "animation_loop": "idle"
-  }
+  "spine-extra": [
+    {
+      "id": "cartethyia",
+      "path": "spine-extra/cartethyia",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_katixiya_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "galbrena",
+      "path": "spine-extra/galbrena",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_jiabeilina_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "lucy",
+      "path": "spine-extra/lucy",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_lucy_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "lupa",
+      "path": "spine-extra/lupa",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_lupa_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "phoebe",
+      "path": "spine-extra/phoebe",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_feibi_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp"
+      ]
+    },
+    {
+      "id": "qiuyuan",
+      "path": "spine-extra/qiuyuan",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_qiuyuan_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "rebecca",
+      "path": "spine-extra/rebecca",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_rebecca_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "sigrika",
+      "path": "spine-extra/sigrika",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_xigelika_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "zanni",
+      "path": "spine-extra/zanni",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": true,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": true,
+      "files": [
+        "avatar_mobile.webp",
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "c_zanni_1.png",
+        "skeleton.atlas",
+        "skeleton.json",
+        "skeleton.png",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    }
+  ],
+  "main-roster-highlights": [
+    {
+      "id": "augusta",
+      "path": "main-roster-highlights/augusta",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "brant",
+      "path": "main-roster-highlights/brant",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp"
+      ]
+    },
+    {
+      "id": "camellya",
+      "path": "main-roster-highlights/camellya",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "changli",
+      "path": "main-roster-highlights/changli",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "ciaccona",
+      "path": "main-roster-highlights/ciaccona",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "jinhsi",
+      "path": "main-roster-highlights/jinhsi",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "jiyan",
+      "path": "main-roster-highlights/jiyan",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "phrolova",
+      "path": "main-roster-highlights/phrolova",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "the-shorekeeper",
+      "path": "main-roster-highlights/the-shorekeeper",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "xiangli-yao",
+      "path": "main-roster-highlights/xiangli-yao",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "yinlin",
+      "path": "main-roster-highlights/yinlin",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "zhezhi",
+      "path": "main-roster-highlights/zhezhi",
+      "has_circular_avatar": false,
+      "has_mobile_avatar": false,
+      "has_standing_card": true,
+      "has_background": true,
+      "has_spine": false,
+      "files": [
+        "bg.webp",
+        "burst.webp",
+        "card_standing.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    }
+  ],
+  "four-star-resonators": [
+    {
+      "id": "aalto",
+      "path": "four-star-resonators/aalto",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.png",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "baizhi",
+      "path": "four-star-resonators/baizhi",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "buling",
+      "path": "four-star-resonators/buling",
+      "rarity": "4-Star",
+      "files": [
+        "bg.webp",
+        "card_standing.webp",
+        "poster.webp",
+        "splash.webp",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "chixia",
+      "path": "four-star-resonators/chixia",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "danjin",
+      "path": "four-star-resonators/danjin",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "lumi",
+      "path": "four-star-resonators/lumi",
+      "rarity": "4-Star",
+      "files": [
+        "bg.png",
+        "card_standing.png",
+        "poster.png",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "mortefi",
+      "path": "four-star-resonators/mortefi",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "sanhua",
+      "path": "four-star-resonators/sanhua",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "taoqi",
+      "path": "four-star-resonators/taoqi",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.png",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "yangyang",
+      "path": "four-star-resonators/yangyang",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "youhu",
+      "path": "four-star-resonators/youhu",
+      "rarity": "4-Star",
+      "files": [
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    },
+    {
+      "id": "yuanwu",
+      "path": "four-star-resonators/yuanwu",
+      "rarity": "4-Star",
+      "files": [
+        "avatar.png",
+        "bg.png",
+        "card_standing.png",
+        "poster.webp",
+        "splash.png",
+        "voice_en.mp3",
+        "voice_ja.mp3"
+      ]
+    }
+  ]
 }

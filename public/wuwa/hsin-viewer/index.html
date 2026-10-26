@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wuthering Waves - Resonators Spine 4.2 WebGL Viewer</title>
+  <title>Wuthering Waves - Solaris-3 Resonators Engine</title>
   <link rel="stylesheet" href="../common-ui/spine-player.css">
   <style>
     :root {
@@ -76,6 +76,28 @@
     }
     .spine-player-controls {
       display: none !important;
+    }
+
+    /* Static Transparent Artwork (for non-Spine characters) */
+    #artwork-container {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    #static-art-img {
+      max-height: 84vh;
+      max-width: 80vw;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 45px rgba(0,0,0,0.85));
+      animation: floatArt 4.5s ease-in-out infinite alternate;
+    }
+    @keyframes floatArt {
+      0% { transform: translateY(-8px); }
+      100% { transform: translateY(8px); }
     }
 
     /* Weapon Overlay (in weapon mode) */
@@ -158,7 +180,7 @@
       gap: 16px;
     }
     .character-name-en {
-      font-size: 58px;
+      font-size: 56px;
       font-weight: 800;
       letter-spacing: 2px;
       color: var(--text-white);
@@ -291,13 +313,47 @@
       flex-direction: column;
       gap: 8px;
     }
+    .avatar-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
     .avatar-bar-label {
       font-family: var(--font-mono, monospace);
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold);
+    }
+    .category-filters {
+      display: flex;
+      gap: 8px;
+    }
+    .filter-pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-muted);
+      border-radius: 999px;
+      padding: 3px 12px;
+      font-size: 11px;
+      font-family: var(--font-mono, monospace);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-pill:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+    .filter-pill.active {
+      background: rgba(218, 182, 125, 0.2);
+      border-color: var(--gold);
+      color: var(--gold-light);
     }
     .avatar-bar {
       display: flex;
@@ -355,6 +411,11 @@
     <div id="spine-player"></div>
   </div>
 
+  <!-- Static Transparent Artwork (for non-Spine characters) -->
+  <div id="artwork-container">
+    <img id="static-art-img" src="" alt="Resonator">
+  </div>
+
   <!-- Weapon Overlay (Model vs Arms Mode) -->
   <div id="weapon-overlay">
     <img id="weapon-img" src="../featured/hsin/arms.webp" alt="Weapon">
@@ -376,7 +437,7 @@
     <div class="character-name-box">
       <span class="character-name-en" id="char-en">Hsin</span>
       <span class="character-name-cn" id="char-cn">心</span>
-      <img src="../common-ui/rate-5-star.webp" alt="5 Stars" class="star-rating">
+      <img src="../common-ui/rate-5-star.webp" alt="5 Stars" class="star-rating" id="star-img">
     </div>
 
     <div class="tags-row">
@@ -415,9 +476,17 @@
     </div>
   </div>
 
-  <!-- All Resonators Roster Scrollbar -->
+  <!-- 36 Resonators Roster Bar with Category Filter -->
   <div class="avatar-bar-container">
-    <div class="avatar-bar-label">Resonator Roster · Solaris-3</div>
+    <div class="avatar-header-row">
+      <div class="avatar-bar-label">Resonator Roster · 36 Resonators (Account Owned)</div>
+      <div class="category-filters">
+        <button class="filter-pill active" onclick="filterCategory('all', this)">All (36)</button>
+        <button class="filter-pill" onclick="filterCategory('featured', this)">Featured (15)</button>
+        <button class="filter-pill" onclick="filterCategory('main5', this)">5★ Main (12)</button>
+        <button class="filter-pill" onclick="filterCategory('four_star', this)">4★ Roster (9)</button>
+      </div>
+    </div>
     <div class="avatar-bar" id="roster-bar">
       <!-- Injected by JavaScript from ROSTER -->
     </div>
@@ -431,340 +500,808 @@
 
   <script>
     const ROSTER = {
-      hsin: {
-        enName: "Hsin",
-        cnName: "心",
-        attr: "Electro (导电)",
-        attrColor: "#DC6061",
-        arms: "Rectifier (音感仪)",
-        armsName: "Blooming Jadehaven",
-        armsDesc: "Jade to pillars, gold to nexus, a hundred mechanisms meshed into one working. Infinite forms divide and proliferate among the blooms.",
-        quote: "To share in the world's joy, and keep the lanterns... burning bright.",
-        avatar: "../featured/hsin/avatar.webp",
-        avatarActive: "../featured/hsin/avatar_active.webp",
-        spine: {
-          json: "../featured/hsin/spine/skeleton.json",
-          atlas: "../featured/hsin/spine/skeleton.atlas",
-          scale: 0.75,
-          x: -180,
-          y: 100,
-          pma: true
-        },
-        bg: "../featured/hsin/bg.webp",
-        armsImg: "../featured/hsin/arms.webp"
-      },
-      suoming: {
-        enName: "Suoming",
-        cnName: "锁暝",
-        attr: "Electro (导电)",
-        attrColor: "#DFB663",
-        arms: "Sword (迅刀)",
-        armsName: "Unspoken Rue",
-        armsDesc: "With this canopy, she sheltered all life and sealed the Evil Miasma. Beneath it linger the shadows of no return, always walking by her side.",
-        quote: "Let go. Forget... I've heard those words a thousand times. But this obsession... this is exactly what I want.",
-        avatar: "../featured/suoming/avatar.webp",
-        avatarActive: "../featured/suoming/avatar_active.webp",
-        spine: {
-          json: "../featured/suoming/spine/skeleton.json",
-          atlas: "../featured/suoming/spine/skeleton.atlas",
-          scale: 1.1,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../featured/suoming/bg.webp",
-        armsImg: "../featured/suoming/arms.webp"
-      },
-      chisa: {
-        enName: "Chisa",
-        cnName: "千咲",
-        attr: "Havoc (湮灭)",
-        attrColor: "#78B7F3",
-        arms: "Broadblade (长刃)",
-        armsName: "Kumokiri",
-        armsDesc: "A crimson thread emerges in the void, binding the structures of all things onto a single thread. The scattered path at last converges once more.",
-        quote: "I will… sever this deadlock.",
-        avatar: "../featured/chisa/avatar.webp",
-        avatarActive: "../featured/chisa/avatar_active.webp",
-        spine: {
-          json: "../featured/chisa/spine/skeleton.json",
-          atlas: "../featured/chisa/spine/skeleton.atlas",
-          scale: 0.9,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../featured/chisa/bg.webp",
-        armsImg: "../featured/chisa/arms.webp"
-      },
-      iuno: {
-        enName: "Iuno",
-        cnName: "尤诺",
-        attr: "Aero (气动)",
-        attrColor: "#4EB49F",
-        arms: "Gauntlets (臂铠)",
-        armsName: "Moongazer's Sigil",
-        armsDesc: "All things rise and fall in endless rhythm, each bearing its meaning. As for hers, it lies here within her grasp.",
-        quote: "While the moon cycles, I remain the anchor.",
-        avatar: "../featured/iuno/avatar.webp",
-        avatarActive: "../featured/iuno/avatar_active.webp",
-        spine: {
-          json: "../featured/iuno/spine/skeleton.json",
-          atlas: "../featured/iuno/spine/skeleton.atlas",
-          scale: 1.1,
-          x: -80,
-          y: -60,
-          pma: false
-        },
-        bg: "../featured/iuno/bg.webp",
-        armsImg: "../featured/iuno/arms.webp"
-      },
-      lynae: {
-        enName: "Lynae",
-        cnName: "琳奈",
-        attr: "Spectro (衍射)",
-        attrColor: "#6251AC",
-        arms: "Pistols (佩枪)",
-        armsName: "Spectrum Blaster",
-        armsDesc: "Prismatic light dances at her fingertips, arcs of color carving radiant trails through the sky.",
-        quote: "Outlaw Blue, Apollo Orange, Hazard Yellow, Acid Green... Wanna guess what color is my next pick?",
-        avatar: "../featured/lynae/avatar.webp",
-        avatarActive: "../featured/lynae/avatar_active.webp",
-        spine: {
-          json: "../featured/lynae/spine/skeleton.json",
-          atlas: "../featured/lynae/spine/skeleton.atlas",
-          scale: 0.9,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../featured/lynae/bg.webp",
-        armsImg: "../featured/lynae/arms.webp"
-      },
-      lucilla: {
-        enName: "Lucilla",
-        cnName: "洛瑟菈",
-        attr: "Glacio (冷凝)",
-        attrColor: "#9D6945",
-        arms: "Rectifier (音感仪)",
-        armsName: "Freeze Frame",
-        armsDesc: "I remember the sunset spilling down, birds and insects threading their small songs through the greenhouse. I am my own freeze frame.",
-        quote: "My dream now is just to see all my students' dreams come true.",
-        avatar: "../featured/lucilla/avatar.webp",
-        avatarActive: "../featured/lucilla/avatar_active.webp",
-        spine: {
-          json: "../featured/lucilla/spine/skeleton.json",
-          atlas: "../featured/lucilla/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../featured/lucilla/bg.webp",
-        armsImg: "../featured/lucilla/arms.webp"
-      },
-      suisui: {
-        enName: "Suisui",
-        cnName: "岁岁",
-        attr: "Fusion (热熔)",
-        attrColor: "#F97316",
-        arms: "Broadblade (长刃)",
-        armsName: "Evergreen Flame",
-        armsDesc: "A hearth fire that never dims, warmed by memories of spring festivals and home.",
-        quote: "Come closer to the fire. There is warmth enough for all of us.",
-        avatar: "../expired-featured/suisui/avatar.webp",
-        avatarActive: "../expired-featured/suisui/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/suisui/spine/skeleton.json",
-          atlas: "../expired-featured/suisui/spine/skeleton.atlas",
-          scale: 0.95,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/suisui/bg.webp",
-        armsImg: "../expired-featured/suisui/arms.webp"
-      },
-      aemeath: {
-        enName: "Aemeath",
-        cnName: "艾梅斯",
-        attr: "Electro (导电)",
-        attrColor: "#DC6061",
-        arms: "Gauntlets (臂铠)",
-        armsName: "Thundercrest Impact",
-        armsDesc: "Thunder forged in the core of ancient ruins, discharged in lightning-fast blows.",
-        quote: "Hold your ground! Lightning never strikes the same place twice—unless I command it.",
-        avatar: "../expired-featured/aemeath/avatar.webp",
-        avatarActive: "../expired-featured/aemeath/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/aemeath/spine/skeleton.json",
-          atlas: "../expired-featured/aemeath/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/aemeath/bg.webp",
-        armsImg: "../expired-featured/aemeath/arms.webp"
-      },
-      luuk: {
-        enName: "Luuk Herssen",
-        cnName: "路克·赫尔森",
-        attr: "Havoc (湮灭)",
-        attrColor: "#78B7F3",
-        arms: "Pistols (佩枪)",
-        armsName: "Shadow Trigger",
-        armsDesc: "Twin barrels engraved with the heraldry of the frontier.",
-        quote: "Bounties come and go, but a bullet always hits its target.",
-        avatar: "../expired-featured/luuk-herssen/avatar.webp",
-        avatarActive: "../expired-featured/luuk-herssen/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/luuk-herssen/spine/skeleton.json",
-          atlas: "../expired-featured/luuk-herssen/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/luuk-herssen/bg.webp",
-        armsImg: "../expired-featured/luuk-herssen/arms.webp"
-      },
-      yangyang: {
-        enName: "Yangyang Xuanling",
-        cnName: "央央·玄灵",
-        attr: "Aero (气动)",
-        attrColor: "#4EB49F",
-        arms: "Sword (迅刀)",
-        armsName: "Feathered Wind",
-        armsDesc: "The gentle breeze carries songs from beyond the clouds.",
-        quote: "Listen carefully... the wind is whispering your name.",
-        avatar: "../expired-featured/yangyang-xuanling/avatar.webp",
-        avatarActive: "../expired-featured/yangyang-xuanling/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/yangyang-xuanling/spine/skeleton.json",
-          atlas: "../expired-featured/yangyang-xuanling/spine/skeleton.atlas",
-          scale: 0.95,
-          x: -180,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/yangyang-xuanling/bg.webp",
-        armsImg: "../expired-featured/yangyang-xuanling/arms.webp"
-      },
-      qingxiao: {
-        enName: "Qingxiao",
-        cnName: "清宵",
-        attr: "Spectro (衍射)",
-        attrColor: "#6251AC",
-        arms: "Sword (迅刀)",
-        armsName: "Dawn Cleaver",
-        armsDesc: "Cold dawnlight caught upon a steel blade that slices through the dark.",
-        quote: "The night is long, but dawn always breaks.",
-        avatar: "../expired-featured/qingxiao/avatar.webp",
-        avatarActive: "../expired-featured/qingxiao/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/qingxiao/spine/skeleton.json",
-          atlas: "../expired-featured/qingxiao/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -80,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/qingxiao/bg.webp",
-        armsImg: "../expired-featured/qingxiao/arms.webp"
-      },
-      feixue: {
-        enName: "Feixue Hiyuki",
-        cnName: "绯雪",
-        attr: "Glacio (冷凝)",
-        attrColor: "#9D6945",
-        arms: "Rectifier (音感仪)",
-        armsName: "Frostpetal Bloom",
-        armsDesc: "Scarlet petals encased in permafrost, blooming only in the coldest winter.",
-        quote: "Snow falls in crimson silence.",
-        avatar: "../expired-featured/feixue-hiyuki/avatar.webp",
-        avatarActive: "../expired-featured/feixue-hiyuki/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/feixue-hiyuki/spine/skeleton.json",
-          atlas: "../expired-featured/feixue-hiyuki/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -100,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/feixue-hiyuki/bg.webp",
-        armsImg: "../expired-featured/feixue-hiyuki/arms.webp"
-      },
-      daniya: {
-        enName: "Daniya",
-        cnName: "达妮娅",
-        attr: "Fusion (热熔)",
-        attrColor: "#F97316",
-        arms: "Pistols (佩枪)",
-        armsName: "Blazing Stride",
-        armsDesc: "Twin rapid-fire pistols engineered for high-mobility duelists.",
-        quote: "Keep moving or stay in the dust.",
-        avatar: "../expired-featured/daniya/avatar.webp",
-        avatarActive: "../expired-featured/daniya/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/daniya/spine/skeleton.json",
-          atlas: "../expired-featured/daniya/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -100,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/daniya/bg.webp",
-        armsImg: "../expired-featured/daniya/arms.webp"
-      },
-      mornye: {
-        enName: "Mornye",
-        cnName: "莫宁",
-        attr: "Aero (气动)",
-        attrColor: "#4EB49F",
-        arms: "Broadblade (长刃)",
-        armsName: "Horizon Breaker",
-        armsDesc: "A colossal cleaver that parts the winds of the frontier.",
-        quote: "The frontier has no boundaries.",
-        avatar: "../expired-featured/mornye/avatar.webp",
-        avatarActive: "../expired-featured/mornye/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/mornye/spine/skeleton.json",
-          atlas: "../expired-featured/mornye/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -100,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/mornye/bg.webp",
-        armsImg: "../expired-featured/mornye/arms.webp"
-      },
-      jingran: {
-        enName: "Jingran",
-        cnName: "景然",
-        attr: "Havoc (湮灭)",
-        attrColor: "#78B7F3",
-        arms: "Gauntlets (臂铠)",
-        armsName: "Obsidian Impact",
-        armsDesc: "Dark crystal gauntlets forged in the deepest abyssal trenches.",
-        quote: "Shadows bend to the resolute.",
-        avatar: "../expired-featured/jingran/avatar.webp",
-        avatarActive: "../expired-featured/jingran/avatar_active.webp",
-        spine: {
-          json: "../expired-featured/jingran/spine/skeleton.json",
-          atlas: "../expired-featured/jingran/spine/skeleton.atlas",
-          scale: 1.0,
-          x: -100,
-          y: -60,
-          pma: false
-        },
-        bg: "../expired-featured/jingran/bg.webp",
-        armsImg: "../expired-featured/jingran/arms.webp"
-      },
-    };
+  "hsin": {
+    "id": "hsin",
+    "enName": "Hsin",
+    "cnName": "心",
+    "attr": "Electro (导电)",
+    "attrColor": "#DC6061",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Blooming Jadehaven",
+    "quote": "To share in the world's joy, and keep the lanterns... burning bright.",
+    "pma": true,
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../featured/hsin/avatar.webp",
+    "avatarActive": "../featured/hsin/avatar_active.webp",
+    "bg": "../featured/hsin/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../featured/hsin/spine/skeleton.json",
+      "atlas": "../featured/hsin/spine/skeleton.atlas",
+      "scale": 0.75,
+      "x": -180,
+      "y": 100,
+      "pma": true
+    }
+  },
+  "suoming": {
+    "id": "suoming",
+    "enName": "Suoming",
+    "cnName": "锁暝",
+    "attr": "Electro (导电)",
+    "attrColor": "#DFB663",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Unspoken Rue",
+    "quote": "Let go. Forget... I've heard those words a thousand times. But this obsession... this is exactly what I want.",
+    "pma": false,
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../featured/suoming/avatar.webp",
+    "avatarActive": "../featured/suoming/avatar_active.webp",
+    "bg": "../featured/suoming/bg.webp",
+    "armsImg": "../featured/suoming/arms.webp",
+    "voice": "../featured/suoming/voice_en.mp3",
+    "spine": {
+      "json": "../featured/suoming/spine/skeleton.json",
+      "atlas": "../featured/suoming/spine/skeleton.atlas",
+      "scale": 1.1,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "chisa": {
+    "id": "chisa",
+    "enName": "Chisa",
+    "cnName": "千咲",
+    "attr": "Havoc (湮灭)",
+    "attrColor": "#78B7F3",
+    "weapon": "Broadblade (长刃)",
+    "armsName": "Kumokiri",
+    "quote": "I will… sever this deadlock.",
+    "pma": false,
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../featured/chisa/avatar.webp",
+    "avatarActive": "../featured/chisa/avatar_active.webp",
+    "bg": "../featured/chisa/bg.webp",
+    "armsImg": "../featured/chisa/arms.webp",
+    "voice": "../featured/chisa/voice_en.mp3",
+    "spine": {
+      "json": "../featured/chisa/spine/skeleton.json",
+      "atlas": "../featured/chisa/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "iuno": {
+    "id": "iuno",
+    "enName": "Iuno",
+    "cnName": "尤诺",
+    "attr": "Aero (气动)",
+    "attrColor": "#4EB49F",
+    "weapon": "Gauntlets (臂铠)",
+    "armsName": "Moongazer's Sigil",
+    "quote": "While the moon cycles, I remain the anchor.",
+    "pma": false,
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../featured/iuno/avatar.webp",
+    "avatarActive": "../featured/iuno/avatar_active.webp",
+    "bg": "../featured/iuno/bg.webp",
+    "armsImg": "../featured/iuno/arms.webp",
+    "voice": "../featured/iuno/voice_en.mp3",
+    "spine": {
+      "json": "../featured/iuno/spine/skeleton.json",
+      "atlas": "../featured/iuno/spine/skeleton.atlas",
+      "scale": 1.1,
+      "x": -80,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "lynae": {
+    "id": "lynae",
+    "enName": "Lynae",
+    "cnName": "琳奈",
+    "attr": "Spectro (衍射)",
+    "attrColor": "#6251AC",
+    "weapon": "Pistols (佩枪)",
+    "armsName": "Spectrum Blaster",
+    "quote": "Outlaw Blue, Apollo Orange, Hazard Yellow, Acid Green... Wanna guess what color is my next pick?",
+    "pma": false,
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../featured/lynae/avatar.webp",
+    "avatarActive": "../featured/lynae/avatar_active.webp",
+    "bg": "../featured/lynae/bg.webp",
+    "armsImg": "../featured/lynae/arms.webp",
+    "voice": "../featured/lynae/voice_en.mp3",
+    "spine": {
+      "json": "../featured/lynae/spine/skeleton.json",
+      "atlas": "../featured/lynae/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "lucilla": {
+    "id": "lucilla",
+    "enName": "Lucilla",
+    "cnName": "洛瑟菈",
+    "attr": "Glacio (冷凝)",
+    "attrColor": "#9D6945",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Freeze Frame",
+    "quote": "My dream now is just to see all my students' dreams come true.",
+    "pma": false,
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../featured/lucilla/avatar.webp",
+    "avatarActive": "../featured/lucilla/avatar_active.webp",
+    "bg": "../featured/lucilla/bg.webp",
+    "armsImg": "../featured/lucilla/arms.webp",
+    "voice": "../featured/lucilla/voice_en.mp3",
+    "spine": {
+      "json": "../featured/lucilla/spine/skeleton.json",
+      "atlas": "../featured/lucilla/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "suisui": {
+    "id": "suisui",
+    "enName": "Suisui",
+    "cnName": "岁岁",
+    "attr": "Fusion (热熔)",
+    "attrColor": "#F97316",
+    "weapon": "Broadblade (长刃)",
+    "armsName": "Evergreen Flame",
+    "quote": "Come closer to the fire. There is warmth enough for all of us.",
+    "dir": "suisui",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/suisui/avatar.webp",
+    "avatarActive": "../expired-featured/suisui/avatar_active.webp",
+    "bg": "../expired-featured/suisui/bg.webp",
+    "armsImg": "../expired-featured/suisui/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/suisui/spine/skeleton.json",
+      "atlas": "../expired-featured/suisui/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "aemeath": {
+    "id": "aemeath",
+    "enName": "Aemeath",
+    "cnName": "艾梅斯",
+    "attr": "Electro (导电)",
+    "attrColor": "#DC6061",
+    "weapon": "Gauntlets (臂铠)",
+    "armsName": "Thundercrest Impact",
+    "quote": "Hold your ground! Lightning never strikes the same place twice—unless I command it.",
+    "dir": "aemeath",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/aemeath/avatar.webp",
+    "avatarActive": "../expired-featured/aemeath/avatar_active.webp",
+    "bg": "../expired-featured/aemeath/bg.webp",
+    "armsImg": "../expired-featured/aemeath/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/aemeath/spine/skeleton.json",
+      "atlas": "../expired-featured/aemeath/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "luuk": {
+    "id": "luuk",
+    "enName": "Luuk Herssen",
+    "cnName": "路克·赫尔森",
+    "attr": "Havoc (湮灭)",
+    "attrColor": "#78B7F3",
+    "weapon": "Pistols (佩枪)",
+    "armsName": "Shadow Trigger",
+    "quote": "Bounties come and go, but a bullet always hits its target.",
+    "dir": "luuk-herssen",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/luuk-herssen/avatar.webp",
+    "avatarActive": "../expired-featured/luuk-herssen/avatar_active.webp",
+    "bg": "../expired-featured/luuk-herssen/bg.webp",
+    "armsImg": "../expired-featured/luuk-herssen/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/luuk-herssen/spine/skeleton.json",
+      "atlas": "../expired-featured/luuk-herssen/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "yangyang_xl": {
+    "id": "yangyang_xl",
+    "enName": "Yangyang Xuanling",
+    "cnName": "秧秧·玄翎",
+    "attr": "Aero (气动)",
+    "attrColor": "#4EB49F",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Feathered Wind",
+    "quote": "Listen carefully... the wind is whispering your name.",
+    "dir": "yangyang-xuanling",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/yangyang-xuanling/avatar.webp",
+    "avatarActive": "../expired-featured/yangyang-xuanling/avatar_active.webp",
+    "bg": "../expired-featured/yangyang-xuanling/bg.webp",
+    "armsImg": "../expired-featured/yangyang-xuanling/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/yangyang-xuanling/spine/skeleton.json",
+      "atlas": "../expired-featured/yangyang-xuanling/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "feixue": {
+    "id": "feixue",
+    "enName": "Feixue Hiyuki",
+    "cnName": "绯雪",
+    "attr": "Glacio (冷凝)",
+    "attrColor": "#9D6945",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Frostpetal Bloom",
+    "quote": "Snow falls in crimson silence.",
+    "dir": "feixue-hiyuki",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/feixue-hiyuki/avatar.webp",
+    "avatarActive": "../expired-featured/feixue-hiyuki/avatar_active.webp",
+    "bg": "../expired-featured/feixue-hiyuki/bg.webp",
+    "armsImg": "../expired-featured/feixue-hiyuki/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/feixue-hiyuki/spine/skeleton.json",
+      "atlas": "../expired-featured/feixue-hiyuki/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "qingxiao": {
+    "id": "qingxiao",
+    "enName": "Qingxiao",
+    "cnName": "清宵",
+    "attr": "Spectro (衍射)",
+    "attrColor": "#6251AC",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Dawn Cleaver",
+    "quote": "The night is long, but dawn always breaks.",
+    "dir": "qingxiao",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/qingxiao/avatar.webp",
+    "avatarActive": "../expired-featured/qingxiao/avatar_active.webp",
+    "bg": "../expired-featured/qingxiao/bg.webp",
+    "armsImg": "../expired-featured/qingxiao/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/qingxiao/spine/skeleton.json",
+      "atlas": "../expired-featured/qingxiao/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "daniya": {
+    "id": "daniya",
+    "enName": "Daniya",
+    "cnName": "达妮娅",
+    "attr": "Fusion (热熔)",
+    "attrColor": "#F97316",
+    "weapon": "Pistols (佩枪)",
+    "armsName": "Blazing Stride",
+    "quote": "Keep moving or stay in the dust.",
+    "dir": "daniya",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/daniya/avatar.webp",
+    "avatarActive": "../expired-featured/daniya/avatar_active.webp",
+    "bg": "../expired-featured/daniya/bg.webp",
+    "armsImg": "../expired-featured/daniya/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/daniya/spine/skeleton.json",
+      "atlas": "../expired-featured/daniya/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "mornye": {
+    "id": "mornye",
+    "enName": "Mornye",
+    "cnName": "莫宁",
+    "attr": "Aero (气动)",
+    "attrColor": "#4EB49F",
+    "weapon": "Broadblade (长刃)",
+    "armsName": "Horizon Breaker",
+    "quote": "The frontier has no boundaries.",
+    "dir": "mornye",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/mornye/avatar.webp",
+    "avatarActive": "../expired-featured/mornye/avatar_active.webp",
+    "bg": "../expired-featured/mornye/bg.webp",
+    "armsImg": "../expired-featured/mornye/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/mornye/spine/skeleton.json",
+      "atlas": "../expired-featured/mornye/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "jingran": {
+    "id": "jingran",
+    "enName": "Jingran",
+    "cnName": "景然",
+    "attr": "Havoc (湮灭)",
+    "attrColor": "#78B7F3",
+    "weapon": "Gauntlets (臂铠)",
+    "armsName": "Obsidian Impact",
+    "quote": "Shadows bend to the resolute.",
+    "dir": "jingran",
+    "category": "featured",
+    "stars": 5,
+    "avatar": "../expired-featured/jingran/avatar.webp",
+    "avatarActive": "../expired-featured/jingran/avatar_active.webp",
+    "bg": "../expired-featured/jingran/bg.webp",
+    "armsImg": "../expired-featured/jingran/arms.webp",
+    "voice": "../featured/hsin/voice_en.mp3",
+    "spine": {
+      "json": "../expired-featured/jingran/spine/skeleton.json",
+      "atlas": "../expired-featured/jingran/spine/skeleton.atlas",
+      "scale": 0.95,
+      "x": -180,
+      "y": -60,
+      "pma": false
+    }
+  },
+  "changli": {
+    "id": "changli",
+    "enName": "Changli",
+    "cnName": "长离",
+    "attr": "Fusion (热熔)",
+    "attrColor": "#F97316",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Blazing Brilliance",
+    "quote": "Every move on the chessboard was foreseen. The blaze only consumes what was already lost.",
+    "dir": "changli",
+    "avatar": "/images/wuwa/avatar-changli.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-changli.webp",
+    "bg": "../main-roster-highlights/changli/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/changli/card_standing.webp",
+    "voice": "../main-roster-highlights/changli/voice_en.mp3"
+  },
+  "yinlin": {
+    "id": "yinlin",
+    "enName": "Yinlin",
+    "cnName": "吟霖",
+    "attr": "Electro (导电)",
+    "attrColor": "#DC6061",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Stringmaster",
+    "quote": "Dance, little puppet. The trial begins when I pull the strings.",
+    "dir": "yinlin",
+    "avatar": "/images/wuwa/avatar-yinlin.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-yinlin.webp",
+    "bg": "../main-roster-highlights/yinlin/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/yinlin/card_standing.webp",
+    "voice": "../main-roster-highlights/yinlin/voice_en.mp3"
+  },
+  "the_shorekeeper": {
+    "id": "the_shorekeeper",
+    "enName": "The Shorekeeper",
+    "cnName": "守岸人",
+    "attr": "Spectro (衍射)",
+    "attrColor": "#6251AC",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Stellar Symphony",
+    "quote": "In the quiet ripples of the Black Shores, I have waited for your footsteps.",
+    "dir": "the-shorekeeper",
+    "avatar": "/images/wuwa/avatar-shorekeeper.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-shorekeeper.webp",
+    "bg": "../main-roster-highlights/the-shorekeeper/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/the-shorekeeper/card_standing.webp",
+    "voice": "../main-roster-highlights/the-shorekeeper/voice_en.mp3"
+  },
+  "camellya": {
+    "id": "camellya",
+    "enName": "Camellya",
+    "cnName": "椿",
+    "attr": "Havoc (湮灭)",
+    "attrColor": "#78B7F3",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Red Spring",
+    "quote": "Blooming in madness, twined in red... Are you ready to dance with me?",
+    "dir": "camellya",
+    "avatar": "/images/wuwa/avatar-changli.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-changli.webp",
+    "bg": "../main-roster-highlights/camellya/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/camellya/card_standing.webp",
+    "voice": "../main-roster-highlights/camellya/voice_en.mp3"
+  },
+  "jinhsi": {
+    "id": "jinhsi",
+    "enName": "Jinhsi",
+    "cnName": "今汐",
+    "attr": "Spectro (衍射)",
+    "attrColor": "#6251AC",
+    "weapon": "Broadblade (长刃)",
+    "armsName": "Ages of Harvest",
+    "quote": "As Magistrate of Jinzhou, I bear the hopes and seasons of my people.",
+    "dir": "jinhsi",
+    "avatar": "/images/wuwa/avatar-shorekeeper.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-shorekeeper.webp",
+    "bg": "../main-roster-highlights/jinhsi/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/jinhsi/card_standing.webp",
+    "voice": "../main-roster-highlights/jinhsi/voice_en.mp3"
+  },
+  "jiyan": {
+    "id": "jiyan",
+    "enName": "Jiyan",
+    "cnName": "忌炎",
+    "attr": "Aero (气动)",
+    "attrColor": "#4EB49F",
+    "weapon": "Broadblade (长刃)",
+    "armsName": "Verdant Summit",
+    "quote": "The wind knows neither hesitation nor regret. Charge with the Midnight Rangers!",
+    "dir": "jiyan",
+    "avatar": "/images/wuwa/avatar-xiangli-yao.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-xiangli-yao.webp",
+    "bg": "../main-roster-highlights/jiyan/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/jiyan/card_standing.webp",
+    "voice": "../main-roster-highlights/jiyan/voice_en.mp3"
+  },
+  "xiangli_yao": {
+    "id": "xiangli_yao",
+    "enName": "Xiangli Yao",
+    "cnName": "相里要",
+    "attr": "Electro (导电)",
+    "attrColor": "#DC6061",
+    "weapon": "Gauntlets (臂铠)",
+    "armsName": "Verity's Handle",
+    "quote": "Every gear, every calculation, in perfect harmony with the pulse of the stars.",
+    "dir": "xiangli-yao",
+    "avatar": "/images/wuwa/avatar-xiangli-yao.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-xiangli-yao.webp",
+    "bg": "../main-roster-highlights/xiangli-yao/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/xiangli-yao/card_standing.webp",
+    "voice": "../main-roster-highlights/xiangli-yao/voice_en.mp3"
+  },
+  "zhezhi": {
+    "id": "zhezhi",
+    "enName": "Zhezhi",
+    "cnName": "折枝",
+    "attr": "Glacio (冷凝)",
+    "attrColor": "#9D6945",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Rime-Draped Sprouts",
+    "quote": "A single brushstroke captures what the heart cannot speak.",
+    "dir": "zhezhi",
+    "avatar": "/images/wuwa/avatar-zhezhi.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-zhezhi.webp",
+    "bg": "../main-roster-highlights/zhezhi/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/zhezhi/card_standing.webp",
+    "voice": "../main-roster-highlights/zhezhi/voice_en.mp3"
+  },
+  "augusta": {
+    "id": "augusta",
+    "enName": "Augusta",
+    "cnName": "奥古斯塔",
+    "attr": "Electro (导电)",
+    "attrColor": "#DC6061",
+    "weapon": "Gauntlets (臂铠)",
+    "armsName": "Thunderbolt Stride",
+    "quote": "Power without discipline is merely noise.",
+    "dir": "augusta",
+    "avatar": "/images/wuwa/avatar-yinlin.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-yinlin.webp",
+    "bg": "../main-roster-highlights/augusta/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/augusta/card_standing.webp",
+    "voice": "../main-roster-highlights/augusta/voice_en.mp3"
+  },
+  "brant": {
+    "id": "brant",
+    "enName": "Brant",
+    "cnName": "布兰特",
+    "attr": "Fusion (热熔)",
+    "attrColor": "#F97316",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Solar Brand",
+    "quote": "Keep your guard high and your blade steady.",
+    "dir": "brant",
+    "avatar": "/images/wuwa/vyrenn-portrait.png",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/vyrenn-portrait.png",
+    "bg": "../main-roster-highlights/brant/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/brant/card_standing.webp",
+    "voice": "../main-roster-highlights/brant/voice_en.mp3"
+  },
+  "ciaccona": {
+    "id": "ciaccona",
+    "enName": "Ciaccona",
+    "cnName": "夏空",
+    "attr": "Aero (气动)",
+    "attrColor": "#4EB49F",
+    "weapon": "Pistols (佩枪)",
+    "armsName": "Gale Trigger",
+    "quote": "A melody carried on the swift winds.",
+    "dir": "ciaccona",
+    "avatar": "/images/wuwa/avatar-zhezhi.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-zhezhi.webp",
+    "bg": "../main-roster-highlights/ciaccona/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/ciaccona/card_standing.webp",
+    "voice": "../main-roster-highlights/ciaccona/voice_en.mp3"
+  },
+  "phrolova": {
+    "id": "phrolova",
+    "enName": "Phrolova",
+    "cnName": "弗洛洛",
+    "attr": "Havoc (湮灭)",
+    "attrColor": "#78B7F3",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Dissonant Bloom",
+    "quote": "Dissonance brings its own symphony.",
+    "dir": "phrolova",
+    "avatar": "/images/wuwa/avatar-danjin.webp",
+    "category": "main5",
+    "stars": 5,
+    "avatarActive": "/images/wuwa/avatar-danjin.webp",
+    "bg": "../main-roster-highlights/phrolova/bg.webp",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../main-roster-highlights/phrolova/card_standing.webp",
+    "voice": "../main-roster-highlights/phrolova/voice_en.mp3"
+  },
+  "danjin": {
+    "id": "danjin",
+    "enName": "Danjin",
+    "cnName": "丹瑾",
+    "attr": "Havoc (湮灭)",
+    "attrColor": "#78B7F3",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Heart Piercer",
+    "quote": "Evil will find no shelter in this blade. Even if it costs my own blood.",
+    "dir": "danjin",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/danjin/avatar.png",
+    "avatarActive": "../four-star-resonators/danjin/avatar.png",
+    "bg": "../four-star-resonators/danjin/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/danjin/splash.png",
+    "voice": "../four-star-resonators/danjin/voice_en.mp3"
+  },
+  "sanhua": {
+    "id": "sanhua",
+    "enName": "Sanhua",
+    "cnName": "散华",
+    "attr": "Glacio (冷凝)",
+    "attrColor": "#9D6945",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Frostbite Edge",
+    "quote": "My eyes perceive the frequency of all things.",
+    "dir": "sanhua",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/sanhua/avatar.png",
+    "avatarActive": "../four-star-resonators/sanhua/avatar.png",
+    "bg": "../four-star-resonators/sanhua/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/sanhua/splash.png",
+    "voice": "../four-star-resonators/sanhua/voice_en.mp3"
+  },
+  "chixia": {
+    "id": "chixia",
+    "enName": "Chixia",
+    "cnName": "炽霞",
+    "attr": "Fusion (热熔)",
+    "attrColor": "#F97316",
+    "weapon": "Pistols (佩枪)",
+    "armsName": "Blazing Justice",
+    "quote": "Hero of Jinzhou, reporting for duty!",
+    "dir": "chixia",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/chixia/avatar.png",
+    "avatarActive": "../four-star-resonators/chixia/avatar.png",
+    "bg": "../four-star-resonators/chixia/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/chixia/splash.png",
+    "voice": "../four-star-resonators/chixia/voice_en.mp3"
+  },
+  "baizhi": {
+    "id": "baizhi",
+    "enName": "Baizhi",
+    "cnName": "白芷",
+    "attr": "Glacio (冷凝)",
+    "attrColor": "#9D6945",
+    "weapon": "Rectifier (音感仪)",
+    "armsName": "Remnant Healer",
+    "quote": "You(tan) will keep you safe.",
+    "dir": "baizhi",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/baizhi/avatar.png",
+    "avatarActive": "../four-star-resonators/baizhi/avatar.png",
+    "bg": "../four-star-resonators/baizhi/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/baizhi/splash.png",
+    "voice": "../four-star-resonators/baizhi/voice_en.mp3"
+  },
+  "mortefi": {
+    "id": "mortefi",
+    "enName": "Mortefi",
+    "cnName": "莫特斐",
+    "attr": "Fusion (热熔)",
+    "attrColor": "#F97316",
+    "weapon": "Pistols (佩枪)",
+    "armsName": "Volcanic Core",
+    "quote": "Control your emotions, or burn in the flames.",
+    "dir": "mortefi",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/mortefi/avatar.png",
+    "avatarActive": "../four-star-resonators/mortefi/avatar.png",
+    "bg": "../four-star-resonators/mortefi/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/mortefi/splash.png",
+    "voice": "../four-star-resonators/mortefi/voice_en.mp3"
+  },
+  "taoqi": {
+    "id": "taoqi",
+    "enName": "Taoqi",
+    "cnName": "桃祈",
+    "attr": "Havoc (湮灭)",
+    "attrColor": "#78B7F3",
+    "weapon": "Broadblade (长刃)",
+    "armsName": "Bulwark Aegis",
+    "quote": "Taking it easy is an art form.",
+    "dir": "taoqi",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/taoqi/avatar.png",
+    "avatarActive": "../four-star-resonators/taoqi/avatar.png",
+    "bg": "../four-star-resonators/taoqi/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/taoqi/splash.png",
+    "voice": "../four-star-resonators/taoqi/voice_en.mp3"
+  },
+  "yuanwu": {
+    "id": "yuanwu",
+    "enName": "Yuanwu",
+    "cnName": "渊武",
+    "attr": "Electro (导电)",
+    "attrColor": "#DC6061",
+    "weapon": "Gauntlets (臂铠)",
+    "armsName": "Iron Fist",
+    "quote": "The fist speaks louder than words.",
+    "dir": "yuanwu",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/yuanwu/avatar.png",
+    "avatarActive": "../four-star-resonators/yuanwu/avatar.png",
+    "bg": "../four-star-resonators/yuanwu/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/yuanwu/splash.png",
+    "voice": "../four-star-resonators/yuanwu/voice_en.mp3"
+  },
+  "aalto": {
+    "id": "aalto",
+    "enName": "Aalto",
+    "cnName": "秋水",
+    "attr": "Aero (气动)",
+    "attrColor": "#4EB49F",
+    "weapon": "Pistols (佩枪)",
+    "armsName": "Mist Mirage",
+    "quote": "Information is the most lethal currency.",
+    "dir": "aalto",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/aalto/avatar.png",
+    "avatarActive": "../four-star-resonators/aalto/avatar.png",
+    "bg": "../four-star-resonators/aalto/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/aalto/splash.png",
+    "voice": "../four-star-resonators/aalto/voice_en.mp3"
+  },
+  "yangyang_base": {
+    "id": "yangyang_base",
+    "enName": "Yangyang",
+    "cnName": "秧秧",
+    "attr": "Aero (气动)",
+    "attrColor": "#4EB49F",
+    "weapon": "Sword (迅刀)",
+    "armsName": "Featherlight",
+    "quote": "May the gentle wind guide your steps.",
+    "dir": "yangyang",
+    "category": "four_star",
+    "stars": 4,
+    "avatar": "../four-star-resonators/yangyang/avatar.png",
+    "avatarActive": "../four-star-resonators/yangyang/avatar.png",
+    "bg": "../four-star-resonators/yangyang/bg.png",
+    "armsImg": "../featured/hsin/arms.webp",
+    "artwork": "../four-star-resonators/yangyang/splash.png",
+    "voice": "../four-star-resonators/yangyang/voice_en.mp3"
+  }
+};
 
     let player = null;
     let currentChar = "hsin";
+    let activeFilter = "all";
+
+    // Filter by Category
+    function filterCategory(cat, btn) {
+      activeFilter = cat;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      initAvatarRoster();
+    }
 
     // Populate all avatar pills into the scrollable roster bar
     function initAvatarRoster() {
@@ -772,6 +1309,8 @@
       bar.innerHTML = "";
       Object.keys(ROSTER).forEach(key => {
         const char = ROSTER[key];
+        if (activeFilter !== 'all' && char.category !== activeFilter) return;
+
         const pill = document.createElement("div");
         pill.className = "avatar-pill" + (key === currentChar ? " active" : "");
         pill.id = "avatar-" + key;
@@ -790,7 +1329,7 @@
     // Load Spine 4.2 WebGL Player with character's specific PMA flag
     function loadSpineCharacter(charKey) {
       const char = ROSTER[charKey];
-      if (!char) return;
+      if (!char || !char.spine) return;
 
       const container = document.getElementById("spine-player");
       if (player) {
@@ -834,7 +1373,7 @@
 
     // Switch active resonator in the roster
     function selectChar(charKey) {
-      if (currentChar === charKey && player) return;
+      if (currentChar === charKey && (player || document.getElementById('artwork-container').style.display === 'flex')) return;
       currentChar = charKey;
       const char = ROSTER[charKey];
       if (!char) return;
@@ -851,6 +1390,7 @@
         activePill.classList.add('active');
         if (activePill.querySelector('img')) activePill.querySelector('img').src = char.avatarActive;
       }
+
       // Update background
       document.getElementById('bg-layer').style.backgroundImage = `url('${char.bg}')`;
 
@@ -860,38 +1400,59 @@
       document.getElementById('char-attr').innerText = char.attr;
       document.getElementById('tag-ind').style.background = char.attrColor;
       document.getElementById('tag-ind').style.boxShadow = `0 0 10px ${char.attrColor}`;
-      document.getElementById('char-arms').innerText = char.arms;
+      document.getElementById('char-arms').innerText = char.weapon;
       document.getElementById('char-arms-name').innerText = char.armsName;
       document.getElementById('char-quote').innerText = `"${char.quote}"`;
 
       // Update weapon overlay
       document.getElementById('weapon-img').src = char.armsImg;
       document.getElementById('weapon-title').innerText = char.armsName;
-      document.getElementById('weapon-desc').innerText = char.armsDesc;
+      document.getElementById('weapon-desc').innerText = char.armsDesc || char.armsName;
 
       // Reset mode to model
       setMode('role');
 
-      // Load new live Spine rig
-      loadSpineCharacter(charKey);
+      // Check whether this character uses Spine or transparent Artwork
+      const spineContainer = document.getElementById('spine-container');
+      const artContainer = document.getElementById('artwork-container');
+
+      if (char.spine) {
+        artContainer.style.display = 'none';
+        spineContainer.style.display = 'flex';
+        loadSpineCharacter(charKey);
+      } else if (char.artwork) {
+        if (player) {
+          try { player.dispose(); } catch(e){}
+          player = null;
+          document.getElementById('spine-player').innerHTML = '';
+        }
+        spineContainer.style.display = 'none';
+        artContainer.style.display = 'flex';
+        document.getElementById('static-art-img').src = char.artwork;
+      }
     }
 
     // Model vs Arms toggle
     function setMode(mode) {
       const spineContainer = document.getElementById('spine-container');
+      const artContainer = document.getElementById('artwork-container');
       const weaponOverlay = document.getElementById('weapon-overlay');
       const pillRole = document.getElementById('pill-role');
       const pillArms = document.getElementById('pill-arms');
 
       if (mode === 'arms') {
         spineContainer.style.opacity = '0.05';
+        artContainer.style.opacity = '0.05';
         spineContainer.style.pointerEvents = 'none';
+        artContainer.style.pointerEvents = 'none';
         weaponOverlay.classList.add('active');
         pillArms.classList.add('active');
         pillRole.classList.remove('active');
       } else {
         spineContainer.style.opacity = '1';
+        artContainer.style.opacity = '1';
         spineContainer.style.pointerEvents = 'auto';
+        artContainer.style.pointerEvents = 'auto';
         weaponOverlay.classList.remove('active');
         pillRole.classList.add('active');
         pillArms.classList.remove('active');
