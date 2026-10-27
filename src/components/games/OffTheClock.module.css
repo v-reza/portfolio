@@ -1,6 +1,6 @@
 /* =========================================================
-   Off The Clock - Modern 4-Column Floating Cards
-   Authentic Kuro Games & Game Aesthetics (Zero AI Slop)
+   Off The Clock - Clean Minimal Game Cards
+   Pure background artwork + centered game logo + footer CTA
    ========================================================= */
 
 .section {
@@ -73,16 +73,17 @@
   perspective: 1200px;
 }
 
-/* Standalone Modern Card with Obsidian Glassmorphism */
+/* Minimal Card with Obsidian Glassmorphism */
 .card {
   position: relative;
-  height: 440px;
+  height: 400px;
   border-radius: 20px;
   padding: 24px 22px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   color: #fdffef;
   cursor: pointer;
   overflow: hidden;
@@ -95,29 +96,30 @@
   outline: none;
 }
 
-/* Background Image Layer for Wuthering Waves (bg_main.webp) */
+/* Full Bleed Background Image Layer */
 .cardBgImage {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center top;
-  opacity: 0.38;
-  filter: saturate(1.1) contrast(1.1);
+  opacity: 0.65;
+  filter: contrast(1.08) brightness(0.92);
   transition: opacity 0.45s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 0;
 }
 
 .card:hover .cardBgImage {
-  opacity: 0.52;
-  transform: scale(1.05);
+  opacity: 0.85;
+  transform: scale(1.06);
 }
 
-/* Dark Vignette Overlay over Background Image */
+/* Dark Radial & Vignette Overlay */
 .cardOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(8, 10, 15, 0.96) 0%, rgba(8, 10, 15, 0.72) 48%, rgba(8, 10, 15, 0.35) 100%);
+  background: radial-gradient(circle at center, rgba(8, 10, 15, 0.45) 0%, rgba(8, 10, 15, 0.85) 100%),
+              linear-gradient(to top, rgba(8, 10, 15, 0.95) 0%, transparent 45%, rgba(8, 10, 15, 0.65) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -154,131 +156,53 @@
   transform: translateX(4px);
 }
 
-/* Card Top Row */
-.cTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Center Content: ONLY Logo/Text in the middle */
+.cCenter {
   position: relative;
-  z-index: 3;
-}
-
-.cLogoGroup {
+  z-index: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
 }
 
-.cIconBox {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
-  border: 1px solid var(--border-color);
-  transition: border-color 0.3s ease;
-}
-
-.card:hover .cIconBox {
-  border-color: var(--highlight-color);
-}
-
-.cLogoImg {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.cTextLogoImg {
-  height: 24px;
-  width: auto;
+.cCenterLogo {
+  width: 200px;
+  height: auto;
+  max-width: 90%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 20px rgba(218, 182, 125, 0.35));
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.cIconNum {
-  font-family: var(--font-mono), monospace;
-  font-size: 15px;
-  font-weight: 800;
-  color: #fdffef;
+.card:hover .cCenterLogo {
+  transform: scale(1.06);
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.98)) drop-shadow(0 0 30px rgba(218, 182, 125, 0.6));
 }
 
-.cBadge {
-  font-family: var(--font-mono), monospace;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.55);
-  color: var(--highlight-color);
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-}
-
-.card:hover .cBadge {
-  border-color: var(--highlight-color);
-}
-
-/* Card Middle (Stats & Titles) */
-.cMid {
-  position: relative;
-  z-index: 3;
-  margin: auto 0 16px;
-}
-
-.cTitle {
+.cCenterTitle {
   font-family: var(--font-sans), sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: #fdffef;
-  line-height: 1.2;
-  margin-bottom: 6px;
-  letter-spacing: -0.01em;
-}
-
-.cBigStatRow {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.cBigStat {
-  font-family: var(--font-sans), sans-serif;
-  font-size: 52px;
+  font-size: 26px;
   font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  color: #fdffef;
-}
-
-.cBigStatLabel {
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--highlight-color);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #fdffef;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9);
+  transition: transform 0.4s ease, color 0.4s ease;
 }
 
-.cSub {
-  font-family: var(--font-sans), sans-serif;
-  font-size: 13px;
-  line-height: 1.45;
-  color: #d1d5db;
-  font-weight: 500;
+.card:hover .cCenterTitle {
+  transform: scale(1.05);
+  color: var(--highlight-color);
 }
 
 /* Card Footer */
 .cFoot {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -431,7 +355,7 @@
     gap: 20px;
   }
   .card {
-    height: 400px;
+    height: 380px;
   }
 }
 
@@ -441,10 +365,10 @@
     gap: 16px;
   }
   .card {
-    height: 350px;
+    height: 320px;
     padding: 22px 20px;
   }
-  .cBigStat {
-    font-size: 44px;
+  .cCenterLogo {
+    width: 170px;
   }
 }
