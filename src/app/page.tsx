@@ -6,8 +6,7 @@ import { FeaturedWork } from "@/components/work/FeaturedWork";
 import { StackMatrix } from "@/components/stack/StackMatrix";
 import { DeliveryPipeline } from "@/components/process/DeliveryPipeline";
 import { AboutMe } from "@/components/about/AboutMe";
-import { GameRotationIntro } from "@/components/games/GameRotationIntro";
-import { WutheringWavesSection } from "@/components/games/WutheringWavesSection";
+import { OffTheClock } from "@/components/games/OffTheClock";
 import { GuestBook } from "@/components/guestbook/GuestBook";
 import { ContactSection } from "@/components/contact/ContactSection";
 
@@ -23,8 +22,7 @@ export default function Home() {
         <StackMatrix />
         <DeliveryPipeline />
         <AboutMe />
-        <GameRotationIntro />
-        <WutheringWavesSection />
+        <OffTheClock />
         <GuestBook />
         <ContactSection />
       </main>
