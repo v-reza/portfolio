@@ -11,11 +11,16 @@ interface GameCard {
   genre: string;
   title: string;
   bigStat: string;
+  bigStatLabel?: string;
   sub: string;
   footer: string;
-  bgGradient: string;
+  bgGradient?: string;
+  bgImage?: string;
+  borderColor: string;
+  highlightColor: string;
   glow: string;
   logo?: string;
+  textLogo?: string;
   isInteractive?: boolean;
 }
 
@@ -23,15 +28,18 @@ const CARDS: GameCard[] = [
   {
     id: "wuwa",
     num: "01",
-    genre: "ACTION RPG",
-    title: "Wuthering Waves",
+    genre: "ARPG",
+    title: "Wuthering Waves 鸣潮",
     bigStat: "UL 80",
-    sub: "Solaris-3 · 36 Resonators · 30/30 Hazard Zone speedrun",
-    footer: "Open WebGL Engine",
-    bgGradient:
-      "radial-gradient(120% 80% at 15% 0%, #FFC9A8 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #E8402A 0%, transparent 60%), linear-gradient(165deg, #FF9A6B, #F25A38)",
-    glow: "#FF7A4F",
+    bigStatLabel: "Union Level",
+    sub: "Solaris-3 · Data Bank Lv. 30 · Tower of Adversity 30/30 · 36 Resonators",
+    footer: "Launch WebGL Engine",
+    bgImage: "/images/wuwa/bg_main.webp",
+    borderColor: "rgba(218, 182, 125, 0.4)",
+    highlightColor: "#dab67d",
+    glow: "rgba(218, 182, 125, 0.45)",
     logo: "/images/wuwa/wuwa-mini-icon.png",
+    textLogo: "/images/wuwa/wuwa-text-only.png",
     isInteractive: true,
   },
   {
@@ -40,11 +48,14 @@ const CARDS: GameCard[] = [
     genre: "TACTICAL MOBA",
     title: "Deadlock",
     bigStat: "6v6",
-    sub: "Valve hero shooter · Lane macro, wave control, and teamfight execution",
+    bigStatLabel: "Hero Shooter",
+    sub: "Valve closed playtest · Lane priority, wave control, and teamfight execution",
     footer: "Active Playtest",
     bgGradient:
-      "radial-gradient(90% 60% at 0% 0%, #FFD24D 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #EE4B73 0%, transparent 60%), linear-gradient(165deg, #3AA6E0, #1667A8)",
-    glow: "#3AA6E0",
+      "radial-gradient(circle at 80% 15%, rgba(58, 166, 224, 0.18) 0%, transparent 55%), linear-gradient(160deg, #101622 0%, #080d16 100%)",
+    borderColor: "rgba(58, 166, 224, 0.35)",
+    highlightColor: "#3aa6e0",
+    glow: "rgba(58, 166, 224, 0.4)",
   },
   {
     id: "rematch",
@@ -52,23 +63,29 @@ const CARDS: GameCard[] = [
     genre: "COMPETITIVE ACTION",
     title: "Rematch",
     bigStat: "+Frame",
+    bigStatLabel: "Neutral Control",
     sub: "Neutral spacing pressure, frame advantage, and reactive whiff punishing",
-    footer: "Competitive Fighter",
+    footer: "Action Fighter",
     bgGradient:
-      "radial-gradient(90% 60% at 0% 0%, #FCC419 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #C92A2A 0%, transparent 60%), linear-gradient(165deg, #9C36B5, #E03131)",
-    glow: "#D7262B",
+      "radial-gradient(circle at 80% 15%, rgba(224, 49, 49, 0.2) 0%, transparent 55%), linear-gradient(160deg, #1c0e12 0%, #0a0507 100%)",
+    borderColor: "rgba(224, 49, 49, 0.35)",
+    highlightColor: "#ff4d4f",
+    glow: "rgba(224, 49, 49, 0.4)",
   },
   {
     id: "valheim",
     num: "04",
-    genre: "SURVIVAL & SYSTEM",
+    genre: "NORSE SURVIVAL",
     title: "Valheim",
     bigStat: "Linux",
+    bigStatLabel: "Dedicated Host",
     sub: "Self-hosted Linux dedicated server · Structural load physics & procedural exploration",
     footer: "Norse Survival",
     bgGradient:
-      "radial-gradient(90% 60% at 0% 0%, #D8F5A2 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #087F5B 0%, transparent 60%), linear-gradient(165deg, #2B8A3E, #1864AB)",
-    glow: "#2B8A3E",
+      "radial-gradient(circle at 80% 15%, rgba(43, 138, 62, 0.2) 0%, transparent 55%), linear-gradient(160deg, #0d1813 0%, #060b08 100%)",
+    borderColor: "rgba(43, 138, 62, 0.35)",
+    highlightColor: "#51cf66",
+    glow: "rgba(43, 138, 62, 0.4)",
   },
 ];
 
@@ -117,7 +134,7 @@ export function OffTheClock() {
 
   return (
     <section id="off-the-clock" className={s.section} aria-label="Off the clock gaming rotation">
-      {/* 1. Header: Modern high-contrast typography */}
+      {/* 1. Header: Kuro Games refined gold and bone-ivory typography */}
       <div className={s.headerWrap}>
         <p className={s.kicker}>Off The Clock</p>
         <h2 className={s.headline}>
@@ -143,7 +160,9 @@ export function OffTheClock() {
                 className={`${s.card} ${isClickable ? s.cardInteractive : ""}`}
                 style={
                   {
-                    background: card.bgGradient,
+                    "--bg": card.bgGradient || "transparent",
+                    "--border-color": card.borderColor,
+                    "--highlight-color": card.highlightColor,
                     "--glow": card.glow,
                   } as React.CSSProperties
                 }
@@ -151,34 +170,65 @@ export function OffTheClock() {
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleCardClick(card)}
               >
-                {/* Top Row: Icon/Logo on Left, Category Pill on Right */}
+                {/* Background Image Layer for Wuthering Waves (bg_main.webp) */}
+                {card.bgImage && (
+                  <>
+                    <div
+                      className={s.cardBgImage}
+                      style={{ backgroundImage: `url(${card.bgImage})` }}
+                      aria-hidden="true"
+                    />
+                    <div className={s.cardOverlay} aria-hidden="true" />
+                  </>
+                )}
+
+                {/* Top Row: Official Kuro Logo + Badge */}
                 <div className={s.cTop}>
-                  <div className={s.cIconBox}>
-                    {card.logo ? (
+                  <div className={s.cLogoGroup}>
+                    <div className={s.cIconBox}>
+                      {card.logo ? (
+                        <Image
+                          src={card.logo}
+                          alt=""
+                          width={28}
+                          height={28}
+                          className={s.cLogoImg}
+                        />
+                      ) : (
+                        <span className={s.cIconNum}>{card.num}</span>
+                      )}
+                    </div>
+
+                    {/* Official Kuro "WUTHERING WAVES" text logo */}
+                    {card.textLogo && (
                       <Image
-                        src={card.logo}
-                        alt=""
-                        width={32}
-                        height={32}
-                        className={s.cLogoImg}
+                        src={card.textLogo}
+                        alt="Wuthering Waves"
+                        width={96}
+                        height={31}
+                        className={s.cTextLogoImg}
                       />
-                    ) : (
-                      <span className={s.cIconNum}>{card.num}</span>
                     )}
                   </div>
+
                   <span className={s.cBadge}>
                     {card.num} · {card.genre}
                   </span>
                 </div>
 
-                {/* Middle: Title, Huge Stat, Subtitle */}
+                {/* Middle: Title, Stat, Subtitle */}
                 <div className={s.cMid}>
                   <p className={s.cTitle}>{card.title}</p>
-                  <div className={s.cBigStat}>{card.bigStat}</div>
+                  <div className={s.cBigStatRow}>
+                    <span className={s.cBigStat}>{card.bigStat}</span>
+                    {card.bigStatLabel && (
+                      <span className={s.cBigStatLabel}>{card.bigStatLabel}</span>
+                    )}
+                  </div>
                   <p className={s.cSub}>{card.sub}</p>
                 </div>
 
-                {/* Footer: Action Label + Arrow */}
+                {/* Footer: Action Link + Arrow */}
                 <div className={s.cFoot}>
                   <span>{card.footer}</span>
                   <span className={s.cFootArrow} aria-hidden="true">
@@ -191,7 +241,7 @@ export function OffTheClock() {
         </div>
       </div>
 
-      {/* 3. Full-Screen Interactive Showcase Modal (Opens ONLY when card clicked!) */}
+      {/* 3. Full-Screen Interactive Showcase Modal */}
       {modalOpen && (
         <div
           className={s.modalBackdrop}
@@ -221,7 +271,7 @@ export function OffTheClock() {
 
           {/* Modal Body: Live Spine 4.2 WebGL Stage + Vyrenn Stats Card */}
           <div className={s.modalBody}>
-            {/* Live Spine 4.2 WebGL Stage (100vw, 92vh) */}
+            {/* Live Spine 4.2 WebGL Stage */}
             <div className={s.modalStageContainer}>
               <iframe
                 src="/wuwa/hsin-viewer/index.html"
