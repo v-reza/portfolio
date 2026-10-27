@@ -1,6 +1,6 @@
 /* =========================================================
-   Off The Clock - 3D Collector's Deck Box (Direct from James Chugh)
-   Exact CSS coordinates, rotations, and box perspective
+   Off The Clock - Option A: Modern 4-Column Floating Cards
+   Clean standalone cards with dynamic glow & subtle 3D tilt
    ========================================================= */
 
 .section {
@@ -8,14 +8,14 @@
   width: 100%;
   background: #0b0d12;
   color: #f4f4f5;
-  padding: 100px 0 120px;
+  padding: 100px 0 130px;
   overflow: clip;
 }
 
 /* 1. Header */
 .headerWrap {
   max-width: 900px;
-  margin: 0 auto 50px;
+  margin: 0 auto 56px;
   padding: 0 24px;
   text-align: center;
 }
@@ -52,337 +52,177 @@
 
 .subheadline {
   font-family: var(--font-sans), sans-serif;
-  font-size: clamp(16px, 1.4vw, 20px);
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(16px, 1.35vw, 19.5px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
   max-width: 640px;
   margin: 0 auto;
 }
 
-/* 2. 3D Isometric Card Deck Box Stage */
-.boxTrack {
+/* 2. 4-Column Modern Cards Grid */
+.gridWrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  perspective: 1200px;
+}
+
+/* Standalone Modern Card */
+.card {
   position: relative;
-  width: 100%;
-  height: 640px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.boxFit {
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  width: 0px;
-  height: 0px;
-  perspective: 2400px;
-  perspective-origin: 50% 25%;
-  transform: scale(0.78);
-  will-change: transform;
-}
-
-.box3 {
-  position: absolute;
-  width: 660px;
-  height: 260px;
-  left: -330px;
-  top: -60px;
-  transform-style: preserve-3d;
-  transform: rotateX(57deg) rotateZ(30deg);
-  will-change: transform;
-}
-
-/* Base Shadow */
-.boxShadow {
-  position: absolute;
-  inset: -50px -40px -40px -50px;
-  transform: translateZ(-2px);
-  background: rgba(0, 0, 0, 0.65);
-  filter: blur(40px);
-  border-radius: 40px;
-  pointer-events: none;
-}
-
-/* Box Floor (Kraft cardboard texture) */
-.boxFloor {
-  position: absolute;
-  inset: 0px;
-  background: linear-gradient(135deg, rgb(234, 211, 168), rgb(221, 191, 140));
-  box-shadow: inset 0 0 50px rgba(120, 80, 30, 0.35);
-  border: 1px solid rgba(212, 176, 122, 0.2);
-}
-
-/* Generic Wall Surface */
-.wallFace {
-  position: absolute;
-  transform-origin: 50% 100%;
-  backface-visibility: visible;
-  box-sizing: border-box;
-}
-
-/* 4 Real Walls from James Chugh */
-.wallBack {
-  width: 660px;
-  height: 96px;
-  left: 0px;
-  top: -96px;
-  transform: translate3d(0px, 0px, 0px) rotateX(-90deg);
-  background: linear-gradient(rgb(232, 207, 160), rgb(213, 179, 124));
-  border: 1px solid rgba(212, 176, 122, 0.25);
-}
-
-.wallLeft {
-  width: 260px;
-  height: 96px;
-  left: -130px;
-  top: 34px;
-  transform: translate3d(0px, 0px, 0px) rotateZ(90deg) rotateX(-90deg);
-  background: linear-gradient(rgb(232, 207, 160), rgb(213, 179, 124));
-  border: 1px solid rgba(212, 176, 122, 0.25);
-}
-
-.wallRight {
-  width: 260px;
-  height: 96px;
-  left: 530px;
-  top: 34px;
-  transform: translate3d(0px, 0px, 0px) rotateZ(-90deg) rotateX(-90deg);
-  background: linear-gradient(rgb(232, 207, 160), rgb(213, 179, 124));
-  border: 1px solid rgba(212, 176, 122, 0.25);
-}
-
-.wallFront {
-  width: 660px;
-  height: 96px;
-  left: 0px;
-  top: 164px;
-  transform: translate3d(0px, 0px, 0px) rotateX(-90deg);
-  background: linear-gradient(rgb(232, 207, 160), rgb(213, 179, 124));
-  border: 1px solid rgba(212, 176, 122, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.brandLabel {
-  font-family: var(--font-sans), sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #7a5a2e;
-  opacity: 0.65;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
-  user-select: none;
-}
-
-/* Box Lid (Folded open behind the box at -72deg) */
-.boxLid {
-  position: absolute;
-  width: 660px;
-  height: 260px;
-  left: 0px;
-  top: -260px;
-  transform-origin: 50% 100%;
-  transform: translate3d(0px, 0px, 96px) rotateX(-72deg);
-  background: linear-gradient(0deg, rgb(227, 199, 149), rgb(240, 221, 184));
-  border: 6px solid rgb(212, 176, 122);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-}
-
-.boxLid::after {
-  content: "";
-  position: absolute;
-  inset: 20px;
-  border: 1.5px dashed rgba(122, 90, 46, 0.35);
-  border-radius: 6px;
-}
-
-/* Standing Isometric Game Cards (.wk) */
-.cardBtn {
-  position: absolute;
-  width: 224px;
-  height: 304px;
-  top: -50px;
-  transform-origin: 50% 100%;
-  cursor: pointer;
-  border-radius: 24px;
-  box-sizing: border-box;
-  overflow: hidden;
-  padding: 20px;
+  height: 420px;
+  border-radius: 22px;
+  padding: 26px 24px 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
   color: #ffffff;
-  outline: none;
-  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
   user-select: none;
-  transform: translate3d(0px, 0px, 0px) rotateZ(-90deg) rotateX(-90deg) rotateY(0deg);
-  clip-path: inset(-220px -90px 65px -90px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 20px 40px -18px rgba(0, 0, 0, 0.7);
-  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.25, 1), box-shadow 0.4s ease, filter 0.4s ease, clip-path 0.4s ease;
+  outline: none;
 }
 
-.cardBtn::before {
+.card::before {
   content: "";
   position: absolute;
-  inset: 0px;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.22) 0%, transparent 55%);
   pointer-events: none;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 45%);
-}
-
-.cardBtn::after {
-  content: "";
-  position: absolute;
-  inset: 0px;
-  pointer-events: none;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.3);
-}
-
-.cardBtn > * {
-  position: relative;
   z-index: 1;
 }
 
-.cardBtn:hover,
-.cardActive {
-  transform: translate3d(0px, 0px, 60px) rotateZ(-90deg) rotateX(-90deg) rotateY(0deg);
-  clip-path: inset(-280px -90px 65px -90px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 0 3px rgba(255, 255, 255, 0.9), 0 24px 50px rgba(0, 0, 0, 0.8);
-  filter: brightness(1.08);
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 32px 70px -12px var(--glow), 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-/* Card Inner Content */
-.cardTop {
+.cardInteractive:hover .cFoot {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cardInteractive:hover .cFootArrow {
+  transform: translateX(4px);
+}
+
+/* Card Top Row */
+.cTop {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
+  position: relative;
+  z-index: 2;
 }
 
-.cardLogo {
+.cIconBox {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.6);
-}
-
-.cardIconBox {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
   display: grid;
   place-items: center;
-  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cLogoImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.cIconNum {
   font-family: var(--font-mono), monospace;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   color: #ffffff;
 }
 
-.cardTag {
+.cBadge {
   font-family: var(--font-mono), monospace;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   padding: 4px 10px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.22);
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.cardMid {
-  display: flex;
-  flex-direction: column;
+/* Card Middle (Stats & Titles) */
+.cMid {
+  position: relative;
+  z-index: 2;
+  margin: auto 0 16px;
 }
 
-.cardTitle {
+.cTitle {
   font-family: var(--font-sans), sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
   color: #ffffff;
-  margin: 0;
   line-height: 1.15;
-  opacity: 0.95;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
 }
 
-.cardBigStat {
+.cBigStat {
   font-family: var(--font-sans), sans-serif;
   font-size: 52px;
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.05em;
   color: #ffffff;
-  margin: 8px 0 4px;
+  margin-bottom: 10px;
 }
 
-.cardSub {
+.cSub {
   font-family: var(--font-sans), sans-serif;
   font-size: 13px;
-  line-height: 1.35;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
 }
 
-.cardFooter {
+/* Card Footer */
+.cFoot {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: var(--font-mono), monospace;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.95);
-  padding-top: 10px;
+  color: rgba(255, 255, 255, 0.92);
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
 }
 
-/* 3. Bottom Index Bar */
-.bottomIndex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  padding: 0 20px;
+.cFootArrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
 }
 
-.indexPill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: var(--font-sans), sans-serif;
-  font-size: 13.5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.indexPill:hover,
-.indexPillActive {
-  background: rgba(255, 170, 64, 0.15);
-  border-color: #ffaa40;
-  color: #ffffff;
-}
-
-.indexNum {
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffaa40;
-}
-
-/* 4. Full-Screen Interactive Showcase Modal */
+/* 3. Full-Screen Interactive Showcase Modal */
 .modalBackdrop {
   position: fixed;
   inset: 0;
@@ -509,14 +349,26 @@
 }
 
 /* Responsiveness */
-@media (max-width: 900px) {
-  .boxFit {
-    transform: scale(0.68);
+@media (max-width: 1100px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card {
+    height: 380px;
   }
 }
 
 @media (max-width: 640px) {
-  .boxFit {
-    transform: scale(0.52);
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card {
+    height: 340px;
+    padding: 22px 20px;
+  }
+  .cBigStat {
+    font-size: 44px;
   }
 }

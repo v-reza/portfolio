@@ -1,33 +1,33 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import s from "./OffTheClock.module.css";
 import statsS from "./WutheringWavesSection.module.css";
 
-interface GameDeckCard {
+interface GameCard {
   id: string;
   num: string;
+  genre: string;
   title: string;
   bigStat: string;
   sub: string;
   footer: string;
-  leftPx: number;
   bgGradient: string;
   glow: string;
   logo?: string;
   isInteractive?: boolean;
 }
 
-const DECK_CARDS: GameDeckCard[] = [
+const CARDS: GameCard[] = [
   {
     id: "wuwa",
     num: "01",
+    genre: "ACTION RPG",
     title: "Wuthering Waves",
     bigStat: "UL 80",
-    sub: "Solaris-3 · 36 Resonators · 30/30 Hazard",
-    footer: "Open WebGL Engine →",
-    leftPx: 60,
+    sub: "Solaris-3 · 36 Resonators · 30/30 Hazard Zone speedrun",
+    footer: "Open WebGL Engine",
     bgGradient:
       "radial-gradient(120% 80% at 15% 0%, #FFC9A8 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #E8402A 0%, transparent 60%), linear-gradient(165deg, #FF9A6B, #F25A38)",
     glow: "#FF7A4F",
@@ -37,11 +37,11 @@ const DECK_CARDS: GameDeckCard[] = [
   {
     id: "deadlock",
     num: "02",
+    genre: "TACTICAL MOBA",
     title: "Deadlock",
     bigStat: "6v6",
-    sub: "Valve Tactical Hero MOBA · Lane Macro",
-    footer: "Active Playtest →",
-    leftPx: 195,
+    sub: "Valve hero shooter · Lane macro, wave control, and teamfight execution",
+    footer: "Active Playtest",
     bgGradient:
       "radial-gradient(90% 60% at 0% 0%, #FFD24D 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #EE4B73 0%, transparent 60%), linear-gradient(165deg, #3AA6E0, #1667A8)",
     glow: "#3AA6E0",
@@ -49,11 +49,11 @@ const DECK_CARDS: GameDeckCard[] = [
   {
     id: "rematch",
     num: "03",
+    genre: "COMPETITIVE ACTION",
     title: "Rematch",
     bigStat: "+Frame",
-    sub: "Action Combat · Neutral Spacing & Punish",
-    footer: "Competitive Action →",
-    leftPx: 330,
+    sub: "Neutral spacing pressure, frame advantage, and reactive whiff punishing",
+    footer: "Competitive Fighter",
     bgGradient:
       "radial-gradient(90% 60% at 0% 0%, #FCC419 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #C92A2A 0%, transparent 60%), linear-gradient(165deg, #9C36B5, #E03131)",
     glow: "#D7262B",
@@ -61,11 +61,11 @@ const DECK_CARDS: GameDeckCard[] = [
   {
     id: "valheim",
     num: "04",
+    genre: "SURVIVAL & SYSTEM",
     title: "Valheim",
     bigStat: "Linux",
-    sub: "Dedicated Server Host · Structural Physics",
-    footer: "Norse Survival →",
-    leftPx: 465,
+    sub: "Self-hosted Linux dedicated server · Structural load physics & procedural exploration",
+    footer: "Norse Survival",
     bgGradient:
       "radial-gradient(90% 60% at 0% 0%, #D8F5A2 0%, transparent 55%), radial-gradient(90% 70% at 100% 100%, #087F5B 0%, transparent 60%), linear-gradient(165deg, #2B8A3E, #1864AB)",
     glow: "#2B8A3E",
@@ -73,10 +73,7 @@ const DECK_CARDS: GameDeckCard[] = [
 ];
 
 export function OffTheClock() {
-  const [activeCardId, setActiveCardId] = useState<string>("wuwa");
   const [modalOpen, setModalOpen] = useState(false);
-  const [isAnimatingPick, setIsAnimatingPick] = useState(false);
-  const cardRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
 
   // Close modal on Escape key and lock body scroll
   useEffect(() => {
@@ -97,52 +94,30 @@ export function OffTheClock() {
     };
   }, [modalOpen]);
 
-  const handleCardClick = (card: GameDeckCard) => {
-    setActiveCardId(card.id);
-    if (!card.isInteractive || isAnimatingPick) return;
+  // Subtle interactive 3D card tilt following mouse movement
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const el = e.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotX = ((y / rect.height - 0.5) * -12).toFixed(2);
+    const rotY = ((x / rect.width - 0.5) * 12).toFixed(2);
+    el.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-12px) scale(1.02)`;
+  };
 
-    const el = cardRefs.current[card.id];
-    if (el) {
-      setIsAnimatingPick(true);
-      // James Chugh pick animation: lift high into air, rotate flat to screen
-      const BW = 660;
-      const BD = 260;
-      const CH = 304;
-      const VIEW_X = 57;
-      const VIEW_Z = 30;
+  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.transform = "";
+  };
 
-      const from = getComputedStyle(el).transform;
-      const mid = `translate3d(0px, 0px, ${CH + 60}px) rotateZ(-90deg) rotateX(-90deg) rotateY(0deg)`;
-      const to = `translate3d(${(BW / 2 - card.leftPx).toFixed(1)}px, ${BD * 0.95}px, 220px) rotateZ(${-VIEW_Z}deg) rotateX(${-VIEW_X}deg) rotateY(0deg)`;
-
-      const anim = el.animate(
-        [
-          { transform: from },
-          { transform: mid, offset: 0.38 },
-          { transform: to },
-        ],
-        {
-          duration: 1100,
-          easing: "cubic-bezier(.55, 0, .15, 1)",
-          fill: "forwards",
-        }
-      );
-
-      anim.onfinish = () => {
-        setTimeout(() => {
-          setModalOpen(true);
-          setIsAnimatingPick(false);
-          anim.cancel();
-        }, 120);
-      };
-    } else {
+  const handleCardClick = (card: GameCard) => {
+    if (card.isInteractive) {
       setModalOpen(true);
     }
   };
 
   return (
     <section id="off-the-clock" className={s.section} aria-label="Off the clock gaming rotation">
-      {/* 1. Header: James Chugh typography with highlighter */}
+      {/* 1. Header: Modern high-contrast typography */}
       <div className={s.headerWrap}>
         <p className={s.kicker}>Off The Clock</p>
         <h2 className={s.headline}>
@@ -151,100 +126,72 @@ export function OffTheClock() {
         </h2>
         <p className={s.subheadline}>
           When the IDE closes, I look for systems that demand the same precision: animation cancels,
-          lane macro, and dedicated servers. Pick a card from the box.
+          lane macro, and dedicated servers. Pick a card to explore.
         </p>
       </div>
 
-      {/* 2. 3D Isometric Card Deck Box (Direct from James Chugh) */}
-      <div className={s.boxTrack}>
-        <div className={s.boxFit}>
-          <div className={s.box3}>
-            {/* Box Cast Shadow */}
-            <div className={s.boxShadow} aria-hidden="true" />
-
-            {/* Box Floor (Kraft cardboard texture) */}
-            <div className={s.boxFloor} aria-hidden="true" />
-
-            {/* 4 Real Walls from James Chugh */}
-            <div className={`${s.wallFace} ${s.wallBack}`} aria-hidden="true" />
-            <div className={`${s.wallFace} ${s.wallLeft}`} aria-hidden="true" />
-            <div className={`${s.wallFace} ${s.wallRight}`} aria-hidden="true" />
-            <div className={`${s.wallFace} ${s.wallFront}`} aria-hidden="true">
-              <span className={s.brandLabel}>Things I played</span>
-            </div>
-
-            {/* Open Box Lid (Folded open behind the box at -72deg) */}
-            <div className={s.boxLid} aria-hidden="true" />
-
-            {/* Four Standing Isometric Game Cards */}
-            {DECK_CARDS.map((card) => {
-              const isSelected = activeCardId === card.id;
-              return (
-                <button
-                  key={card.id}
-                  ref={(el) => {
-                    cardRefs.current[card.id] = el;
-                  }}
-                  type="button"
-                  aria-label={`${card.title}, open showcase`}
-                  className={`${s.cardBtn} ${isSelected ? s.cardActive : ""}`}
-                  style={{
+      {/* 2. 4-Column Modern Floating Cards Grid */}
+      <div className={s.gridWrap}>
+        <div className={s.cardsGrid}>
+          {CARDS.map((card) => {
+            const isClickable = !!card.isInteractive;
+            return (
+              <button
+                key={card.id}
+                type="button"
+                aria-label={`${card.title}, ${card.footer}`}
+                className={`${s.card} ${isClickable ? s.cardInteractive : ""}`}
+                style={
+                  {
                     background: card.bgGradient,
-                    left: `${card.leftPx}px`,
-                  }}
-                  onMouseEnter={() => setActiveCardId(card.id)}
-                  onClick={() => handleCardClick(card)}
-                >
-                  <div className={s.cardTop}>
+                    "--glow": card.glow,
+                  } as React.CSSProperties
+                }
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleCardClick(card)}
+              >
+                {/* Top Row: Icon/Logo on Left, Category Pill on Right */}
+                <div className={s.cTop}>
+                  <div className={s.cIconBox}>
                     {card.logo ? (
                       <Image
                         src={card.logo}
                         alt=""
-                        width={44}
-                        height={44}
-                        className={s.cardLogo}
+                        width={32}
+                        height={32}
+                        className={s.cLogoImg}
                       />
                     ) : (
-                      <div className={s.cardIconBox}>{card.num}</div>
+                      <span className={s.cIconNum}>{card.num}</span>
                     )}
-                    <span className={s.cardTag}>{card.num}</span>
                   </div>
+                  <span className={s.cBadge}>
+                    {card.num} · {card.genre}
+                  </span>
+                </div>
 
-                  <div className={s.cardMid}>
-                    <p className={s.cardTitle}>{card.title}</p>
-                    <div className={s.cardBigStat}>{card.bigStat}</div>
-                    <p className={s.cardSub}>{card.sub}</p>
-                  </div>
+                {/* Middle: Title, Huge Stat, Subtitle */}
+                <div className={s.cMid}>
+                  <p className={s.cTitle}>{card.title}</p>
+                  <div className={s.cBigStat}>{card.bigStat}</div>
+                  <p className={s.cSub}>{card.sub}</p>
+                </div>
 
-                  <div className={s.cardFooter}>
-                    <span>{card.footer}</span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+                {/* Footer: Action Label + Arrow */}
+                <div className={s.cFoot}>
+                  <span>{card.footer}</span>
+                  <span className={s.cFootArrow} aria-hidden="true">
+                    →
+                  </span>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* 3. Bottom Index Bar */}
-      <div className={s.bottomIndex}>
-        {DECK_CARDS.map((card) => {
-          const isSelected = activeCardId === card.id;
-          return (
-            <button
-              key={card.id}
-              type="button"
-              className={`${s.indexPill} ${isSelected ? s.indexPillActive : ""}`}
-              onClick={() => handleCardClick(card)}
-            >
-              <span className={s.indexNum}>{card.num}</span>
-              <span>{card.title}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* 4. Full-Screen Interactive Showcase Modal (Opens ONLY when card clicked!) */}
+      {/* 3. Full-Screen Interactive Showcase Modal (Opens ONLY when card clicked!) */}
       {modalOpen && (
         <div
           className={s.modalBackdrop}
@@ -274,7 +221,7 @@ export function OffTheClock() {
 
           {/* Modal Body: Live Spine 4.2 WebGL Stage + Vyrenn Stats Card */}
           <div className={s.modalBody}>
-            {/* Live Spine 4.2 WebGL Stage */}
+            {/* Live Spine 4.2 WebGL Stage (100vw, 92vh) */}
             <div className={s.modalStageContainer}>
               <iframe
                 src="/wuwa/hsin-viewer/index.html"
