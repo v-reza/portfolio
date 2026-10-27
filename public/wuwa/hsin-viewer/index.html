@@ -458,23 +458,6 @@
     </div>
   </div>
 
-  <!-- Mode & Audio Dock (Right Side) -->
-  <div class="mode-switch-dock">
-    <div class="switch-pill active" id="pill-role" onclick="setMode('role')" title="Resonator Model">
-      <img src="../featured/hsin/role_swap_act.webp" alt="Model">
-      <span>Model</span>
-    </div>
-    <div class="switch-pill" id="pill-arms" onclick="setMode('arms')" title="Signature Weapon">
-      <img src="../featured/hsin/arms_swap.webp" alt="Weapon">
-      <span>Arms</span>
-    </div>
-    <div class="switch-pill" id="pill-bgm" onclick="toggleBgm()" title="Toggle Background Music">
-      <svg class="bgm-icon" viewBox="0 0 24 24">
-        <path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-      </svg>
-      <span>BGM</span>
-    </div>
-  </div>
 
   <!-- 36 Resonators Roster Bar with Category Filter -->
   <div class="avatar-bar-container">
@@ -1721,21 +1704,17 @@
       const pillArms = document.getElementById('pill-arms');
 
       if (mode === 'arms') {
-        spineContainer.style.opacity = '0.05';
-        artContainer.style.opacity = '0.05';
-        spineContainer.style.pointerEvents = 'none';
-        artContainer.style.pointerEvents = 'none';
-        weaponOverlay.classList.add('active');
-        pillArms.classList.add('active');
-        pillRole.classList.remove('active');
+        if (spineContainer) { spineContainer.style.opacity = '0.05'; spineContainer.style.pointerEvents = 'none'; }
+        if (artContainer) { artContainer.style.opacity = '0.05'; artContainer.style.pointerEvents = 'none'; }
+        if (weaponOverlay) weaponOverlay.classList.add('active');
+        if (pillArms) pillArms.classList.add('active');
+        if (pillRole) pillRole.classList.remove('active');
       } else {
-        spineContainer.style.opacity = '1';
-        artContainer.style.opacity = '1';
-        spineContainer.style.pointerEvents = 'auto';
-        artContainer.style.pointerEvents = 'auto';
-        weaponOverlay.classList.remove('active');
-        pillRole.classList.add('active');
-        pillArms.classList.remove('active');
+        if (spineContainer) { spineContainer.style.opacity = '1'; spineContainer.style.pointerEvents = 'auto'; }
+        if (artContainer) { artContainer.style.opacity = '1'; artContainer.style.pointerEvents = 'auto'; }
+        if (weaponOverlay) weaponOverlay.classList.remove('active');
+        if (pillRole) pillRole.classList.add('active');
+        if (pillArms) pillArms.classList.remove('active');
       }
     }
 
